@@ -1,0 +1,5346 @@
+{
+ "searchData": {
+  "results": {
+   "products": [
+    {
+     "landingPageUrl": "lounge-tshirts/levis/levis-men-soft-pure-cotton-round-neck-half-sleeve-tshirt/12027436/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 12027436,
+     "product": "Levis Men Soft Pure Cotton Round Neck Half Sleeve Tshirt",
+     "productName": "Levis Men Soft Pure Cotton Round Neck Half Sleeve Tshirt",
+     "rating": 4.406137466430664,
+     "ratingCount": 33826,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 228,
+     "brand": "Levis",
+     "searchImage": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/ea90445c-a37b-43ac-948b-8e291ec78dc31663221311972LevisMenWhiteSolidRoundNeckLoungeT-shirt1.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 41875338,
+     "buyButtonWinnerSellerPartnerId": 4215,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 41875338,
+       "label": "M",
+       "inventory": 235,
+       "available": true,
+       "brandSizeLabel": "M"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 12027436,
+       "baseColourHex": "#f2f2f2",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/ea90445c-a37b-43ac-948b-8e291ec78dc31663221311972LevisMenWhiteSolidRoundNeckLoungeT-shirt1.jpg"
+      },
+      {
+       "styleId": 12027422,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027422/2022/9/15/7a4e30f1-809f-4111-9991-6fd07d8832e21663221355704LevisMenCharcoalGreySolidRoundNeckLoungeT-shirts1.jpg"
+      },
+      {
+       "styleId": 12027418,
+       "baseColourHex": "#3c4477",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/b5f7623a-cc63-43b2-bed7-1ad9ab3070921663221186524LevisMenNavyBlueSolidRoundNeckLoungeT-shirts1.jpg"
+      },
+      {
+       "styleId": 12027428,
+       "baseColourHex": "#9fa8ab",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027428/2020/11/23/4f6be415-c536-49e5-bc78-534dade9cd2d1606116792652-Levis-Men-Grey-Melange-Solid-Pure-Cotton-V-Neck-Lounge-T-shi-1.jpg"
+      },
+      {
+       "styleId": 12027424,
+       "baseColourHex": "#d34b56",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027424/2022/9/15/91b7a73b-7707-49ce-9364-05254a39de0d1663221437123LevisMenRedSolidRoundNeckLoungeT-shirts1.jpg"
+      }
+     ],
+     "sizes": "S,M,L,XL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/ea90445c-a37b-43ac-948b-8e291ec78dc31663221311972LevisMenWhiteSolidRoundNeckLoungeT-shirt1.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/f0028b78-6bd2-4be8-af63-08373d368abe1663221312002LevisMenWhiteSolidRoundNeckLoungeT-shirt3.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/ea90445c-a37b-43ac-948b-8e291ec78dc31663221311972LevisMenWhiteSolidRoundNeckLoungeT-shirt1.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/bcbbaa26-393a-4684-a8e1-dbd33c34d0dc1663221312010LevisMenWhiteSolidRoundNeckLoungeT-shirt4.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/ec61f604-83bf-4d5e-99cf-8fd4b115e0181663221312019LevisMenWhiteSolidRoundNeckLoungeT-shirt5.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/44fb08ae-efe4-4b60-b0c7-b4923153288d1663221312027LevisMenWhiteSolidRoundNeckLoungeT-shirt6.jpg"
+      },
+      {
+       "view": "bottom",
+       "src": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/4cfe64a6-a51d-422e-86ab-3c088170adb91663221312036LevisMenWhiteSolidRoundNeckLoungeT-shirt7.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/d6a98b6c-e152-4337-a0cf-2f3ab7a28cf01663221311982LevisMenWhiteSolidRoundNeckLoungeT-shirt2.jpg"
+      }
+     ],
+     "gender": "Men",
+     "primaryColour": "White",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(35% OFF)",
+     "additionalInfo": "Solid Lounge T-shirt",
+     "category": "Lounge Tshirts",
+     "mrp": 649,
+     "price": 421,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1596067200000",
+     "season": "Spring",
+     "year": "2020",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_EORSPRICELIVE",
+       "value": "EORS Price Live",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PICWORTHY",
+       "value": "PIC-WORTHY",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_CURTAINRAISER",
+       "value": "Curtain Raiser",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_STYLEBOOST",
+       "value": "NA",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PRICECRASH",
+       "value": "Price Crash",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_SALEPRICE",
+       "value": "Crazy Deal",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_BESTSELLER",
+       "value": "BESTSELLER",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_NEW_BUYERS_CHOICE",
+       "value": "New Buyers Choice",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_BESTSELLER_IN_ATG",
+       "value": "Bestseller in ATG",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_IMAGES",
+       "value": "Reviews with Images",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 271,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 5,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "name": "New Buyers Choice",
+          "tagId": "New_Buyers_Choice"
+         },
+         {
+          "metadata": {
+           "tag_label": "Bestseller in Loungewear"
+          },
+          "name": "Bestseller in ATG",
+          "tagId": "Bestseller_in_ATG"
+         },
+         {
+          "metadata": {
+           "tag_label": "878 Reviews with Images"
+          },
+          "name": "Reviews with Images",
+          "tagId": "Reviews_with_Images"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "high",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass_Premium",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Nu Bestseller",
+          "tagId": "Nu_Bestseller"
+         },
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "count": "371"
+          },
+          "tagId": "PDP_Views"
+         }
+        ]
+       },
+       "trends": {},
+       "trust": {},
+       "xcelerator": {
+        "tagInfos": [
+         {
+          "name": "PIC-WORTHY",
+          "tagId": "PICWORTHY"
+         },
+         {
+          "name": "BESTSELLER",
+          "tagId": "BESTSELLER"
+         }
+        ]
+       }
+      }
+     },
+     "brandLogo": "https://assets.myntassets.com/assets/images/2020/7/7/8d2db9db-e27c-49eb-b0db-0b6d5ef525941594102405818-Levis-logo.png",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "lounge-tshirts/levis/levis-men-soft-pure-cotton-round-neck-half-sleeve-tshirt/12027432/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 12027432,
+     "product": "Levis Men Soft Pure Cotton Round Neck Half Sleeve Tshirt",
+     "productName": "Levis Men Soft Pure Cotton Round Neck Half Sleeve Tshirt",
+     "rating": 4.406137466430664,
+     "ratingCount": 33826,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 273,
+     "brand": "Levis",
+     "searchImage": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/09d02049-216d-4adf-917a-89c7585b28f51663221482922LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt1.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 41875318,
+     "buyButtonWinnerSellerPartnerId": 4215,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 41875318,
+       "label": "S",
+       "inventory": 68,
+       "available": true,
+       "brandSizeLabel": "S"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 12027432,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/09d02049-216d-4adf-917a-89c7585b28f51663221482922LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt1.jpg"
+      },
+      {
+       "styleId": 12027418,
+       "baseColourHex": "#3c4477",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/b5f7623a-cc63-43b2-bed7-1ad9ab3070921663221186524LevisMenNavyBlueSolidRoundNeckLoungeT-shirts1.jpg"
+      },
+      {
+       "styleId": 12027428,
+       "baseColourHex": "#9fa8ab",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027428/2020/11/23/4f6be415-c536-49e5-bc78-534dade9cd2d1606116792652-Levis-Men-Grey-Melange-Solid-Pure-Cotton-V-Neck-Lounge-T-shi-1.jpg"
+      },
+      {
+       "styleId": 12027424,
+       "baseColourHex": "#d34b56",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027424/2022/9/15/91b7a73b-7707-49ce-9364-05254a39de0d1663221437123LevisMenRedSolidRoundNeckLoungeT-shirts1.jpg"
+      },
+      {
+       "styleId": 12027436,
+       "baseColourHex": "#f2f2f2",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/ea90445c-a37b-43ac-948b-8e291ec78dc31663221311972LevisMenWhiteSolidRoundNeckLoungeT-shirt1.jpg"
+      }
+     ],
+     "sizes": "S,M,L,XL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/09d02049-216d-4adf-917a-89c7585b28f51663221482922LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt1.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/09d02049-216d-4adf-917a-89c7585b28f51663221482922LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt1.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/aa57db9e-3f51-4c3a-bda2-9fecbc326c9e1663221482967LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt5.jpg"
+      },
+      {
+       "view": "bottom",
+       "src": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/ce3ee8a1-294a-49cc-ba17-e0e9df30efb41663221482983LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt7.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/b220b085-62f7-4cb6-bec0-672949e488ea1663221482959LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt4.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/ba21acd7-973f-4327-b9ea-7514cc97f8851663221482951LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt3.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/592071bc-190e-40f9-ae3c-f05b87877f031663221482932LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt2.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/defd4725-c245-4e6a-9444-1f80e7e2dc521663221482975LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt6.jpg"
+      }
+     ],
+     "gender": "Men",
+     "primaryColour": "Black",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(42% OFF)",
+     "additionalInfo": "Solid Lounge T-shirt",
+     "category": "Lounge Tshirts",
+     "mrp": 649,
+     "price": 376,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1596067200000",
+     "season": "Spring",
+     "year": "2020",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "Custom_Label2",
+       "value": "SA_FD_Label2",
+       "metaInfo": "M_ROS_MBU"
+      },
+      {
+       "attribute": "SA_XT_EORSPRICELIVE",
+       "value": "EORS Price Live",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PICWORTHY",
+       "value": "PIC-WORTHY",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_BESTSELLER",
+       "value": "BESTSELLER",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_STYLEBOOST",
+       "value": "NA",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_TOPDEALS",
+       "value": "Top Deals",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_SALEPRICE",
+       "value": "Crazy Deal",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PRICECRASH",
+       "value": "Price Crash",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_NEW_BUYERS_CHOICE",
+       "value": "New Buyers Choice",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_BESTSELLER_IN_ATG",
+       "value": "Bestseller in ATG",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_IMAGES",
+       "value": "Reviews with Images",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_DEAL_OF_THE_DAY",
+       "value": "Deal of the Day",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PRICE_CRASH",
+       "value": "Price Crash",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_CRAZY_DEAL",
+       "value": "Crazy Deal",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 226,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 5,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "name": "New Buyers Choice",
+          "tagId": "New_Buyers_Choice"
+         },
+         {
+          "metadata": {
+           "tag_label": "Bestseller in Loungewear"
+          },
+          "name": "Bestseller in ATG",
+          "tagId": "Bestseller_in_ATG"
+         },
+         {
+          "metadata": {
+           "tag_label": "878 Reviews with Images"
+          },
+          "name": "Reviews with Images",
+          "tagId": "Reviews_with_Images"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "high",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass_Premium",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Nu Bestseller",
+          "tagId": "Nu_Bestseller"
+         },
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         },
+         {
+          "name": "Deal of the Day",
+          "tagId": "Deal_Of_The_Day"
+         },
+         {
+          "name": "Price Crash",
+          "tagId": "Price_Crash"
+         },
+         {
+          "name": "Crazy Deal",
+          "tagId": "Crazy_Deal"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "count": "306"
+          },
+          "tagId": "PDP_Views"
+         }
+        ]
+       },
+       "trends": {},
+       "trust": {
+        "tagInfos": [
+         {
+          "name": "Choice",
+          "tagId": "Choice"
+         }
+        ]
+       },
+       "xcelerator": {
+        "tagInfos": [
+         {
+          "name": "PIC-WORTHY",
+          "tagId": "PICWORTHY"
+         },
+         {
+          "name": "BESTSELLER",
+          "tagId": "BESTSELLER"
+         }
+        ]
+       }
+      }
+     },
+     "brandLogo": "https://assets.myntassets.com/assets/images/2020/7/7/8d2db9db-e27c-49eb-b0db-0b6d5ef525941594102405818-Levis-logo.png",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "lounge-tshirts/van+heusen/van-heusen-women-cotton-relax-fit-lounge-t-shirt/31354058/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 31354058,
+     "product": "Van Heusen Women Cotton Relax Fit Lounge T Shirt",
+     "productName": "Van Heusen Women Cotton Relax Fit Lounge T Shirt",
+     "rating": 4.355796813964844,
+     "ratingCount": 1751,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 0,
+     "brand": "Van Heusen",
+     "searchImage": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/PnZEZdMZ_b2d1ab4fcc9f481e8d8445376cc53415.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 101093704,
+     "buyButtonWinnerSellerPartnerId": 4076,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 101093704,
+       "label": "S",
+       "inventory": 25,
+       "available": true,
+       "brandSizeLabel": "S"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 31354058,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/PnZEZdMZ_b2d1ab4fcc9f481e8d8445376cc53415.jpg"
+      },
+      {
+       "styleId": 35038118,
+       "baseColourHex": "#ff7f50",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/EOolF8jx_e5221c1a21564d7b97bc278808a951d4.jpg"
+      },
+      {
+       "styleId": 35038115,
+       "baseColourHex": "#0074D9",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/03YgOwij_3a2a9c845711483d846162bc9b2ee6df.jpg"
+      },
+      {
+       "styleId": 35038129,
+       "baseColourHex": "#800080",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/M8a562VL_c659db7b444f48358827dd007ad69915.jpg"
+      },
+      {
+       "styleId": 35038126,
+       "baseColourHex": "#b7410e",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/oeFzEBlG_e02c5405fa4f40c9a5de83f82818a186.jpg"
+      },
+      {
+       "styleId": 35038110,
+       "baseColourHex": "#8b4513",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/7cmk8cKe_1e440a0451e24cd791dd3f65f21e2cde.jpg"
+      },
+      {
+       "styleId": 31354071,
+       "baseColourHex": "#3c4477",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/dA4TPbK0_568b0609890d4083a280b39453ee056e.jpg"
+      },
+      {
+       "styleId": 31354049,
+       "baseColourHex": "#f1a9c4",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/jVwIgCAB_05060d9730fa426385eb4b778ecd8aa9.jpg"
+      }
+     ],
+     "sizes": "S,M,L",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/PnZEZdMZ_b2d1ab4fcc9f481e8d8445376cc53415.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/473f4Xw2_a601804e2c5c43a89a18b5366e7540f8.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/50hgHcRb_6050227ef1e24dda9482d740e5ec2776.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/p6Pdz94M_6cf1794e76e441e5be738a47a9290d90.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/PnZEZdMZ_b2d1ab4fcc9f481e8d8445376cc53415.jpg"
+      },
+      {
+       "view": "bottom",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/stCbuxWc_ed550d5697354b8e917171e6e517baf7.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/2K8lj5Ag_c7e06090988d48728257762f248c9e1c.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/BSUh1y9G_b063ffc1d650442999f223399864dc74.jpg"
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Black",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "",
+     "additionalInfo": "Short Sleeves Cotton T-Shirt",
+     "category": "Lounge Tshirts",
+     "mrp": 499,
+     "price": 499,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1729123200000",
+     "season": "Winter",
+     "year": "2024",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_IMAGES",
+       "value": "Reviews with Images",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_NEW_BUYERS_CHOICE",
+       "value": "New Buyers Choice",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 349,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 8,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "tag_label": "33 Reviews with Images"
+          },
+          "name": "Reviews with Images",
+          "tagId": "Reviews_with_Images"
+         },
+         {
+          "name": "New Buyers Choice",
+          "tagId": "New_Buyers_Choice"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Nu Bestseller",
+          "tagId": "Nu_Bestseller"
+         },
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "https://assets.myntassets.com/assets/images/2023/3/7/89e5030b-13de-4f5b-8f65-7690922b7e611678174593475-Van-Heusen-New-Logo-Powermark-04.jpg",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/glitchez/glitchez-typography-printed-drop-shoulder-sleeves-pure-cotton-oversized-t-shirt/40620654/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 40620654,
+     "product": "glitchez Typography Printed Drop-Shoulder Sleeves Pure Cotton Oversized T-shirt",
+     "productName": "glitchez Typography Printed Drop-Shoulder Sleeves Pure Cotton Oversized T-shirt",
+     "rating": 4.235263347625732,
+     "ratingCount": 3817,
+     "isFastFashion": true,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 512,
+     "brand": "glitchez",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/22/4f1bf53aa67443538494aa24c9ae1239.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 129975469,
+     "buyButtonWinnerSellerPartnerId": 4036,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 129975469,
+       "label": "M",
+       "inventory": 76,
+       "available": true,
+       "brandSizeLabel": "M"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 40620654,
+       "baseColourHex": "#d6d6e5",
+       "colour1Hex": "#f2f2f2",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/22/4f1bf53aa67443538494aa24c9ae1239.jpg"
+      },
+      {
+       "styleId": 31359037,
+       "baseColourHex": "#f2f2f2",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/MAY/21/zAybEf5k_f4190b8468a24f8cb552e64237b1a0d3.jpg"
+      },
+      {
+       "styleId": 40620637,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/AUGUST/7/stLVNc0j_7760a6fb3d60497dacf0965d2886e361.jpg"
+      },
+      {
+       "styleId": 31359077,
+       "baseColourHex": "#40e0d0",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/MAY/21/RWOutk0m_2e3daf5bf8314c17bc1b4fe03ea1fe72.jpg"
+      },
+      {
+       "styleId": 31358981,
+       "baseColourHex": "#ffe5b4",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/MAY/21/xwrO2gBm_b88a94c978b44514b21fc43e3a85d2d0.jpg"
+      }
+     ],
+     "sizes": "XS,S,M,L,XL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/22/4f1bf53aa67443538494aa24c9ae1239.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/22/75b150dc9af94b25bc40ffeb68a94fb3.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/22/4f1bf53aa67443538494aa24c9ae1239.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/22/cf657105df8e4874b9c7cefcd6e5d7b6.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/22/28d808ff05a34eeabb98340af96bbd74.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/22/368737da2bfe4551b6e06c595d426a82.jpg"
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Lavender",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(64% OFF)",
+     "additionalInfo": "Pure Cotton Oversized T-shirt",
+     "category": "Tshirts",
+     "mrp": 799,
+     "price": 287,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1791417600000",
+     "season": "Summer",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_STYLECAST",
+       "value": "FWD",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_30DAY_BESTPRICE",
+       "value": "30Day BestPrice",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_MYNTRA_UNIQUE",
+       "value": "Myntra Unique",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_VIDEOS",
+       "value": "Reviews with Videos",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_IMAGES",
+       "value": "Reviews with Images",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [
+      {
+       "attributeTypeName": "Fabric",
+       "attributeValue": "Pure Cotton",
+       "overlayImage": "http://assets.myntassets.com/assets/images/2026/MAY/20/Ze3prtEa_28547c6922ec4e75a19f9779aa71b1a5.png"
+      }
+     ],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 144,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 143,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "EXPLORE_STYLES_20261016_1900",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": true,
+       "isExplore": true
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 4,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "tag_label": "75 Reviews with Videos"
+          },
+          "name": "Reviews with Videos",
+          "tagId": "Reviews_with_Videos"
+         },
+         {
+          "metadata": {
+           "attributeTypeName": "FWD Fresh Drops",
+           "imageUrl": "http://assets.myntassets.com/assets/images/2024/NOVEMBER/21/IqIpjiNX_ac6a5f9e07f8400a83932e8080e5e446.png"
+          },
+          "name": "FWD FRESH DROPS",
+          "tagId": "FWD_Fresh_Drops"
+         },
+         {
+          "metadata": {
+           "tag_label": "220 Reviews with Images"
+          },
+          "name": "Reviews with Images",
+          "tagId": "Reviews_with_Images"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "FWD_EXCLUSIVE",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "30Day BestPrice",
+          "tagId": "30Day_BestPrice"
+         }
+        ]
+       },
+       "selection": {
+        "tagInfos": [
+         {
+          "name": "Myntra Unique",
+          "tagId": "Myntra_Unique"
+         }
+        ]
+       },
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "lounge-tshirts/dreamz+by+pantaloons/dreamz-by-pantaloons-printed-cotton-round-neck-lounge-tshirts/44553096/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 44553096,
+     "product": "Dreamz by Pantaloons Printed Cotton Round Neck Lounge Tshirts",
+     "productName": "Dreamz by Pantaloons Printed Cotton Round Neck Lounge Tshirts",
+     "rating": 4.443396091461182,
+     "ratingCount": 106,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 0,
+     "brand": "Dreamz by Pantaloons",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/JULY/23/H2qrrDTv_2a0aabe5340c4ad98e39cda041d2506e.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 142000725,
+     "buyButtonWinnerSellerPartnerId": 10226,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 142000725,
+       "label": "XXL",
+       "inventory": 35,
+       "available": true,
+       "brandSizeLabel": "XXL"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 44553096,
+       "baseColourHex": "#8b4513",
+       "colour1Hex": "#f2f2f2",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/23/H2qrrDTv_2a0aabe5340c4ad98e39cda041d2506e.jpg"
+      },
+      {
+       "styleId": 44553104,
+       "baseColourHex": "#800080",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/23/XOeX77A2_c9d11568bde44c82b884acd4e9b016d9.jpg"
+      },
+      {
+       "styleId": 45987344,
+       "baseColourHex": "#d34b56",
+       "colour1Hex": "#f2f2f2",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/01d06ee1233442918d8b54d4bbc4fdee.jpg"
+      },
+      {
+       "styleId": 44553093,
+       "baseColourHex": "#3c4477",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/23/RZPZWl3Z_ab44105feebd46728fd943c207734e83.jpg"
+      }
+     ],
+     "sizes": "XS,S,M,L,XL,XXL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/23/H2qrrDTv_2a0aabe5340c4ad98e39cda041d2506e.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/23/AQTxZjYM_3bb1e44825d9404d82d0e06321e6b3fc.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/23/burnW9JA_08c1e501b8534dbe83a420985c3336d4.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/23/v3RA8Ige_3092173b14a84da0af82b1a74387d3fd.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/23/OiOyak1u_2c90a36349494f6aa16162a2da27ef99.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/23/TkYlHn9X_40d893521de345049ec4bbcbbfbd8cea.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/23/H2qrrDTv_2a0aabe5340c4ad98e39cda041d2506e.jpg"
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Brown",
+     "discountLabel": "",
+     "discountDisplayLabel": "",
+     "additionalInfo": "Round Neck Lounge Tshirts",
+     "category": "Lounge Tshirts",
+     "mrp": 299,
+     "price": 299,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "",
+     "tdBxGyText": "",
+     "catalogDate": "1784764800000",
+     "season": "Winter",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_NEW_BUYERS_CHOICE",
+       "value": "New Buyers Choice",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 149,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 3,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "name": "New Buyers Choice",
+          "tagId": "New_Buyers_Choice"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Entry",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Nu Bestseller",
+          "tagId": "Nu_Bestseller"
+         },
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/printabulous/printabulous-printed-pure-cotton-t-shirt/46313676/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 46313676,
+     "product": "Printabulous Printed Pure Cotton T-shirt",
+     "productName": "Printabulous Printed Pure Cotton T-shirt",
+     "rating": 0,
+     "ratingCount": 0,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 148,
+     "brand": "Printabulous",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/16/3dad405f6ec64f779f626ef2dd49ed68.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 147877601,
+     "buyButtonWinnerSellerPartnerId": 89284,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 147877601,
+       "label": "1-1.5Y",
+       "inventory": 6,
+       "available": true,
+       "brandSizeLabel": "1-1.5Y"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 46313676,
+       "baseColourHex": "#f1a9c4",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/16/3dad405f6ec64f779f626ef2dd49ed68.jpg"
+      }
+     ],
+     "sizes": "9-12M,1-1.5Y",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/16/3dad405f6ec64f779f626ef2dd49ed68.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/16/3dad405f6ec64f779f626ef2dd49ed68.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/16/c05dbc158dc74a3c8b2e5a7c26bd2f78.jpg"
+      }
+     ],
+     "gender": "Unisex",
+     "primaryColour": "Pink",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(24% OFF)",
+     "additionalInfo": "Printed T-shirt",
+     "category": "Tshirts",
+     "mrp": 620,
+     "price": 472,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": false,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1788998400000",
+     "season": "Summer",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_JUST_LAUNCHED",
+       "value": "Just Launched",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [
+      {
+       "attributeTypeName": "Fabric",
+       "attributeValue": "Pure Cotton",
+       "overlayImage": "http://assets.myntassets.com/assets/images/2026/MAY/20/Ze3prtEa_28547c6922ec4e75a19f9779aa71b1a5.png"
+      }
+     ],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 322,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 0,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {},
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {},
+       "selection": {
+        "tagInfos": [
+         {
+          "name": "Just Launched",
+          "tagId": "Just_Launched"
+         }
+        ]
+       },
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "lounge-tshirts/levis/levis-men-soft-pure-cotton-round-neck-half-sleeve-tshirt/12027418/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 12027418,
+     "product": "Levis Men Soft Pure Cotton Round Neck Half Sleeve Tshirt",
+     "productName": "Levis Men Soft Pure Cotton Round Neck Half Sleeve Tshirt",
+     "rating": 4.406137466430664,
+     "ratingCount": 33826,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 273,
+     "brand": "Levis",
+     "searchImage": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/b5f7623a-cc63-43b2-bed7-1ad9ab3070921663221186524LevisMenNavyBlueSolidRoundNeckLoungeT-shirts1.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 41875264,
+     "buyButtonWinnerSellerPartnerId": 4215,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 41875264,
+       "label": "S",
+       "inventory": 137,
+       "available": true,
+       "brandSizeLabel": "S"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 12027418,
+       "baseColourHex": "#3c4477",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/b5f7623a-cc63-43b2-bed7-1ad9ab3070921663221186524LevisMenNavyBlueSolidRoundNeckLoungeT-shirts1.jpg"
+      },
+      {
+       "styleId": 12027432,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027432/2022/9/15/09d02049-216d-4adf-917a-89c7585b28f51663221482922LevisMenBlackSolidPureCottonRoundNeckLoungeT-shirt1.jpg"
+      },
+      {
+       "styleId": 12027428,
+       "baseColourHex": "#9fa8ab",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027428/2020/11/23/4f6be415-c536-49e5-bc78-534dade9cd2d1606116792652-Levis-Men-Grey-Melange-Solid-Pure-Cotton-V-Neck-Lounge-T-shi-1.jpg"
+      },
+      {
+       "styleId": 12027424,
+       "baseColourHex": "#d34b56",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027424/2022/9/15/91b7a73b-7707-49ce-9364-05254a39de0d1663221437123LevisMenRedSolidRoundNeckLoungeT-shirts1.jpg"
+      },
+      {
+       "styleId": 12027436,
+       "baseColourHex": "#f2f2f2",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/12027436/2022/9/15/ea90445c-a37b-43ac-948b-8e291ec78dc31663221311972LevisMenWhiteSolidRoundNeckLoungeT-shirt1.jpg"
+      }
+     ],
+     "sizes": "S,M,L,XL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/b5f7623a-cc63-43b2-bed7-1ad9ab3070921663221186524LevisMenNavyBlueSolidRoundNeckLoungeT-shirts1.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/46ca814f-6cd8-4d84-8331-a697336828441663221186570LevisMenNavyBlueSolidRoundNeckLoungeT-shirts5.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/322ecf59-e06c-4158-ab31-9fa073578e851663221186554LevisMenNavyBlueSolidRoundNeckLoungeT-shirts3.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/48b2507a-50c2-4769-9a48-752ea1e2c0a91663221186533LevisMenNavyBlueSolidRoundNeckLoungeT-shirts2.jpg"
+      },
+      {
+       "view": "bottom",
+       "src": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/b80739a6-ec4d-4f4f-93b9-9f84881e34641663221186587LevisMenNavyBlueSolidRoundNeckLoungeT-shirts7.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/b5f7623a-cc63-43b2-bed7-1ad9ab3070921663221186524LevisMenNavyBlueSolidRoundNeckLoungeT-shirts1.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/482d1a85-8d68-4dd3-9679-a090d774b5481663221186563LevisMenNavyBlueSolidRoundNeckLoungeT-shirts4.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/12027418/2022/9/15/00c11d38-add6-41aa-9e7a-ab8b275983a61663221186578LevisMenNavyBlueSolidRoundNeckLoungeT-shirts6.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      }
+     ],
+     "gender": "Men",
+     "primaryColour": "Navy Blue",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(42% OFF)",
+     "additionalInfo": "Solid Lounge T-shirt",
+     "category": "Lounge Tshirts",
+     "mrp": 649,
+     "price": 376,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1596067200000",
+     "season": "Spring",
+     "year": "2020",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "Custom_Label2",
+       "value": "SA_FD_Label2",
+       "metaInfo": "H_ROS_MBU"
+      },
+      {
+       "attribute": "SA_XT_PICWORTHY",
+       "value": "PIC-WORTHY",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_STYLEBOOST",
+       "value": "NA",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_NEW_BUYERS_CHOICE",
+       "value": "New Buyers Choice",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_BESTSELLER_IN_ATG",
+       "value": "Bestseller in ATG",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_IMAGES",
+       "value": "Reviews with Images",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_DEAL_OF_THE_DAY",
+       "value": "Deal of the Day",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PRICE_CRASH",
+       "value": "Price Crash",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_CRAZY_DEAL",
+       "value": "Crazy Deal",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 226,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 5,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "name": "New Buyers Choice",
+          "tagId": "New_Buyers_Choice"
+         },
+         {
+          "metadata": {
+           "tag_label": "Bestseller in Loungewear"
+          },
+          "name": "Bestseller in ATG",
+          "tagId": "Bestseller_in_ATG"
+         },
+         {
+          "metadata": {
+           "tag_label": "878 Reviews with Images"
+          },
+          "name": "Reviews with Images",
+          "tagId": "Reviews_with_Images"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "high",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass_Premium",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Nu Bestseller",
+          "tagId": "Nu_Bestseller"
+         },
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         },
+         {
+          "name": "Deal of the Day",
+          "tagId": "Deal_Of_The_Day"
+         },
+         {
+          "name": "Price Crash",
+          "tagId": "Price_Crash"
+         },
+         {
+          "name": "Crazy Deal",
+          "tagId": "Crazy_Deal"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "count": "119"
+          },
+          "tagId": "PDP_Views"
+         }
+        ]
+       },
+       "trends": {},
+       "trust": {},
+       "xcelerator": {
+        "tagInfos": [
+         {
+          "name": "PIC-WORTHY",
+          "tagId": "PICWORTHY"
+         }
+        ]
+       }
+      }
+     },
+     "brandLogo": "https://assets.myntassets.com/assets/images/2020/7/7/8d2db9db-e27c-49eb-b0db-0b6d5ef525941594102405818-Levis-logo.png",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/mlada/mlada-women-t-shirt/46796059/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 46796059,
+     "product": "Mlada Women T-shirt",
+     "productName": "Mlada Women T-shirt",
+     "rating": 0,
+     "ratingCount": 0,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 840,
+     "brand": "Mlada",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/a53215a3aaeb40529a16db1030b8b947.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 149444872,
+     "buyButtonWinnerSellerPartnerId": 26077,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 149444872,
+       "label": "5XL",
+       "inventory": 3,
+       "available": true,
+       "brandSizeLabel": "5X"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 46796059,
+       "baseColourHex": "#3D9970",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/a53215a3aaeb40529a16db1030b8b947.jpg"
+      },
+      {
+       "styleId": 46796057,
+       "baseColourHex": "#808080",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/29/c2b4d56c04e846f8bb63580ad12f54e0.jpg"
+      },
+      {
+       "styleId": 46796058,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/29/c8c1e92a0a1a490c8b2fc5e6cb40427e.jpg"
+      },
+      {
+       "styleId": 46796056,
+       "baseColourHex": "#b03060",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/29/9a12dc77b1d54928997c4938564b278c.jpg"
+      }
+     ],
+     "sizes": "M,L,XL,XXL,3XL,4XL,5XL,6XL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/a53215a3aaeb40529a16db1030b8b947.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/8c76c21b1ff94d6ca2767552ca5a952f.jpg"
+      },
+      {
+       "view": "bottom",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/133674a2d0a1438685e0eee15e7a14d9.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/1458622286614f9589d78b54e53426bb.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/a71bf09557b24e9eb489bcbe0c90668c.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/6aead6c095fb4c73a3ebbec83019df5d.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/36f24923fbdc4b9b93b75f9201a928c8.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/3/a53215a3aaeb40529a16db1030b8b947.jpg"
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Olive",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(60% OFF)",
+     "additionalInfo": "Active Workout Tshirts",
+     "category": "Tshirts",
+     "mrp": 1399,
+     "price": 559,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1790208000000",
+     "season": "Spring",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_JUST_LAUNCHED",
+       "value": "Just Launched",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": null,
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "EXPLORE_STYLES_20261016_1900",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": true,
+       "isExplore": true
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 3,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {},
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass_Premium",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {},
+       "selection": {
+        "tagInfos": [
+         {
+          "name": "Just Launched",
+          "tagId": "Just_Launched"
+         }
+        ]
+       },
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "lounge-tshirts/roadster/the-roadster-lifestyle-co-printed-round-neck-lounge-t-shirt/41518857/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 41518857,
+     "product": "The Roadster Lifestyle Co. Printed Round Neck Lounge T-Shirt",
+     "productName": "The Roadster Lifestyle Co. Printed Round Neck Lounge T-Shirt",
+     "rating": 4.666666507720947,
+     "ratingCount": 12,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 1046,
+     "brand": "Roadster",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/APRIL/21/K6luyMx8_5025768280f44f66ad2acf6207cb8de1.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 132785157,
+     "buyButtonWinnerSellerPartnerId": 57008,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 132785157,
+       "label": "3XL",
+       "inventory": 195,
+       "available": true,
+       "brandSizeLabel": "3XL"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 41518857,
+       "baseColourHex": "#3D9970",
+       "colour1Hex": "#f1a9c4",
+       "colour2Hex": "#f2f2f2",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/APRIL/21/K6luyMx8_5025768280f44f66ad2acf6207cb8de1.jpg"
+      }
+     ],
+     "sizes": "M,L,XL,XXL,3XL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/APRIL/21/K6luyMx8_5025768280f44f66ad2acf6207cb8de1.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/APRIL/21/R5CSfCu0_0872de1ca4d541ce9cb2305f43a87d2b.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/APRIL/21/snFTMrlV_18e45ddb36f34599bfe75e33243d0211.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/APRIL/21/nCh0iQhh_9d18251a7a004a23bef2144da02ed3bc.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/APRIL/21/K6luyMx8_5025768280f44f66ad2acf6207cb8de1.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/APRIL/21/aFNc6h1Q_2970f6dda7564f248a1e79fbfe8cacd9.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Olive",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(75% OFF)",
+     "additionalInfo": "Printed Lounge T-Shirt",
+     "category": "Lounge Tshirts",
+     "mrp": 1399,
+     "price": 353,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": false,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1776297600000",
+     "season": "Summer",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_30DAY_BESTPRICE",
+       "value": "30Day BestPrice",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 203,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 0,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {},
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         },
+         {
+          "name": "30Day BestPrice",
+          "tagId": "30Day_BestPrice"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {},
+       "trends": {},
+       "trust": {
+        "tagInfos": [
+         {
+          "name": "Top Rated",
+          "tagId": "Top_Rated"
+         }
+        ]
+       }
+      }
+     },
+     "brandLogo": "https://assets.myntassets.com/assets/images/2020/4/2/a6a4dfb7-3c3b-46f0-a004-084683f27a1a1585819057973-Roadster.jpg",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "lounge-tshirts/christy+world/christy-world-pack-of-2-printed-round-neck-long-lounge-t-shirts/36154296/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 36154296,
+     "product": "Christy World Pack Of 2 Printed Round Neck Long Lounge T-Shirts",
+     "productName": "Christy World Pack Of 2 Printed Round Neck Long Lounge T-Shirts",
+     "rating": 4.5,
+     "ratingCount": 8,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 1076,
+     "brand": "Christy World",
+     "searchImage": "http://assets.myntassets.com/assets/images/2025/AUGUST/2/gDsgvey6_45e40659b4de4b67a83eab7177905a68.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 115515312,
+     "buyButtonWinnerSellerPartnerId": 35459,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 115515312,
+       "label": "S",
+       "inventory": 200,
+       "available": true,
+       "brandSizeLabel": "S"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 36154296,
+       "baseColourHex": "#5eb160",
+       "colour1Hex": "#b03060",
+       "colour2Hex": "#f2f2f2",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/2/gDsgvey6_45e40659b4de4b67a83eab7177905a68.jpg"
+      }
+     ],
+     "sizes": "S,M,L,XL,XXL,3XL,4XL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2025/AUGUST/2/gDsgvey6_45e40659b4de4b67a83eab7177905a68.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2025/AUGUST/2/MydkCJIz_55715aeaf07c434abe95bcdbc7145749.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2025/AUGUST/2/bobM2fgS_515100103fa144f9a06f4b54dac92fbe.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2025/AUGUST/2/gDsgvey6_45e40659b4de4b67a83eab7177905a68.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2025/AUGUST/2/zUren1wU_429177f94fea4326a129c009b5fafb25.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2025/AUGUST/2/X7YIrzUw_7adf80eaa92e4ee3ba295ec7ce4156dd.jpg"
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Green",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(72% OFF)",
+     "additionalInfo": "Pack Of 2 Lounge T-Shirts",
+     "category": "Lounge Tshirts",
+     "mrp": 1499,
+     "price": 423,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": false,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1753920000000",
+     "season": "Summer",
+     "year": "2025",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 273,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 0,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {},
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/hellcat/hellcat-boys-pack-of-3-printed-cotton-t-shirt/22204288/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 22204288,
+     "product": "HELLCAT Boys Pack Of 3 Printed Cotton T-shirt",
+     "productName": "HELLCAT Boys Pack Of 3 Printed Cotton T-shirt",
+     "rating": 4.112243175506592,
+     "ratingCount": 16491,
+     "isFastFashion": true,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 3545,
+     "brand": "HELLCAT",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/14/4d4cb31f748a47e890e1b105afff5b1d.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 70293088,
+     "buyButtonWinnerSellerPartnerId": 10916,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 70293088,
+       "label": "9-10Y",
+       "inventory": 983,
+       "available": true,
+       "brandSizeLabel": "30(9-10Y)"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 22204288,
+       "baseColourHex": "#e8e6cf",
+       "colour1Hex": "#b7410e",
+       "colour2Hex": "#e8e6cf",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/14/4d4cb31f748a47e890e1b105afff5b1d.jpg"
+      },
+      {
+       "styleId": 22204298,
+       "baseColourHex": "#b03060",
+       "colour1Hex": "#e8e6cf",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/OCTOBER/1/716b6edf40434347aa3dddc3b264e84e.jpg"
+      },
+      {
+       "styleId": 22204272,
+       "baseColourHex": "#0074D9",
+       "colour1Hex": "#3c4477",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/OCTOBER/6/7c1461b85896483099d3dc206b745565.jpg"
+      },
+      {
+       "styleId": 22204278,
+       "baseColourHex": "#808080",
+       "colour1Hex": "#0074D9",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/SEPTEMBER/16/PDBGDYFI_3c5835c3ea8e453581f8cbd98de09c99.jpg"
+      }
+     ],
+     "sizes": "3-4Y,5-6Y,7-8Y,9-10Y,11-12Y,13-14Y,15-16Y",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/14/4d4cb31f748a47e890e1b105afff5b1d.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/14/4b1fabd74e7d42d8a5da3b6c3f9add71.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/14/e88ac50c94004804b4f7d1135794ac1a.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/14/4d4cb31f748a47e890e1b105afff5b1d.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/14/0aada018845c4375915a9870bd5fdf48.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/14/5424e22fb7c34022aaf32e9a9aaab279.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/14/829af573a6684daaa3aa000a40b9ca59.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      }
+     ],
+     "gender": "Boys",
+     "primaryColour": "Beige",
+     "discountLabel": "Flat_Search_Amount",
+     "discountDisplayLabel": "(Rs. 3545 OFF)",
+     "additionalInfo": "Boys Pack Of 3 Cotton T-shirt",
+     "category": "Tshirts",
+     "mrp": 3897,
+     "price": 352,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1682553600000",
+     "season": "Summer",
+     "year": "2023",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_CURTAINRAISER",
+       "value": "Curtain Raiser",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_DEAL_OF_THE_DAY",
+       "value": "Deal of the Day",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_CRAZY_DEAL",
+       "value": "Crazy Deal",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PRICE_CRASH",
+       "value": "Price Crash",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_VIDEOS",
+       "value": "Reviews with Videos",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_NEW_BUYERS_CHOICE",
+       "value": "New Buyers Choice",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_BESTSELLER_IN_ATG",
+       "value": "Bestseller in ATG",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_IMAGES",
+       "value": "Reviews with Images",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 202,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 3,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "tag_label": "56 Reviews with Videos"
+          },
+          "name": "Reviews with Videos",
+          "tagId": "Reviews_with_Videos"
+         },
+         {
+          "name": "New Buyers Choice",
+          "tagId": "New_Buyers_Choice"
+         },
+         {
+          "metadata": {
+           "tag_label": "Bestseller in Boys Tees"
+          },
+          "name": "Bestseller in ATG",
+          "tagId": "Bestseller_in_ATG"
+         },
+         {
+          "metadata": {
+           "tag_label": "358 Reviews with Images"
+          },
+          "name": "Reviews with Images",
+          "tagId": "Reviews_with_Images"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "high",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "luxury",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Kids",
+          "tagId": "Kids"
+         },
+         {
+          "name": "Deal of the Day",
+          "tagId": "Deal_Of_The_Day"
+         },
+         {
+          "name": "Crazy Deal",
+          "tagId": "Crazy_Deal"
+         },
+         {
+          "name": "Price Crash",
+          "tagId": "Price_Crash"
+         },
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/kajaru/kajaru-men-typography-striped-polo-collar-t-shirt/47007905/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 47007905,
+     "product": "KAJARU Men Typography Striped Polo Collar T-shirt",
+     "productName": "KAJARU Men Typography Striped Polo Collar T-shirt",
+     "rating": 0,
+     "ratingCount": 0,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 600,
+     "brand": "KAJARU",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/OCTOBER/5/7a25aa633a7244b3bce37fad052166cb.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 150155505,
+     "buyButtonWinnerSellerPartnerId": 38729,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 150155505,
+       "label": "M",
+       "inventory": 996,
+       "available": true,
+       "brandSizeLabel": "M"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 47007905,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/OCTOBER/5/7a25aa633a7244b3bce37fad052166cb.jpg"
+      }
+     ],
+     "sizes": "M,L,XL,XXL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/5/7a25aa633a7244b3bce37fad052166cb.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/5/e83588bac58d4b308b8f544312d0c370.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/5/021b5a2765284b2b9cb270b2b1161f8d.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/5/9f6a2af3bae14861b7a8dbc836fb3aeb.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/5/23e9b308ff5742f38a06675d8c25bed6.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/OCTOBER/5/7a25aa633a7244b3bce37fad052166cb.jpg"
+      }
+     ],
+     "gender": "Men",
+     "primaryColour": "Black",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(60% OFF)",
+     "additionalInfo": "Men Typography Striped Polo Collar T-shirt",
+     "category": "Tshirts",
+     "mrp": 999,
+     "price": 399,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": false,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1790812800000",
+     "season": "Summer",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_JUST_LAUNCHED",
+       "value": "Just Launched",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": null,
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "EXPLORE_STYLES_20261016_1900",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": true,
+       "isExplore": true
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 0,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {},
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {},
+       "selection": {
+        "tagInfos": [
+         {
+          "name": "Just Launched",
+          "tagId": "Just_Launched"
+         }
+        ]
+       },
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "lounge-tshirts/dreamz+by+pantaloons/dreamz-by-pantaloons-printed-round-neck-lounge-tshirts/45987344/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 45987344,
+     "product": "Dreamz by Pantaloons Printed Round Neck Lounge Tshirts",
+     "productName": "Dreamz by Pantaloons Printed Round Neck Lounge Tshirts",
+     "rating": 4.443396091461182,
+     "ratingCount": 106,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 0,
+     "brand": "Dreamz by Pantaloons",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/01d06ee1233442918d8b54d4bbc4fdee.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 146878922,
+     "buyButtonWinnerSellerPartnerId": 10226,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 146878922,
+       "label": "XS",
+       "inventory": 48,
+       "available": true,
+       "brandSizeLabel": "XS"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 45987344,
+       "baseColourHex": "#d34b56",
+       "colour1Hex": "#f2f2f2",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/01d06ee1233442918d8b54d4bbc4fdee.jpg"
+      },
+      {
+       "styleId": 44553104,
+       "baseColourHex": "#800080",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/23/XOeX77A2_c9d11568bde44c82b884acd4e9b016d9.jpg"
+      },
+      {
+       "styleId": 44553096,
+       "baseColourHex": "#8b4513",
+       "colour1Hex": "#f2f2f2",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/23/H2qrrDTv_2a0aabe5340c4ad98e39cda041d2506e.jpg"
+      },
+      {
+       "styleId": 44553093,
+       "baseColourHex": "#3c4477",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/23/RZPZWl3Z_ab44105feebd46728fd943c207734e83.jpg"
+      }
+     ],
+     "sizes": "XS,S,M,L,XL,XXL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/01d06ee1233442918d8b54d4bbc4fdee.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/bab8b0b724324bdc9a000a9f56886c26.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/c354c02ec3e5478f967abd86c98e9393.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/abdf189d341f4fc3836bd88dce6ba0e4.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/ba0e1dcb72ed40fa9d87e85a1f24abf6.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/01d06ee1233442918d8b54d4bbc4fdee.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/c2f5aa9790db45e5960b727571617ed3.jpg"
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Red",
+     "discountLabel": "",
+     "discountDisplayLabel": "",
+     "additionalInfo": "Printed Lounge Tshirts",
+     "category": "Lounge Tshirts",
+     "mrp": 299,
+     "price": 299,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "",
+     "tdBxGyText": "",
+     "catalogDate": "1788393600000",
+     "season": "Fall",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_NEW",
+       "value": "NEW",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 149,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 3,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {},
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Entry",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         }
+        ]
+       },
+       "selection": {
+        "tagInfos": [
+         {
+          "name": "NEW",
+          "tagId": "New"
+         }
+        ]
+       },
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "lounge-tshirts/van+heusen/van-heusen-women-cotton-solid-relax-fit-lounge-t-shirt/31354046/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 31354046,
+     "product": "Van Heusen Women Cotton Solid Relax Fit Lounge T Shirt",
+     "productName": "Van Heusen Women Cotton Solid Relax Fit Lounge T Shirt",
+     "rating": 4.357586860656738,
+     "ratingCount": 1608,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 0,
+     "brand": "Van Heusen",
+     "searchImage": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/sFxrEvMv_297238bd082c48068e62723052698ec3.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 101093687,
+     "buyButtonWinnerSellerPartnerId": 4076,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 101093687,
+       "label": "L",
+       "inventory": 45,
+       "available": true,
+       "brandSizeLabel": "L"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 35038118,
+       "baseColourHex": "#ff7f50",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/EOolF8jx_e5221c1a21564d7b97bc278808a951d4.jpg"
+      },
+      {
+       "styleId": 31354058,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/PnZEZdMZ_b2d1ab4fcc9f481e8d8445376cc53415.jpg"
+      },
+      {
+       "styleId": 35038115,
+       "baseColourHex": "#0074D9",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/03YgOwij_3a2a9c845711483d846162bc9b2ee6df.jpg"
+      },
+      {
+       "styleId": 35038129,
+       "baseColourHex": "#800080",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/M8a562VL_c659db7b444f48358827dd007ad69915.jpg"
+      },
+      {
+       "styleId": 35038126,
+       "baseColourHex": "#b7410e",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/oeFzEBlG_e02c5405fa4f40c9a5de83f82818a186.jpg"
+      },
+      {
+       "styleId": 35038110,
+       "baseColourHex": "#8b4513",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/JUNE/18/7cmk8cKe_1e440a0451e24cd791dd3f65f21e2cde.jpg"
+      },
+      {
+       "styleId": 31354071,
+       "baseColourHex": "#3c4477",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/dA4TPbK0_568b0609890d4083a280b39453ee056e.jpg"
+      },
+      {
+       "styleId": 31354049,
+       "baseColourHex": "#f1a9c4",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/jVwIgCAB_05060d9730fa426385eb4b778ecd8aa9.jpg"
+      }
+     ],
+     "sizes": "S,M,L",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/sFxrEvMv_297238bd082c48068e62723052698ec3.jpg"
+      },
+      {
+       "view": "bottom",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/IVPZIuAN_a4bc3ef4c54f4f5e9804fb6d35960eab.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/jrFwV9eH_98f569567f3749a1b5945a67f2cf4e84.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/GIGRaREY_57d5a5a18dd14d27be25ff06317a1c76.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/62q91yVp_494db613a8c7486aa887bed387b02d11.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/sFxrEvMv_297238bd082c48068e62723052698ec3.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/opmohe5B_9886dc6be5394345ba1665d6f241f7dd.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2024/OCTOBER/18/ko8uo9GM_14f04b4587874e1c85f7b2db11cd14a2.jpg"
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Fuchsia",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "",
+     "additionalInfo": "Relaxed-Fit Lounge T-Shirt",
+     "category": "Lounge Tshirts",
+     "mrp": 499,
+     "price": 499,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1729123200000",
+     "season": "Winter",
+     "year": "2024",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_IMAGES",
+       "value": "Reviews with Images",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 349,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 8,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "tag_label": "31 Reviews with Images"
+          },
+          "name": "Reviews with Images",
+          "tagId": "Reviews_with_Images"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Nu Bestseller",
+          "tagId": "Nu_Bestseller"
+         },
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {},
+       "trends": {},
+       "trust": {
+        "tagInfos": [
+         {
+          "name": "Choice",
+          "tagId": "Choice"
+         }
+        ]
+       }
+      }
+     },
+     "brandLogo": "https://assets.myntassets.com/assets/images/2023/3/7/89e5030b-13de-4f5b-8f65-7690922b7e611678174593475-Van-Heusen-New-Logo-Powermark-04.jpg",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/vp+texx/vp-texx-boys-4-printed-t-shirt/44073995/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 44073995,
+     "product": "VP TEXX Boys 4 Printed T-shirt",
+     "productName": "VP TEXX Boys 4 Printed T-shirt",
+     "rating": 3.7946324348449707,
+     "ratingCount": 857,
+     "isFastFashion": true,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 1326,
+     "brand": "VP TEXX",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/JULY/16/l463Sn90_0fa00b5afe8745cb8329162d162b1f41.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 140301140,
+     "buyButtonWinnerSellerPartnerId": 90788,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 140301140,
+       "label": "5-6Y",
+       "inventory": 94,
+       "available": true,
+       "brandSizeLabel": "5-6Y"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 44073995,
+       "baseColourHex": "#0074D9",
+       "colour1Hex": "#f1a9c4",
+       "colour2Hex": "#36454f",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/16/l463Sn90_0fa00b5afe8745cb8329162d162b1f41.jpg"
+      },
+      {
+       "styleId": 44073532,
+       "baseColourHex": "#5eb160",
+       "colour1Hex": "#f1a9c4",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/16/pVQSTBqy_4e9eceaf1fc241f6bde52180682899e8.jpg"
+      },
+      {
+       "styleId": 44073533,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "#0074D9",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/16/0GFOTXJB_032868d2c98c4fdd8b3fc9c36b663b61.jpg"
+      },
+      {
+       "styleId": 44073534,
+       "baseColourHex": "#f1a9c4",
+       "colour1Hex": "#5eb160",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/16/krBfIaX7_40fca2de903b4c4d823007bbce2acb61.jpg"
+      }
+     ],
+     "sizes": "0-6M,6-12M,12-18M,18-24M,1-2Y,2-3Y,3-4Y,4-5Y,5-6Y",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/16/l463Sn90_0fa00b5afe8745cb8329162d162b1f41.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/16/wqO0IVk2_a2c0775fdd8d46c0b5787fa1a1af9f44.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/16/uTBXIXfO_f4d1f81b64fb4e26bd6f89a3af41a9e0.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/16/l463Sn90_0fa00b5afe8745cb8329162d162b1f41.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/16/WrtDVDuY_9a2ec574dc64401aa448bde47cc0bd60.jpg"
+      },
+      {
+       "view": "bottom",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/16/hMZctFVA_29d5dcf4d40e464e9930c70a8fac4ffc.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/16/n6bDsSfJ_516360cf9a824d928ae70d4dbdfa748c.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/16/uQ2ssy44_1ccfd672accc4f268d945f1378470e30.jpg"
+      }
+     ],
+     "gender": "Boys",
+     "primaryColour": "Blue",
+     "discountLabel": "Flat_Search_Amount",
+     "discountDisplayLabel": "(Rs. 1326 OFF)",
+     "additionalInfo": "Boys Printed T-shirt",
+     "category": "Tshirts",
+     "mrp": 1699,
+     "price": 373,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1783555200000",
+     "season": "Summer",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_OOS",
+       "value": "1 days",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_CRAZY_DEAL",
+       "value": "Crazy Deal",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PRICE_CRASH",
+       "value": "Price Crash",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_DEAL_OF_THE_DAY",
+       "value": "Deal of the Day",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_VIDEOS",
+       "value": "Reviews with Videos",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_NEW_BUYERS_CHOICE",
+       "value": "New Buyers Choice",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_BESTSELLER_IN_ATG",
+       "value": "Bestseller in ATG",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 223,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 4,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "tag_label": "10 Reviews with Videos"
+          },
+          "name": "Reviews with Videos",
+          "tagId": "Reviews_with_Videos"
+         },
+         {
+          "name": "New Buyers Choice",
+          "tagId": "New_Buyers_Choice"
+         },
+         {
+          "metadata": {
+           "tag_label": "Bestseller in Boys Tees"
+          },
+          "name": "Bestseller in ATG",
+          "tagId": "Bestseller_in_ATG"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "high",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass_Premium",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "days": "1"
+          },
+          "name": "1 days",
+          "tagId": "Oos"
+         },
+         {
+          "name": "Kids",
+          "tagId": "Kids"
+         },
+         {
+          "name": "Crazy Deal",
+          "tagId": "Crazy_Deal"
+         },
+         {
+          "name": "Price Crash",
+          "tagId": "Price_Crash"
+         },
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         },
+         {
+          "name": "Deal of the Day",
+          "tagId": "Deal_Of_The_Day"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/here%26now/herenow-men-colourblocked-polo-collar-t-shirt/46046579/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 46046579,
+     "product": "HERE&NOW Men Colourblocked Polo Collar T-shirt",
+     "productName": "HERE&NOW Men Colourblocked Polo Collar T-shirt",
+     "rating": 0,
+     "ratingCount": 0,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 950,
+     "brand": "HERE&NOW",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/614a613ec66047578c4775b551c7ee83.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 147062955,
+     "buyButtonWinnerSellerPartnerId": 99486,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 147062955,
+       "label": "L",
+       "inventory": 10,
+       "available": true,
+       "brandSizeLabel": "L"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 46046579,
+       "baseColourHex": "#800080",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/614a613ec66047578c4775b551c7ee83.jpg"
+      }
+     ],
+     "sizes": "M,L,XL,XXL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/614a613ec66047578c4775b551c7ee83.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/87773f9fc2e24845ba3c95dd7b621fc2.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/067b40bd1b9b4b8880a1a74fe0524b96.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/ea636752cc9047a5bec4398b50bb4a7e.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/8/614a613ec66047578c4775b551c7ee83.jpg"
+      }
+     ],
+     "gender": "Men",
+     "primaryColour": "Purple",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(73% OFF)",
+     "additionalInfo": "Men Colourblocked CollarTshirt",
+     "category": "Tshirts",
+     "mrp": 1299,
+     "price": 349,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": false,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1788393600000",
+     "season": "Summer",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_HOUSE_OF_BRANDS",
+       "value": "House of Brands",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_MYNTRA_UNIQUE",
+       "value": "Myntra Unique",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 150,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 199,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "EXPLORE_STYLES_20261016_1900",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": true,
+       "isExplore": true
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 0,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {},
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {},
+       "selection": {
+        "tagInfos": [
+         {
+          "name": "House of Brands",
+          "tagId": "House_of_Brands"
+         },
+         {
+          "name": "Myntra Unique",
+          "tagId": "Myntra_Unique"
+         }
+        ]
+       },
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "http://assets.myntassets.com/assets/images/retaillabs/2019/2/13/3014bf8c-a762-401f-b599-0b872cbd64551550060008471-Here-Now.png",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/fazza/fazza-girls-pack-of-5-typography-printed-round-neck-cotton-t-shirts/32060141/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 32060141,
+     "product": "FAZZA Girls Pack Of 5 Typography Printed Round Neck Cotton T-shirts",
+     "productName": "FAZZA Girls Pack Of 5 Typography Printed Round Neck Cotton T-shirts",
+     "rating": 4.503660202026367,
+     "ratingCount": 683,
+     "isFastFashion": true,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 3043,
+     "brand": "FAZZA",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/vz4Gggcg_d8bb90fd9153402bab348bbdbd56c405.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 103230154,
+     "buyButtonWinnerSellerPartnerId": 17562,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 103230154,
+       "label": "11-12Y",
+       "inventory": 51,
+       "available": true,
+       "brandSizeLabel": "11-12 YEARS"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 32060141,
+       "baseColourHex": "#ffe5b4",
+       "colour1Hex": "#3c4477",
+       "colour2Hex": "#800080",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/vz4Gggcg_d8bb90fd9153402bab348bbdbd56c405.jpg"
+      }
+     ],
+     "sizes": "2-3Y,3-4Y,5-6Y,7-8Y,9-10Y,11-12Y,13-14Y",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/vz4Gggcg_d8bb90fd9153402bab348bbdbd56c405.jpg"
+      },
+      {
+       "view": "bottom",
+       "src": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/eppcMojY_53fce7212a7c47df9849b563fc7b2ce6.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/afsagfPY_3fb2a5f7584a463d8c442c225a1fc610.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/K9iL7hHG_e51c411d373a479ab6c7d6f433ae67f1.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/vz4Gggcg_d8bb90fd9153402bab348bbdbd56c405.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/cCRqkVWW_3b5eaabc3dcd424bab75700466d5ceec.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/gUcZi1cy_c4c5bd2f5d5e4579886866a8b91d66e5.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/FEBRUARY/12/QLohr3tw_5927235b8fbb4fd59ff3b6d6b968375d.jpg"
+      }
+     ],
+     "gender": "Girls",
+     "primaryColour": "Peach",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(82% OFF)",
+     "additionalInfo": "Pack Of 5 Printed T-shirts",
+     "category": "Tshirts",
+     "mrp": 3699,
+     "price": 656,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": false,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1734566400000",
+     "season": "Summer",
+     "year": "2024",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_DEAL_OF_THE_DAY",
+       "value": "Deal of the Day",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PRICE_CRASH",
+       "value": "Price Crash",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_CRAZY_DEAL",
+       "value": "Crazy Deal",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_NEW_BUYERS_CHOICE",
+       "value": "New Buyers Choice",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_BESTSELLER_IN_ATG",
+       "value": "Bestseller in ATG",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 164,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFFSAVE",
+       "bestPrice": 492,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 0,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "name": "New Buyers Choice",
+          "tagId": "New_Buyers_Choice"
+         },
+         {
+          "metadata": {
+           "tag_label": "Bestseller in Girls Tees"
+          },
+          "name": "Bestseller in ATG",
+          "tagId": "Bestseller_in_ATG"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "high",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Premium",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         },
+         {
+          "name": "Deal of the Day",
+          "tagId": "Deal_Of_The_Day"
+         },
+         {
+          "name": "Price Crash",
+          "tagId": "Price_Crash"
+         },
+         {
+          "name": "Kids",
+          "tagId": "Kids"
+         },
+         {
+          "name": "Crazy Deal",
+          "tagId": "Crazy_Deal"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "count": "51"
+          },
+          "tagId": "PDP_Views"
+         }
+        ]
+       },
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/fionaa+trendz/fionaa-trendz-kids-black-tom--jerry-printed-pure-cotton-t-shirt/36573316/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 36573316,
+     "product": "FIONAA TRENDZ Kids Black Tom & Jerry Printed Pure Cotton T-shirt",
+     "productName": "FIONAA TRENDZ Kids Black Tom & Jerry Printed Pure Cotton T-shirt",
+     "rating": 4.319799900054932,
+     "ratingCount": 1601,
+     "isFastFashion": true,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 410,
+     "brand": "FIONAA TRENDZ",
+     "searchImage": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/7oSvP4pF_72207e48d6664c61af7b27c9f32fd649.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 116910259,
+     "buyButtonWinnerSellerPartnerId": 40004,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 116910259,
+       "label": "13-14Y",
+       "inventory": 125,
+       "available": true,
+       "brandSizeLabel": "13-14Y"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 36573316,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/7oSvP4pF_72207e48d6664c61af7b27c9f32fd649.jpg"
+      },
+      {
+       "styleId": 36573313,
+       "baseColourHex": "#ffe5b4",
+       "colour1Hex": "#808080",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/rce7J9tN_3b6e239eb0864c02a881bc329af46fbb.jpg"
+      },
+      {
+       "styleId": 36573314,
+       "baseColourHex": "#b03060",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/qtRRoMuT_54542016376c43b18f3cec90e56d181d.jpg"
+      },
+      {
+       "styleId": 36575211,
+       "baseColourHex": "#f2f2f2",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/IhcBfj6e_50290d3ea80d41f3aced27e547b51725.jpg"
+      },
+      {
+       "styleId": 36575216,
+       "baseColourHex": "#0074D9",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/deymlcVm_252f6a01191a4548aa3baddcb9280175.jpg"
+      },
+      {
+       "styleId": 36573317,
+       "baseColourHex": "#3c4477",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/kd4jZ8j2_d8ebee28a3c7444ea45b12b2978f3681.jpg"
+      },
+      {
+       "styleId": 36573318,
+       "baseColourHex": "#5eb160",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/rqCaOEQh_70f4986129544c979f3ad39671d6b8a1.jpg"
+      },
+      {
+       "styleId": 36573315,
+       "baseColourHex": "#808080",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/06eJ7Wii_3239c8cf608e430eb6d1b7c5ae50c172.jpg"
+      },
+      {
+       "styleId": 36575214,
+       "baseColourHex": "#d34b56",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/6qfPx8z5_ec2b23f263e04b49819b4f716c3bac6f.jpg"
+      },
+      {
+       "styleId": 36575215,
+       "baseColourHex": "#800080",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/M9gvI6X7_d03ed670a3ce47b6af386ad818de349a.jpg"
+      },
+      {
+       "styleId": 36575213,
+       "baseColourHex": "#f1a9c4",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/wkF8w6Jn_dfb4d01265704e28beaf2bfb30e404f9.jpg"
+      }
+     ],
+     "sizes": "0-1Y,1-2Y,2-3Y,3-4Y,4-5Y,5-6Y,6-7Y,7-8Y,8-9Y,9-10Y,10-11Y,11-12Y,12-13Y,13-14Y,14-15Y",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/7oSvP4pF_72207e48d6664c61af7b27c9f32fd649.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/7oSvP4pF_72207e48d6664c61af7b27c9f32fd649.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2025/AUGUST/23/HstwchJ4_22ba0fd8d1f44b78b02d1c73b1d65c4b.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      }
+     ],
+     "gender": "Unisex Kids",
+     "primaryColour": "Black",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(59% OFF)",
+     "additionalInfo": "Tom & Jerry Printed T-shirt",
+     "category": "Tshirts",
+     "mrp": 699,
+     "price": 289,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1755734400000",
+     "season": "Summer",
+     "year": "2025",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "BrandNameVisible",
+       "value": "NO",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_CRAZY_DEAL",
+       "value": "Crazy Deal",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_PRICE_CRASH",
+       "value": "Price Crash",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_DEAL_OF_THE_DAY",
+       "value": "Deal of the Day",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_NEW_BUYERS_CHOICE",
+       "value": "New Buyers Choice",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_REVIEWS_WITH_VIDEOS",
+       "value": "Reviews with Videos",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 145,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFF50OFF",
+       "bestPrice": 144,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 12,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {
+        "tagInfos": [
+         {
+          "name": "New Buyers Choice",
+          "tagId": "New_Buyers_Choice"
+         },
+         {
+          "metadata": {
+           "tag_label": "8 Reviews with Videos"
+          },
+          "name": "Reviews with Videos",
+          "tagId": "Reviews_with_Videos"
+         }
+        ]
+       },
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "high",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass_Premium",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Crazy Deal",
+          "tagId": "Crazy_Deal"
+         },
+         {
+          "name": "Price Crash",
+          "tagId": "Price_Crash"
+         },
+         {
+          "name": "Best Seller",
+          "tagId": "Best_Seller"
+         },
+         {
+          "name": "Deal of the Day",
+          "tagId": "Deal_Of_The_Day"
+         },
+         {
+          "name": "Kids",
+          "tagId": "Kids"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "lounge-tshirts/lounge+dreams/lounge-dreams-printed-pure-cotton-oversized-t-shirt/18047650/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 18047650,
+     "product": "Lounge Dreams Printed Pure Cotton Oversized T-shirt",
+     "productName": "Lounge Dreams Printed Pure Cotton Oversized T-shirt",
+     "rating": 4.331491947174072,
+     "ratingCount": 362,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 600,
+     "brand": "Lounge Dreams",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/66afdd55d5fb4a448b169b3ae8e428e6.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 55537024,
+     "buyButtonWinnerSellerPartnerId": 13886,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 55537024,
+       "label": "XS",
+       "inventory": 20,
+       "available": true,
+       "brandSizeLabel": "XS"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 18047650,
+       "baseColourHex": "#2e8b57",
+       "colour1Hex": "#0074D9",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/66afdd55d5fb4a448b169b3ae8e428e6.jpg"
+      },
+      {
+       "styleId": 18047648,
+       "baseColourHex": "#f1a9c4",
+       "colour1Hex": "#f2f2f2",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/7c8096505e6249e694dee7d1a71be071.jpg"
+      },
+      {
+       "styleId": 18047634,
+       "baseColourHex": "#e8e6cf",
+       "colour1Hex": "#f28d20",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/b1e87ee15d094cf48a13b9b4efb33702.jpg"
+      },
+      {
+       "styleId": 18047666,
+       "baseColourHex": "#f28d20",
+       "colour1Hex": "#f2f2f2",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/18047666/2022/4/26/5fdda634-97c6-4b19-965a-5fe07a7df9c21650980888916LoungeTshirts1.jpg"
+      },
+      {
+       "styleId": 18047682,
+       "baseColourHex": "#0074D9",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/749aa2c9f1294b5ab13c9696fece6962.jpg"
+      },
+      {
+       "styleId": 18047646,
+       "baseColourHex": "#d6d6e5",
+       "colour1Hex": "#0074D9",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/18047646/2025/4/11/a99faae8-e924-4173-b6bb-3ea7c76940a81744377657606-Lounge-Dreams-Women-Lavender--Blue-Printed-Pure-Cotton-Overs-1.jpg"
+      },
+      {
+       "styleId": 18047672,
+       "baseColourHex": "#800080",
+       "colour1Hex": "#eadc32",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/18047672/2022/4/26/accd2835-70c7-4942-b179-0eb61396988f1650981475885LoungeTshirts1.jpg"
+      },
+      {
+       "styleId": 18047678,
+       "baseColourHex": "#a03245",
+       "colour1Hex": "#0074D9",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/da2dac0599284d078a9e519a8b35f923.jpg"
+      },
+      {
+       "styleId": 18047640,
+       "baseColourHex": "#808080",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/18047640/2022/4/26/8cec9c83-a1c7-4d4f-bb0a-57452e788bb91650981723701LoungeTshirts1.jpg"
+      },
+      {
+       "styleId": 18047624,
+       "baseColourHex": "#ffe5b4",
+       "colour1Hex": "#f2f2f2",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/18047624/2022/4/26/125bf3ad-7b50-46a3-9387-70083aec96cd1650981701687LoungeTshirts1.jpg"
+      },
+      {
+       "styleId": 18047658,
+       "baseColourHex": "#36454f",
+       "colour1Hex": "#eadc32",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/18047658/2022/4/26/3245f5b3-3740-48c9-999a-e349ba5da6261650981739894LoungeTshirts1.jpg"
+      }
+     ],
+     "sizes": "XS,S,M,L,XL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/66afdd55d5fb4a448b169b3ae8e428e6.jpg"
+      },
+      {
+       "view": "bottom",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/1e481c24294d440396460fe933ba076c.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/00118c6b241743168ae7c1d549762879.jpg"
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/3bbed5cd232d498b953b3a5efb45d63c.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/66afdd55d5fb4a448b169b3ae8e428e6.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/e6b9993d856e45bba7b585dc23d9f9f3.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/5699bd9869ea481f9689e69a55eeae6b.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/SEPTEMBER/28/e947869b1cf642d997c1df64bc4e98e1.jpg"
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Sea Green",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(46% OFF)",
+     "additionalInfo": "Pure Cotton Oversized T-shirt",
+     "category": "Lounge Tshirts",
+     "mrp": 1299,
+     "price": 699,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": true,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1650499200000",
+     "season": "Summer",
+     "year": "2022",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "isGSTiN",
+       "value": "True",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_CRAZY_DEAL",
+       "value": "Crazy Deal",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": {
+      "couponDiscount": 175,
+      "endDate": "1792952940000",
+      "tagLink": "https://www.myntra.com/online-fashion-store",
+      "couponDescription": {
+       "description": "{bestPriceText} {bestPrice} with coupon",
+       "couponCode": "BFFSAVE",
+       "bestPrice": 524,
+       "bestPriceText": "Best Price",
+       "templateInfo": {
+        "templateName": "template1",
+        "attributes": {
+         "couponDiscount": "",
+         "couponCode": "identifier1",
+         "bestPrice": "identifier1",
+         "bestPriceText": "identifier1"
+        }
+       }
+      }
+     },
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": false,
+       "isExplore": false
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Lounge Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Loungewear and Nightwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 28,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {},
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Mass_Premium",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "Crazy Deal",
+          "tagId": "Crazy_Deal"
+         }
+        ]
+       },
+       "selection": {},
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    },
+    {
+     "landingPageUrl": "tshirts/kook+n+keech/kook-n-keech-women-pure-cotton-t-shirt/43554995/buy",
+     "loyaltyPointsEnabled": false,
+     "adId": "",
+     "isPLA": false,
+     "productId": 43554995,
+     "product": "Kook N Keech Women Pure Cotton T-shirt",
+     "productName": "Kook N Keech Women Pure Cotton T-shirt",
+     "rating": 0,
+     "ratingCount": 0,
+     "isFastFashion": false,
+     "futureDiscountedPrice": 0,
+     "futureDiscountStartDate": "",
+     "discount": 1042,
+     "brand": "Kook N Keech",
+     "searchImage": "http://assets.myntassets.com/assets/images/2026/JULY/14/gx5FNT7g_5f872d37fe22415faae7929f7db74688.jpg",
+     "effectiveDiscountPercentageAfterTax": 0,
+     "effectiveDiscountAmountAfterTax": 0,
+     "buyButtonWinnerSkuId": 139005552,
+     "buyButtonWinnerSellerPartnerId": 22233,
+     "relatedStylesCount": 0,
+     "relatedStylesType": "",
+     "productVideos": [],
+     "inventoryInfo": [
+      {
+       "skuId": 139005552,
+       "label": "L",
+       "inventory": 985,
+       "available": true,
+       "brandSizeLabel": "L"
+      }
+     ],
+     "colourVariants": [
+      {
+       "styleId": 43554995,
+       "baseColourHex": "#3D9970",
+       "colour1Hex": "",
+       "colour2Hex": "",
+       "imageUrl": "http://assets.myntassets.com/assets/images/2026/JULY/14/gx5FNT7g_5f872d37fe22415faae7929f7db74688.jpg"
+      }
+     ],
+     "sizes": "XS,S,M,L,XL",
+     "images": [
+      {
+       "view": "default",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/14/gx5FNT7g_5f872d37fe22415faae7929f7db74688.jpg"
+      },
+      {
+       "view": "top",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/14/VV4X0zSq_2b902c479cec4071b30a29d439b0a513.jpg"
+      },
+      {
+       "view": "right",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/14/Ta7htwGN_9052b44e67f946c2a7b8b7c536d51d3c.jpg"
+      },
+      {
+       "view": "search",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/14/gx5FNT7g_5f872d37fe22415faae7929f7db74688.jpg"
+      },
+      {
+       "view": "left",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/14/HzS7BICa_ffdfab200c80454cbb2b2eed8815af36.jpg"
+      },
+      {
+       "view": "front",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/14/fa7f4iNb_ddbc7acba90446d2b4f2b5ced61decfc.jpg"
+      },
+      {
+       "view": "size_representation",
+       "src": ""
+      },
+      {
+       "view": "back",
+       "src": "http://assets.myntassets.com/assets/images/2026/JULY/14/PyFnwxts_ec270bbe5a944fddbbdf73bd6b8d85e6.jpg"
+      }
+     ],
+     "gender": "Women",
+     "primaryColour": "Olive",
+     "discountLabel": "Flat_Search_Percent",
+     "discountDisplayLabel": "(87% OFF)",
+     "additionalInfo": "Oversized Pure Cotton T-Shirt",
+     "category": "Tshirts",
+     "mrp": 1199,
+     "price": 157,
+     "advanceOrderTag": "",
+     "colorVariantAvailable": false,
+     "productimagetag": "",
+     "listViews": 0,
+     "discountType": "1",
+     "tdBxGyText": "",
+     "catalogDate": "1783555200000",
+     "season": "Summer",
+     "year": "2026",
+     "isPersonalised": false,
+     "eorsPicksTag": "",
+     "personalizedCoupon": "",
+     "personalizedCouponValue": 0,
+     "productMeta": "",
+     "systemAttributes": [
+      {
+       "attribute": "SA_XT_30DAY_BESTPRICE",
+       "value": "30Day BestPrice",
+       "metaInfo": ""
+      },
+      {
+       "attribute": "SA_XT_HOUSE_OF_BRANDS",
+       "value": "House of Brands",
+       "metaInfo": ""
+      }
+     ],
+     "attributeTagsPriorityList": [
+      {
+       "attributeTypeName": "Fabric",
+       "attributeValue": "Pure Cotton",
+       "overlayImage": "http://assets.myntassets.com/assets/images/2026/MAY/20/Ze3prtEa_28547c6922ec4e75a19f9779aa71b1a5.png"
+      }
+     ],
+     "preferredDeliveryTag": "",
+     "deliveryPromise": "",
+     "expressTags": [],
+     "couponData": null,
+     "productMetaData": {
+      "plaSlot": false,
+      "plaSlotType": "",
+      "plaReason": "",
+      "plaRank": 0,
+      "adSource": "",
+      "adsMeta": null,
+      "lmsMetadata": "",
+      "isUld": false,
+      "organicMeta": {
+       "metasrcDsExplore": "EXPLORE_STYLES_20261016_1900",
+       "metasrcDsCohort": "",
+       "metasrcDsFwdCohort": "",
+       "exploreReason": "",
+       "exploreSlot": true,
+       "isExplore": true
+      },
+      "instrumentationMetaData": {
+       "bannerDept": "merch",
+       "isPLAEnabled": "true"
+      }
+     },
+     "virtualTryOn": {
+      "vtrPartner": ""
+     },
+     "vtrApplicable": false,
+     "articleType": {
+      "typeName": "Tshirts"
+     },
+     "subCategory": {
+      "typeName": "Topwear"
+     },
+     "masterCategory": {
+      "typeName": "Apparel"
+     },
+     "mediaData": [],
+     "hasMultipleSizes": true,
+     "relatedColoursCount": 0,
+     "styleTagEntry": {
+      "tagGroups": {
+       "attributeTags": {},
+       "miscTags": {
+        "tagInfos": [
+         {
+          "metadata": {
+           "fwd_exclusive": "",
+           "high_performing": "",
+           "meta_affiliate_commission": "Commission_9",
+           "omni": "",
+           "premiumness_tag": "Entry",
+           "yt_commission_tag": "Commission_13"
+          },
+          "name": "Martech",
+          "tagId": "Martech"
+         }
+        ]
+       },
+       "pricing": {
+        "tagInfos": [
+         {
+          "name": "30Day BestPrice",
+          "tagId": "30Day_BestPrice"
+         }
+        ]
+       },
+       "selection": {
+        "tagInfos": [
+         {
+          "name": "House of Brands",
+          "tagId": "House_of_Brands"
+         }
+        ]
+       },
+       "socialProofing": {},
+       "trends": {},
+       "trust": {}
+      }
+     },
+     "brandLogo": "https://assets.myntassets.com/assets/images/2020/9/16/f5064aca-79ad-4d23-953e-cf3a9c0c677f1600254077602-croppedImage-1600254076942.jpg",
+     "rankingSource": null,
+     "serviceableSizes": "",
+     "concernArticleAttrs": [],
+     "saleInfo": null,
+     "source": "others-search",
+     "nepData": null
+    }
+   ]
+  }
+ }
+}

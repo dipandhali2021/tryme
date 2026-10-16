@@ -68,3 +68,26 @@ const outDir = join(root, "src/test/fixtures");
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "flipkart-state.json"), JSON.stringify(fixture, null, 1));
 console.log(`wrote ${fkProducts.length} flipkart products`);
+
+// ---- Myntra ----
+const myHtmlPath = join(CACHE, "my2.html");
+if (!existsSync(myHtmlPath)) throw new Error(`missing ${myHtmlPath} — save a Myntra search page there first`);
+const myState = extractJsonAfterMarker(readFileSync(myHtmlPath, "utf8"), "window.__myx =");
+const rawProducts = myState?.searchData?.results?.products;
+if (!Array.isArray(rawProducts)) throw new Error("myntra product array not found");
+const seenIds = new Set();
+const myProducts = [];
+for (const p of rawProducts) {
+  const id = String(p?.productId ?? "");
+  if (!id || seenIds.has(id)) continue;
+  seenIds.add(id);
+  myProducts.push(p);
+  if (myProducts.length >= 20) break;
+}
+if (myProducts.length < 20) throw new Error(`only ${myProducts.length} myntra products found`);
+
+const myFixture = {
+  searchData: { results: { products: myProducts } },
+};
+writeFileSync(join(outDir, "myntra-state.json"), JSON.stringify(myFixture, null, 1));
+console.log(`wrote ${myProducts.length} myntra products`);
