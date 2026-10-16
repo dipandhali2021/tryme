@@ -1,0 +1,97 @@
+@layer cojeev-states {
+[data-slot="marquee"] {
+  --marquee-duration: 44s;
+  --marquee-gap: var(--s-4);
+  display: grid;
+  gap: var(--s-4);
+  min-inline-size: 0;
+  color: var(--v-text);
+}
+[data-slot="marquee"][data-speed="normal"] { --marquee-duration: 30s; }
+[data-slot="marquee"][data-speed="fast"] { --marquee-duration: 18s; }
+[data-slot="marquee-header"], [data-slot="marquee-controls"] {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  min-inline-size: 0;
+}
+[data-slot="marquee-header"] { justify-content: space-between; }
+[data-slot="marquee-controls"] { margin-inline-start: auto; }
+[data-slot="marquee-status"] {
+  display: grid;
+  align-items: center;
+  inline-size: 18ch;
+  min-block-size: 2lh;
+  text-align: end;
+}
+[data-slot="marquee-viewport"] {
+  min-inline-size: 0;
+  overflow: hidden;
+  padding-block: var(--s-2);
+}
+[data-slot="marquee-track"] {
+  transform: var(--marquee-transform, none);
+  display: flex;
+  direction: ltr;
+  inline-size: max-content;
+}
+[data-slot="marquee-stage"] { min-inline-size:0; }
+[data-slot="marquee"][data-presentation="depth"] [data-slot="marquee-viewport"] {
+  padding-block:clamp(32px,5vw,64px);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+}
+[data-slot="marquee"][data-presentation="depth"] [data-slot="marquee-stage"] {
+  transform:perspective(var(--marquee-perspective)) rotateY(var(--marquee-tilt-y)) rotateX(var(--marquee-tilt-x));
+  transform-style:preserve-3d;
+}
+[data-slot="marquee-content"], [data-slot="marquee-copy"] {
+  position:relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: stretch;
+  gap: var(--marquee-gap);
+  min-inline-size: var(--marquee-viewport, 0px);
+  margin: 0;
+  padding: 0 var(--marquee-gap) 0 0;
+  list-style: none;
+}
+[data-slot="marquee"] :is([data-slot="marquee-content"], [data-slot="marquee-copy"]) > li {
+  filter: var(--marquee-item-filter, none);
+  opacity: var(--marquee-item-opacity, 1);
+  flex: 0 0 auto;
+  min-inline-size: 0;
+  max-inline-size: min(80vw, 30rem);
+  overflow-wrap: anywhere;
+}
+[data-slot="marquee-copy"] { pointer-events: none; }
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-track"] {
+  transform:none;
+  inline-size: 100%;
+}
+[data-slot="marquee"][data-motion="static"] [data-slot="marquee-stage"] { transform:none; }
+[data-slot="marquee"][data-motion="static"] [data-slot="marquee-viewport"] { mask-image:none; }
+[data-slot="marquee"][data-motion="static"] [data-slot="marquee-content"] > li { filter:none; opacity:1; }
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-content"] {
+  flex-wrap: wrap;
+  min-inline-size: 0;
+  inline-size: 100%;
+  padding: 0;
+}
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-content"] > li { max-inline-size: 100%; }
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-content"] > li > * { max-inline-size: 100%; }
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-viewport"] { overflow: visible; }
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-copy"] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="marquee"] [data-slot="marquee-track"] { transform:none; inline-size: 100%; }
+  [data-slot="marquee"][data-presentation] [data-slot="marquee-stage"] { transform:none; }
+  [data-slot="marquee"][data-presentation] [data-slot="marquee-viewport"] { mask-image:none; }
+  [data-slot="marquee"] [data-slot="marquee-content"] > li { filter:none; opacity:1; }
+  [data-slot="marquee"] [data-slot="marquee-content"] { flex-wrap: wrap; min-inline-size: 0; inline-size: 100%; padding: 0; }
+  [data-slot="marquee"] [data-slot="marquee-content"] > li { max-inline-size: 100%; }
+  [data-slot="marquee"] [data-slot="marquee-content"] > li > * { max-inline-size: 100%; }
+  [data-slot="marquee"] [data-slot="marquee-viewport"] { overflow: visible; }
+  [data-slot="marquee"] [data-slot="marquee-copy"] { display: none; }
+}
+
+}
