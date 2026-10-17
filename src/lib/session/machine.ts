@@ -20,6 +20,7 @@ export type SessionEvent =
   | { type: "FIRST_FRAME" }
   | { type: "TICK" }
   | { type: "DISCONNECTED" }
+  | { type: "STALLED" }
   | { type: "ERROR"; message: string }
   | { type: "RETRY" }
   | { type: "RECAP_DISMISSED" };
@@ -115,6 +116,17 @@ export function reduce(state: SessionState, event: SessionEvent): SessionState {
         ? { ...state, phase: "recap", recapReady: true, warn: false }
         : state;
     }
+
+    case "STALLED":
+      // No first frame inside the guard window: abort instead of letting the
+      // session stream (and bill) without the clock ever starting.
+      return state.phase === "connecting" || state.phase === "warming"
+        ? {
+            ...state,
+            phase: "error",
+            error: "The try-on took too long to start. Try again — it usually takes a few seconds.",
+          }
+        : state;
 
     case "ERROR":
       return { ...state, phase: "error", error: event.message };

@@ -50,11 +50,18 @@ async function fetchGarmentBlob(url: string): Promise<Blob> {
   return await res.blob();
 }
 
-// Matches the lucy-vton-latest model definition (1280×720, 30fps ideal).
+// Matches the lucy-vton-3.6 model definition (1280×720, 30fps ideal).
 const CAMERA_CONSTRAINTS: MediaStreamConstraints = {
   video: { width: { ideal: 1280 }, height: { ideal: 720 }, facingMode: "user" },
   audio: false,
 };
+
+/**
+ * How long connecting + warm-up may take before the session is aborted.
+ * Decart normally reaches the first frame in seconds; past this window
+ * something is wrong and the stream would keep billing with no clock running.
+ */
+const START_GUARD_MS = 45_000;
 
 function describeError(err: unknown): string {
   if (err instanceof DOMException) {
@@ -81,7 +88,10 @@ export function useTryOnSession(): UseTryOnSession {
   const [recapUrl, setRecapUrl] = useState<string | null>(null);
 
   const stateRef = useRef(state);
-  stateRef.current = state;
+
+  useEffect(() => {
+    stateRef.current = state;
+  }, [state]);
 
   const localStreamRef = useRef<MediaStream | null>(null);
   const remoteStreamRef = useRef<MediaStream | null>(null);
@@ -114,7 +124,7 @@ export function useTryOnSession(): UseTryOnSession {
             return data.apiKey;
           },
         }),
-        model: sdk.models.realtime("lucy-vton-latest"),
+        model: sdk.models.realtime("lucy-vton-3.6"),
       };
     }
     return apiRef.current;
@@ -315,6 +325,18 @@ export function useTryOnSession(): UseTryOnSession {
     const id = window.setInterval(() => dispatch({ type: "TICK" }), 1000);
     return () => window.clearInterval(id);
   }, [state.phase]);
+
+  // Billing guard: if the first AI frame never arrives, nothing else stops
+  // the stream — abort it after a generous window instead of billing forever.
+  useEffect(() => {
+    if (state.phase !== "connecting" && state.phase !== "warming") return;
+    const id = window.setTimeout(() => {
+      clearSession();
+      void stopRecorder();
+      dispatch({ type: "STALLED" });
+    }, START_GUARD_MS);
+    return () => window.clearTimeout(id);
+  }, [state.phase, clearSession, stopRecorder]);
 
   // At 0s the reducer moves to `ending`: stop the recording, close the
   // session, then land on the recap (or skip it when nothing was recorded).

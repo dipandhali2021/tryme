@@ -54,18 +54,16 @@ export function HowItWorks() {
           return (
             <div className="flex h-full flex-col justify-between gap-s-4 p-s-5">
               <div className="flex items-center justify-between">
-                <span className="text-v-meta tabular-nums text-muted-foreground">
+                <span className="text-v-meta tabular-nums opacity-70">
                   {step.number}
                 </span>
-                <Icon className="size-5 text-muted-foreground" aria-hidden />
+                <Icon className="size-5 opacity-70" aria-hidden />
               </div>
               <div className="flex flex-col gap-s-1">
                 <span className="text-v-title font-weight-v-semibold">
                   {step.title}
                 </span>
-                <span className="text-v-small text-muted-foreground">
-                  {step.body}
-                </span>
+                <span className="text-v-small opacity-70">{step.body}</span>
               </div>
             </div>
           );

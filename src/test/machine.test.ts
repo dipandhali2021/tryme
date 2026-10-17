@@ -169,3 +169,24 @@ describe("error + retry", () => {
     expect(reduce(errored, { type: "RETRY" }).phase).toBe("camera_ready");
   });
 });
+
+describe("stall guard", () => {
+  it("STALLED while connecting or warming → error", () => {
+    const connecting = reduce(cameraReady(), {
+      type: "GARMENT_SELECTED",
+      imageUrl: "https://cdn/x.jpg",
+    });
+    const stalled = reduce(connecting, { type: "STALLED" });
+    expect(stalled.phase).toBe("error");
+    expect(stalled.error).toContain("too long");
+
+    const warming = reduce(connecting, { type: "CONNECTED" });
+    expect(reduce(warming, { type: "STALLED" }).phase).toBe("error");
+  });
+
+  it("STALLED is ignored once live", () => {
+    const next = reduce(live(), { type: "STALLED" });
+    expect(next.phase).toBe("live");
+    expect(next.error).toBeNull();
+  });
+});

@@ -1,6 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+} from "react";
 import { ExternalLink, Search, Upload, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -117,8 +124,11 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
   const [input, setInput] = useState("");
   const [query, setQuery] = useState<string | null>(null);
   const [nonce, setNonce] = useState(0);
-  const [response, setResponse] = useState<SearchResponse | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState<{
+    key: string;
+    response: SearchResponse;
+  } | null>(null);
+  const [errorKey, setErrorKey] = useState<string | null>(null);
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [toast, setToast] = useState<string | null>(null);
   const [pinned, setPinned] = useState<PinnedGarment | null>(null);
@@ -142,28 +152,38 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
     }
   }, []);
 
+  // The identity of the search currently being asked for.
+  const searchKey = useMemo(
+    () => (query ? `${store}\u0000${query}\u0000${nonce}` : null),
+    [store, query, nonce],
+  );
+  // Loading is derived (not set in an effect): we are waiting whenever the
+  // latest request's key does not match the latest result or error.
+  const loading =
+    searchKey !== null && result?.key !== searchKey && errorKey !== searchKey;
+  const response = result?.response ?? null;
+
   useEffect(() => {
-    if (!query) return;
+    if (!searchKey || !query) return;
     let cancelled = false;
-    setLoading(true);
+    const key = searchKey;
     fetchSearch(store, query)
       .then((res) => {
         if (cancelled) return;
-        setResponse(res);
+        setErrorKey(null);
+        setResult({ key, response: res });
         setFilters((current) => ({ ...current, colors: [], brands: [] }));
         if (res.error) setToast(res.error);
       })
       .catch((err: unknown) => {
         if (cancelled) return;
+        setErrorKey(key);
         setToast(err instanceof Error ? err.message : "Search failed");
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
       });
     return () => {
       cancelled = true;
     };
-  }, [store, query, nonce]);
+  }, [searchKey, store, query]);
 
   const submit = (value?: string) => {
     const next = (value ?? input).trim();
@@ -242,7 +262,17 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
         </div>
   
         <div className="min-h-0 flex-1">
-          <ScrollArea className="h-full">
+          <ScrollArea
+            className="h-full"
+            style={
+              {
+                // .v-scroll caps itself at var(--h) — give it a definite
+                // viewport-derived cap so the results box never blows up the
+                // layout (and shrinks when content is short).
+                "--h": "calc(100dvh - 360px)",
+              } as CSSProperties
+            }
+          >
             <div className="p-s-4">
               {pinned ? (
                 <div className="mb-s-3 flex items-center gap-s-3 rounded-2xl border border-border bg-v-paper p-s-2 pr-s-3">

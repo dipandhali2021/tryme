@@ -72,12 +72,26 @@ export function CameraStage({
       fired = true;
       onRemoteFrame();
     };
-    if (typeof el.requestVideoFrameCallback === "function") {
-      el.requestVideoFrameCallback(() => fire());
-    } else {
-      el.addEventListener("playing", fire, { once: true });
+    // "Try again" reuses this already-playing element, so the event may have
+    // fired before this effect ran (or never fire again). Cover every case:
+    // already painting → fire now; otherwise next frame / play event.
+    if (!el.paused && el.readyState >= 2) {
+      fire();
+      return;
     }
-    return () => el.removeEventListener("playing", fire);
+    el.addEventListener("playing", fire);
+    el.addEventListener("loadeddata", fire);
+    let frameRequest = 0;
+    if (typeof el.requestVideoFrameCallback === "function") {
+      frameRequest = el.requestVideoFrameCallback(() => fire());
+    }
+    return () => {
+      el.removeEventListener("playing", fire);
+      el.removeEventListener("loadeddata", fire);
+      if (frameRequest && typeof el.cancelVideoFrameCallback === "function") {
+        el.cancelVideoFrameCallback(frameRequest);
+      }
+    };
   }, [remoteStream, onRemoteFrame]);
 
   const remoteVisible =

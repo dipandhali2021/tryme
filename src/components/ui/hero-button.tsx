@@ -151,6 +151,7 @@ export function HeroButton({
   return (
     <Button
       {...props}
+      asChild={asChild}
       size={size}
       variant={variant === "default" || variant === "block" ? "ghost" : variant}
       fullWidth={props.fullWidth || variant === "block"}
