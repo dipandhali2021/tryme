@@ -87,6 +87,7 @@ export async function fetchAndCacheImage(
         ...(referer ? { referer } : {}),
       },
       cache: "no-store",
+      signal: AbortSignal.timeout(15_000),
     });
   } catch {
     return null;

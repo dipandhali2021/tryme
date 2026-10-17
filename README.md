@@ -29,9 +29,11 @@ counts, other hosts need HTTPS.
 
 - **Left half:** camera preview + the Decart realtime session. One garment per
   try, capped at **20 seconds per try** — a warning drops at 5s, the session
-  auto-stops at 0, and a recap with a recorded replay appears.
+  auto-stops at 0, and a recap with a recorded replay appears. Pause mid-try to
+  drop the billed stream instantly and resume with the seconds you had left.
 - **Right half:** live-scraped garments with filters (category, price, color,
-  brand, gender, sort). Pick a garment and it lands on you.
+  brand, gender, sort). Pick a garment and it lands on you — or paste a product
+  link (Flipkart/Myntra; Amazon links get the drag-it-in fallback).
 - **Any garment, anywhere:** drag an image from any open tab, paste an image
   URL, or upload a photo from your device.
 - The Decart API key never leaves the server: the browser gets a short-lived

@@ -7,12 +7,9 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json(token);
   } catch (err) {
     console.error("[realtime-token] failed:", err);
-    const message =
-      err instanceof Error
-        ? err.message
-        : typeof err === "string"
-          ? err
-          : "token mint failed";
-    return Response.json({ error: message }, { status: 500 });
+    return Response.json(
+      { error: "Could not mint a session token." },
+      { status: 500 },
+    );
   }
 }

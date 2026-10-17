@@ -18,7 +18,7 @@ export type UseTryOnSession = {
   localStream: MediaStream | null;
   remoteStream: MediaStream | null;
   recapUrl: string | null;
-  enableCamera: () => Promise<void>;
+  enableCamera: () => Promise<boolean>;
   disableCamera: () => void;
   tryGarment: (source: GarmentSource) => void;
   tryAgain: () => void;
@@ -104,8 +104,14 @@ export function useTryOnSession(): UseTryOnSession {
   const pendingGarmentRef = useRef<string | null>(null);
   const connectingRef = useRef(false);
   const recorderRef = useRef<TryOnRecorder | null>(null);
-  /** Pause drops the connection itself; the SDK's disconnect event is swallowed. */
-  const pausingRef = useRef(false);
+  /**
+   * Session generation. `clearSession` bumps it, so every callback captured by
+   * an older connection (disconnect, error, a late `connect()` resolution) is
+   * ignored instead of startling the machine or adopting an orphan session.
+   */
+  const genRef = useRef(0);
+  /** In-flight getUserMedia, shared by quick repeated enable attempts. */
+  const cameraPendingRef = useRef<Promise<boolean> | null>(null);
   /** The stop promise from the pause, awaited by "End try" before the recap. */
   const pauseStopRef = useRef<Promise<Blob | null> | null>(null);
 
@@ -153,6 +159,7 @@ export function useTryOnSession(): UseTryOnSession {
   );
 
   const clearSession = useCallback(() => {
+    genRef.current += 1;
     sessionRef.current?.disconnect();
     sessionRef.current = null;
     connectingRef.current = false;
@@ -183,7 +190,7 @@ export function useTryOnSession(): UseTryOnSession {
         return;
       }
       connectingRef.current = true;
-      pausingRef.current = false;
+      const gen = ++genRef.current;
       // A new try invalidates the previous recording and recap; a resume keeps
       // the segment banked at pause in case the reconnection fails.
       if (!options?.resume) {
@@ -192,29 +199,42 @@ export function useTryOnSession(): UseTryOnSession {
       }
       try {
         const { client, model } = await getApi();
+        if (genRef.current !== gen) return;
         const fileId = await ensureFileId(garmentUrl);
+        if (genRef.current !== gen) return;
         const session = await client.realtime.connect(local, {
           model,
           speed: "fast",
           mirror: "auto",
           initialState: { image: fileId },
-          onRemoteStream: (stream) => setRemoteStream(stream),
+          onRemoteStream: (stream) => {
+            if (genRef.current !== gen) return;
+            // Sync the ref here, not in an effect: the stage's video element
+            // fires the first-frame callback from a child effect that runs
+            // before parent effects, so the ref must be current by then.
+            remoteStreamRef.current = stream;
+            setRemoteStream(stream);
+          },
           onConnectionChange: (connection) => {
+            if (genRef.current !== gen) return;
             if (connection === "connected") dispatch({ type: "CONNECTED" });
-            if (connection === "disconnected") {
-              // A pause is an intentional disconnect, not a session end.
-              if (pausingRef.current) pausingRef.current = false;
-              else dispatch({ type: "DISCONNECTED" });
-            }
+            if (connection === "disconnected") dispatch({ type: "DISCONNECTED" });
           },
         });
+        if (genRef.current !== gen) {
+          // Stopped or ended while connecting: never adopt an orphan session.
+          session.disconnect();
+          return;
+        }
         sessionRef.current = session;
         connectingRef.current = false;
         session.on("error", (err) => {
+          if (genRef.current !== gen) return;
           void stopRecorder();
           dispatch({ type: "ERROR", message: describeError(err) });
         });
         session.on("sessionEnded", (ended) => {
+          if (genRef.current !== gen) return;
           void stopRecorder();
           const reason =
             ended && typeof ended === "object" && "reason" in ended
@@ -231,29 +251,40 @@ export function useTryOnSession(): UseTryOnSession {
         const pending = pendingGarmentRef.current;
         if (pending && pending !== garmentUrl) {
           const pendingFile = await ensureFileId(pending);
+          if (genRef.current !== gen) return;
           await session.set({ image: pendingFile });
         }
         pendingGarmentRef.current = null;
       } catch (err) {
         connectingRef.current = false;
         sessionRef.current = null;
+        if (genRef.current !== gen) return;
         dispatch({ type: "ERROR", message: describeError(err) });
       }
     },
     [clearRecap, ensureFileId, getApi, stopRecorder],
   );
 
-  const enableCamera = useCallback(async () => {
-    if (localStreamRef.current) return;
-    try {
-      const stream =
-        await navigator.mediaDevices.getUserMedia(CAMERA_CONSTRAINTS);
-      localStreamRef.current = stream;
-      setLocalStream(stream);
-      dispatch({ type: "CAMERA_ON" });
-    } catch (err) {
-      dispatch({ type: "CAMERA_FAILED", message: describeError(err) });
-    }
+  const enableCamera = useCallback(async (): Promise<boolean> => {
+    if (localStreamRef.current) return true;
+    if (cameraPendingRef.current) return cameraPendingRef.current;
+    const attempt = (async () => {
+      try {
+        const stream =
+          await navigator.mediaDevices.getUserMedia(CAMERA_CONSTRAINTS);
+        localStreamRef.current = stream;
+        setLocalStream(stream);
+        dispatch({ type: "CAMERA_ON" });
+        return true;
+      } catch (err) {
+        dispatch({ type: "CAMERA_FAILED", message: describeError(err) });
+        return false;
+      }
+    })();
+    cameraPendingRef.current = attempt;
+    const ok = await attempt;
+    cameraPendingRef.current = null;
+    return ok;
   }, []);
 
   const disableCamera = useCallback(() => {
@@ -262,6 +293,7 @@ export function useTryOnSession(): UseTryOnSession {
     clearSession();
     localStreamRef.current?.getTracks().forEach((track) => track.stop());
     localStreamRef.current = null;
+    remoteStreamRef.current = null;
     pendingGarmentRef.current = null;
     setLocalStream(null);
     setRemoteStream(null);
@@ -273,9 +305,21 @@ export function useTryOnSession(): UseTryOnSession {
       // Normalize files/URLs to a stable string first (see sourceToUrl).
       const imageUrl = sourceToUrl(source);
       const phase = stateRef.current.phase;
+      // The clock ran out; a pick now would race the recap teardown.
+      if (phase === "ending") return;
       pendingGarmentRef.current = imageUrl;
       dispatch({ type: "GARMENT_SELECTED", imageUrl });
 
+      if (phase === "camera_off") {
+        // Trying on before the camera is on: turn it on, then start the try.
+        void (async () => {
+          const ok = await enableCamera();
+          if (!ok) return; // CAMERA_FAILED already shows the permission help
+          dispatch({ type: "RETRY" }); // camera_ready + garment → connecting
+          void startSession(imageUrl);
+        })();
+        return;
+      }
       if (phase === "camera_ready" || phase === "paused") {
         // GARMENT_SELECTED already armed a fresh connection (and clock) from paused.
         void startSession(imageUrl);
@@ -294,6 +338,7 @@ export function useTryOnSession(): UseTryOnSession {
         void (async () => {
           try {
             const fileId = await ensureFileId(imageUrl);
+            if (sessionRef.current !== session) return; // session changed mid-flight
             await session.set({ image: fileId });
             if (pendingGarmentRef.current === imageUrl) {
               pendingGarmentRef.current = null;
@@ -304,7 +349,7 @@ export function useTryOnSession(): UseTryOnSession {
         })();
       }
     },
-    [ensureFileId, startSession],
+    [enableCamera, ensureFileId, startSession],
   );
 
   const tryAgain = useCallback(() => {
@@ -318,9 +363,8 @@ export function useTryOnSession(): UseTryOnSession {
   /** Pause: drop the billed stream this instant; banked seconds stay put. */
   const pauseTry = useCallback(() => {
     if (stateRef.current.phase !== "live") return;
-    pausingRef.current = true;
     dispatch({ type: "PAUSE" });
-    clearSession();
+    clearSession(); // bumps the generation — the SDK's disconnect is ignored
     const stopping = stopRecorder();
     pauseStopRef.current = stopping;
     void stopping.then((blob) => {

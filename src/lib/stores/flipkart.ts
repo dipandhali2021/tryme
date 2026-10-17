@@ -130,6 +130,7 @@ export async function searchFlipkart(q: string, page = 1): Promise<Product[]> {
       "accept-language": "en-IN,en;q=0.9",
     },
     cache: "no-store",
+    signal: AbortSignal.timeout(15_000),
   });
   if (!res.ok) throw new Error(`flipkart search failed: ${res.status}`);
   const html = await res.text();
