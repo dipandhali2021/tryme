@@ -8,6 +8,10 @@ const SOURCES = [
   { name: "Any open tab", note: "drop it in" },
 ];
 
+// One authored strip must outrun the viewport, or the track stretches and
+// opens a bare gap at the wrap point between passes.
+const TILES = [...SOURCES, ...SOURCES];
+
 /** Store names drifting by — a hint at where garments come from. */
 export function StoreMarquee() {
   return (
@@ -16,9 +20,9 @@ export function StoreMarquee() {
       speed="normal"
       className="mx-auto w-full max-w-6xl px-s-6 pb-s-5"
     >
-      {SOURCES.map((source) => (
+      {TILES.map((source, index) => (
         <span
-          key={source.name}
+          key={`${source.name}-${index}`}
           className="inline-flex items-baseline gap-s-2 rounded-full border border-border bg-v-paper px-s-4 py-s-2 text-v-control"
         >
           <span className="font-weight-v-semibold">{source.name}</span>

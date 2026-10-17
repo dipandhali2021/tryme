@@ -472,3 +472,12 @@
   background-size: 100% 100%, 100% 100%, cover;
   background-position: top, bottom, top;
 }
+
+/* The root scroller keeps working (wheel, touch, keys) but paints no native
+   rail — the landing lets the hills run edge to edge. */
+html {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}

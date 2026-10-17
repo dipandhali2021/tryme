@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
+import { Badge } from "@/components/ui/badge";
 import {
   ThemeToggle,
   applyTheme,
@@ -69,7 +70,7 @@ export function SiteHeader() {
           : "border-border/60 bg-background/80 backdrop-blur",
       )}
     >
-      <Link href="/" className="flex items-center gap-s-2">
+      <Link href="/" className="flex items-center gap-s-2 no-underline">
         <Image
           src="/icon.svg"
           alt=""
@@ -81,14 +82,18 @@ export function SiteHeader() {
         <span className="font-heading text-v-title font-weight-v-semibold tracking-tight">
           TryMe
         </span>
-        <span className="hidden text-v-small text-muted-foreground sm:inline">
-          live virtual try-on
-        </span>
+        <Badge
+          variant="pink-soft"
+          size="sm"
+          className="hidden sm:inline-flex"
+        >
+          virtual try-on
+        </Badge>
       </Link>
       <nav className="flex items-center gap-s-3">
         <Link
           href="/studio"
-          className="text-v-control text-muted-foreground transition-colors hover:text-foreground"
+          className="no-underline text-v-control text-muted-foreground transition-colors hover:text-foreground"
         >
           Studio
         </Link>

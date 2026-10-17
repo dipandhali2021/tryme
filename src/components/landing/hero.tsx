@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HeroButton } from "@/components/ui/hero-button";
 import { TextReveal } from "@/components/ui/text-reveal";
@@ -20,13 +19,6 @@ export function Hero() {
         <HeroButton asChild size="lg">
           <Link href="/studio">Try it now</Link>
         </HeroButton>
-        <Link
-          href="#how"
-          className="inline-flex items-center gap-1.5 text-v-control text-muted-foreground transition-colors hover:text-foreground"
-        >
-          How it works
-          <ArrowDown className="size-4" aria-hidden />
-        </Link>
       </div>
     </section>
   );
