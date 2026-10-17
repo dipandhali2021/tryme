@@ -22,6 +22,9 @@ export type CameraStageProps = {
   onTryExample: () => void;
   onTryAgain: () => void;
   onDismissRecap: () => void;
+  onPause: () => void;
+  onResume: () => void;
+  onEndTry: () => void;
   onRemoteFrame: () => void;
 };
 
@@ -31,6 +34,7 @@ const PHASE_LABEL: Record<SessionState["phase"], string> = {
   connecting: "Connecting…",
   warming: "Warming up…",
   live: "On you",
+  paused: "Paused",
   ending: "Wrapping up…",
   recap: "Ended",
   error: "Error",
@@ -79,6 +83,9 @@ export function CameraStage({
   onTryExample,
   onTryAgain,
   onDismissRecap,
+  onPause,
+  onResume,
+  onEndTry,
   onRemoteFrame,
 }: CameraStageProps) {
   const remoteVideoRef = useRef<HTMLVideoElement>(null);
@@ -131,12 +138,16 @@ export function CameraStage({
     Boolean(remoteStream) &&
     (state.phase === "warming" ||
       state.phase === "live" ||
+      state.phase === "paused" ||
       state.phase === "ending" ||
       state.phase === "recap");
   const localVisible = Boolean(localStream) && !remoteVisible;
   const videoVisible = localVisible || remoteVisible;
   const isBusy = state.phase === "connecting" || state.phase === "warming";
-  const countdownVisible = state.phase === "live" || state.phase === "ending";
+  const countdownVisible =
+    state.phase === "live" ||
+    state.phase === "paused" ||
+    state.phase === "ending";
   const controlsVisible =
     state.phase === "camera_ready" || isBusy || countdownVisible;
 
@@ -221,14 +232,34 @@ export function CameraStage({
                   Turn off camera
                 </Button>
               </>
+            ) : state.phase === "paused" ? (
+              <>
+                <HeroButton size="sm" showArrow={false} onClick={onResume}>
+                  Resume
+                </HeroButton>
+                <Button
+                  variant="ghost"
+                  className="text-white! hover:bg-white/15! hover:text-white!"
+                  onClick={onEndTry}
+                >
+                  End try
+                </Button>
+              </>
             ) : (
-              <Button
-                variant="ghost"
-                className="text-white! hover:bg-white/15! hover:text-white!"
-                onClick={onDisableCamera}
-              >
-                Stop
-              </Button>
+              <>
+                {state.phase === "live" && (
+                  <HeroButton size="sm" showArrow={false} onClick={onPause}>
+                    Pause
+                  </HeroButton>
+                )}
+                <Button
+                  variant="ghost"
+                  className="text-white! hover:bg-white/15! hover:text-white!"
+                  onClick={onDisableCamera}
+                >
+                  Stop
+                </Button>
+              </>
             )}
           </div>
 
@@ -253,7 +284,7 @@ export function CameraStage({
         <RecapCard
           url={recapUrl}
           onTryAgain={onTryAgain}
-          onAddAnother={onDismissRecap}
+          onDismiss={onDismissRecap}
         />
       )}
 

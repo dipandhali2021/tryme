@@ -37,6 +37,7 @@ describe("initialSessionState", () => {
       garmentUrl: null,
       error: null,
       recapReady: false,
+      resumed: false,
     });
   });
 });
@@ -147,6 +148,108 @@ describe("the 20s clock", () => {
     expect(switched.remaining).toBe(20);
     expect(switched.warn).toBe(false);
     expect(switched.garmentUrl).toBe("https://cdn/y.jpg");
+  });
+});
+
+describe("pause / resume", () => {
+  it("PAUSE banks the clock and freezes it", () => {
+    const midTry = run(
+      live(),
+      Array.from({ length: 8 }, () => ({ type: "TICK" as const })),
+    );
+    expect(midTry.remaining).toBe(12);
+
+    const paused = reduce(midTry, { type: "PAUSE" });
+    expect(paused.phase).toBe("paused");
+    expect(paused.remaining).toBe(12);
+    expect(paused.warn).toBe(false);
+
+    const ticked = reduce(paused, { type: "TICK" });
+    expect(ticked.phase).toBe("paused");
+    expect(ticked.remaining).toBe(12);
+  });
+
+  it("RESUME → FIRST_FRAME keeps the banked seconds", () => {
+    const paused = run(live(), [
+      ...Array.from({ length: 8 }, () => ({ type: "TICK" as const })),
+      { type: "PAUSE" },
+    ]);
+    expect(paused.remaining).toBe(12);
+
+    const resumed = run(paused, [
+      { type: "RESUME" },
+      { type: "CONNECTED" },
+      { type: "FIRST_FRAME" },
+    ]);
+    expect(resumed.phase).toBe("live");
+    expect(resumed.remaining).toBe(12);
+    expect(resumed.resumed).toBe(false);
+  });
+
+  it("a resume that lands under 5s still warns", () => {
+    const paused = run(live(), [
+      ...Array.from({ length: 17 }, () => ({ type: "TICK" as const })),
+      { type: "PAUSE" },
+    ]);
+    expect(paused.remaining).toBe(3);
+
+    const resumed = run(paused, [
+      { type: "RESUME" },
+      { type: "FIRST_FRAME" },
+    ]);
+    expect(resumed.phase).toBe("live");
+    expect(resumed.remaining).toBe(3);
+    expect(resumed.warn).toBe(true);
+  });
+
+  it("a fresh garment pick while paused starts a new 20s try", () => {
+    const paused = run(live(), [
+      ...Array.from({ length: 9 }, () => ({ type: "TICK" as const })),
+      { type: "PAUSE" },
+    ]);
+
+    const picked = reduce(paused, {
+      type: "GARMENT_SELECTED",
+      imageUrl: "https://cdn/z.jpg",
+    });
+    expect(picked.phase).toBe("connecting");
+    expect(picked.remaining).toBe(20);
+    expect(picked.resumed).toBe(false);
+    expect(picked.garmentUrl).toBe("https://cdn/z.jpg");
+
+    const liveAgain = run(picked, [
+      { type: "CONNECTED" },
+      { type: "FIRST_FRAME" },
+    ]);
+    expect(liveAgain.remaining).toBe(20);
+  });
+
+  it("END_TRY while paused → recap; ignored while live", () => {
+    const paused = reduce(live(), { type: "PAUSE" });
+    const ended = reduce(paused, { type: "END_TRY" });
+    expect(ended.phase).toBe("recap");
+    expect(ended.recapReady).toBe(true);
+
+    expect(reduce(live(), { type: "END_TRY" }).phase).toBe("live");
+  });
+
+  it("PAUSE and RESUME only act from their own phase", () => {
+    expect(reduce(cameraReady(), { type: "PAUSE" }).phase).toBe("camera_ready");
+    expect(reduce(live(), { type: "RESUME" }).phase).toBe("live");
+    expect(reduce(live(), { type: "PAUSE" }).resumed).toBe(false);
+  });
+
+  it("a non-resume connect still restarts the clock", () => {
+    const picked = reduce(cameraReady(), {
+      type: "GARMENT_SELECTED",
+      imageUrl: "https://cdn/x.jpg",
+    });
+    const liveAgain = run(picked, [
+      { type: "CONNECTED" },
+      { type: "FIRST_FRAME" },
+    ]);
+    expect(liveAgain.remaining).toBe(20);
+    expect(liveAgain.resumed).toBe(false);
   });
 });
 

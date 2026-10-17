@@ -22,6 +22,9 @@ export type UseTryOnSession = {
   disableCamera: () => void;
   tryGarment: (source: GarmentSource) => void;
   tryAgain: () => void;
+  pauseTry: () => void;
+  resumeTry: () => void;
+  endTry: () => void;
   dismissRecap: () => void;
   notifyRemoteFrame: () => void;
 };
@@ -101,6 +104,10 @@ export function useTryOnSession(): UseTryOnSession {
   const pendingGarmentRef = useRef<string | null>(null);
   const connectingRef = useRef(false);
   const recorderRef = useRef<TryOnRecorder | null>(null);
+  /** Pause drops the connection itself; the SDK's disconnect event is swallowed. */
+  const pausingRef = useRef(false);
+  /** The stop promise from the pause, awaited by "End try" before the recap. */
+  const pauseStopRef = useRef<Promise<Blob | null> | null>(null);
 
   useEffect(() => {
     remoteStreamRef.current = remoteStream;
@@ -168,7 +175,7 @@ export function useTryOnSession(): UseTryOnSession {
   }, []);
 
   const startSession = useCallback(
-    async (garmentUrl: string) => {
+    async (garmentUrl: string, options?: { resume?: boolean }) => {
       if (connectingRef.current || sessionRef.current) return;
       const local = localStreamRef.current;
       if (!local) {
@@ -176,9 +183,13 @@ export function useTryOnSession(): UseTryOnSession {
         return;
       }
       connectingRef.current = true;
-      // A new try invalidates the previous recording and recap.
-      void stopRecorder();
-      clearRecap();
+      pausingRef.current = false;
+      // A new try invalidates the previous recording and recap; a resume keeps
+      // the segment banked at pause in case the reconnection fails.
+      if (!options?.resume) {
+        void stopRecorder();
+        clearRecap();
+      }
       try {
         const { client, model } = await getApi();
         const fileId = await ensureFileId(garmentUrl);
@@ -191,7 +202,9 @@ export function useTryOnSession(): UseTryOnSession {
           onConnectionChange: (connection) => {
             if (connection === "connected") dispatch({ type: "CONNECTED" });
             if (connection === "disconnected") {
-              dispatch({ type: "DISCONNECTED" });
+              // A pause is an intentional disconnect, not a session end.
+              if (pausingRef.current) pausingRef.current = false;
+              else dispatch({ type: "DISCONNECTED" });
             }
           },
         });
@@ -263,7 +276,8 @@ export function useTryOnSession(): UseTryOnSession {
       pendingGarmentRef.current = imageUrl;
       dispatch({ type: "GARMENT_SELECTED", imageUrl });
 
-      if (phase === "camera_ready") {
+      if (phase === "camera_ready" || phase === "paused") {
+        // GARMENT_SELECTED already armed a fresh connection (and clock) from paused.
         void startSession(imageUrl);
         return;
       }
@@ -300,6 +314,43 @@ export function useTryOnSession(): UseTryOnSession {
     dispatch({ type: "RETRY" });
     void startSession(garment);
   }, [startSession]);
+
+  /** Pause: drop the billed stream this instant; banked seconds stay put. */
+  const pauseTry = useCallback(() => {
+    if (stateRef.current.phase !== "live") return;
+    pausingRef.current = true;
+    dispatch({ type: "PAUSE" });
+    clearSession();
+    const stopping = stopRecorder();
+    pauseStopRef.current = stopping;
+    void stopping.then((blob) => {
+      if (!blob || blob.size === 0) return;
+      const url = URL.createObjectURL(blob);
+      setRecapUrl((prev) => {
+        if (prev) URL.revokeObjectURL(prev);
+        return url;
+      });
+    });
+  }, [clearSession, stopRecorder]);
+
+  /** Resume: reconnect the same garment; the clock keeps the banked seconds. */
+  const resumeTry = useCallback(() => {
+    const garment = stateRef.current.garmentUrl;
+    if (!garment || stateRef.current.phase !== "paused") return;
+    pendingGarmentRef.current = null;
+    dispatch({ type: "RESUME" });
+    void startSession(garment, { resume: true });
+  }, [startSession]);
+
+  /** End a paused try: finalize the recording and show the recap (when usable). */
+  const endTry = useCallback(() => {
+    if (stateRef.current.phase !== "paused") return;
+    void (async () => {
+      const blob = await (pauseStopRef.current ?? Promise.resolve(null));
+      dispatch({ type: "END_TRY" });
+      if (!blob || blob.size === 0) dispatch({ type: "RECAP_DISMISSED" });
+    })();
+  }, []);
 
   const dismissRecap = useCallback(() => {
     clearRecap();
@@ -383,6 +434,9 @@ export function useTryOnSession(): UseTryOnSession {
     disableCamera,
     tryGarment,
     tryAgain,
+    pauseTry,
+    resumeTry,
+    endTry,
     dismissRecap,
     notifyRemoteFrame,
   };

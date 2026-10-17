@@ -7,6 +7,7 @@ export type Phase =
   | "connecting"
   | "warming"
   | "live"
+  | "paused"
   | "ending"
   | "recap"
   | "error";
@@ -23,6 +24,9 @@ export type SessionEvent =
   | { type: "STALLED" }
   | { type: "ERROR"; message: string }
   | { type: "RETRY" }
+  | { type: "PAUSE" }
+  | { type: "RESUME" }
+  | { type: "END_TRY" }
   | { type: "RECAP_DISMISSED" };
 
 export type SessionState = {
@@ -32,6 +36,8 @@ export type SessionState = {
   garmentUrl: string | null;
   error: string | null;
   recapReady: boolean;
+  /** Set by RESUME so the next FIRST_FRAME banks time instead of restarting. */
+  resumed: boolean;
 };
 
 export function initialSessionState(): SessionState {
@@ -42,6 +48,7 @@ export function initialSessionState(): SessionState {
     garmentUrl: null,
     error: null,
     recapReady: false,
+    resumed: false,
   };
 }
 
@@ -55,12 +62,19 @@ function freshClock(): Pick<SessionState, "remaining" | "warn"> {
  *
  *   camera_off → camera_ready → connecting → warming → live → ending → recap
  *                    ↖──────────────── RECAP_DISMISSED ────────────────┘
+ *   live ⇄ paused (stream dropped, seconds banked; RESUME keeps them, END_TRY → recap)
  *   error ← (any phase), RETRY → connecting (garment set) | camera_ready
  */
 export function reduce(state: SessionState, event: SessionEvent): SessionState {
   switch (event.type) {
     case "CAMERA_ON":
-      return { ...state, phase: "camera_ready", error: null, recapReady: false };
+      return {
+        ...state,
+        phase: "camera_ready",
+        error: null,
+        recapReady: false,
+        resumed: false,
+      };
 
     case "CAMERA_OFF":
       return {
@@ -68,6 +82,7 @@ export function reduce(state: SessionState, event: SessionEvent): SessionState {
         phase: "camera_off",
         error: null,
         recapReady: false,
+        resumed: false,
         ...freshClock(),
       };
 
@@ -79,10 +94,13 @@ export function reduce(state: SessionState, event: SessionEvent): SessionState {
         ...state,
         garmentUrl: event.imageUrl,
         error: null,
+        resumed: false,
         ...freshClock(),
       };
-      // First pick arms the connection; later picks just restart the clock.
-      if (state.phase === "camera_ready") return { ...base, phase: "connecting" };
+      // First pick — or a fresh pick while paused — arms the connection;
+      // later picks just restart the clock.
+      if (state.phase === "camera_ready" || state.phase === "paused")
+        return { ...base, phase: "connecting" };
       return base;
     }
 
@@ -91,11 +109,21 @@ export function reduce(state: SessionState, event: SessionEvent): SessionState {
         ? { ...state, phase: "warming" }
         : state;
 
-    case "FIRST_FRAME":
-      // The clock only starts when the first AI frame hits the screen.
-      return state.phase === "connecting" || state.phase === "warming"
-        ? { ...state, phase: "live", ...freshClock() }
-        : state;
+    case "FIRST_FRAME": {
+      // The clock only starts when the first AI frame hits the screen. A resumed
+      // connection keeps the seconds banked at pause instead of restarting.
+      const arming = state.phase === "connecting" || state.phase === "warming";
+      if (!arming) return state;
+      if (state.resumed) {
+        return {
+          ...state,
+          phase: "live",
+          warn: state.remaining <= WARN_AT,
+          resumed: false,
+        };
+      }
+      return { ...state, phase: "live", ...freshClock() };
+    }
 
     case "TICK": {
       if (state.phase !== "live") return state;
@@ -133,8 +161,24 @@ export function reduce(state: SessionState, event: SessionEvent): SessionState {
 
     case "RETRY":
       return state.garmentUrl
-        ? { ...state, phase: "connecting", error: null }
-        : { ...state, phase: "camera_ready", error: null };
+        ? { ...state, phase: "connecting", error: null, resumed: false }
+        : { ...state, phase: "camera_ready", error: null, resumed: false };
+
+    case "PAUSE":
+      // Dropping the stream stops billing that instant; banked seconds stay put.
+      return state.phase === "live"
+        ? { ...state, phase: "paused", warn: false }
+        : state;
+
+    case "RESUME":
+      return state.phase === "paused"
+        ? { ...state, phase: "connecting", resumed: true, error: null }
+        : state;
+
+    case "END_TRY":
+      return state.phase === "paused"
+        ? { ...state, phase: "recap", recapReady: true, warn: false }
+        : state;
 
     case "RECAP_DISMISSED":
       return {
@@ -142,6 +186,7 @@ export function reduce(state: SessionState, event: SessionEvent): SessionState {
         phase: "camera_ready",
         recapReady: false,
         error: null,
+        resumed: false,
         ...freshClock(),
       };
   }

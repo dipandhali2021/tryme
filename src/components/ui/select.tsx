@@ -246,6 +246,7 @@ export function SelectContent({
         <SelectScrollUpButton />
         <ScrollAreaList
           maxHeight="min(320px, calc(var(--radix-select-content-available-height, 60dvh) - 24px))"
+          scrollbarVariant="rounded"
           viewportWrapper={(viewport) => (
             <Primitive.Viewport>{viewport}</Primitive.Viewport>
           )}

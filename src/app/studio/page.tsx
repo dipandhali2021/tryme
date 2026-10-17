@@ -20,6 +20,9 @@ export default function StudioPage() {
         onTryExample={() => session.tryGarment(SAMPLE_GARMENT_URL)}
         onTryAgain={session.tryAgain}
         onDismissRecap={session.dismissRecap}
+        onPause={session.pauseTry}
+        onResume={session.resumeTry}
+        onEndTry={session.endTry}
         onRemoteFrame={session.notifyRemoteFrame}
       />
       <StorePanel onTryOn={(url) => session.tryGarment(url)} />

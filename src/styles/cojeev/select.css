@@ -391,6 +391,14 @@
 [data-slot="select-item"] > span:not(.v-item-adornment) { min-width:0; overflow-wrap:anywhere; }
 .v-listbox[data-slot="select-content"] [data-slot="select-item"] { white-space:normal; }
 [data-slot="select-content"] { width:var(--menu-width,max(var(--select-anchor-width,0px),240px)); min-width:0; max-width:calc(100vw - 24px); }
+
+/* Listbox rows own the full trigger-aligned width: the rail floats over the row's
+   inline padding instead of reserving a dead strip on the right, and the slim pill
+   only takes pointer input on the thumb so row clicks stay intact underneath. */
+[data-slot="select-content"] [data-slot="scroll-area-viewport"] { padding-right: 0; }
+[data-slot="select-content"] [data-slot="scroll-area-scrollbar"][data-orientation="vertical"] { width: 12px; padding: 0 3px; pointer-events: none; }
+[data-slot="select-content"] [data-slot="scroll-area-scrollbar"][data-orientation="vertical"]::before { inset: 0 3px; }
+[data-slot="select-content"] [data-slot="scroll-area-thumb"] { pointer-events: auto; }
 [data-slot="select-trigger"] > .v-state-chevron { margin-inline-start:auto; }
 [data-slot="select-trigger"]:active:not(:disabled) { background:var(--v-pink-soft); color:var(--v-text); }
 

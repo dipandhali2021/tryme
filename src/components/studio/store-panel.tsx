@@ -343,7 +343,7 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
                   <img
                     src={`/api/proxy-image?url=${encodeURIComponent(imported.imageUrl)}`}
                     alt="Imported garment"
-                    className="h-20 w-16 shrink-0 rounded-xl object-cover"
+                    className="h-20 w-20 shrink-0 rounded-xl bg-white object-contain"
                   />
                   <div className="min-w-0 flex-1">
                     <Badge variant="pink-soft">
@@ -373,7 +373,7 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
                   <img
                     src={pinned.previewUrl}
                     alt="Pinned garment"
-                    className="h-20 w-16 rounded-xl object-cover"
+                    className="h-20 w-20 shrink-0 rounded-xl bg-white object-contain"
                   />
                   <div className="min-w-0 flex-1">
                     <Badge variant="pink-soft">{pinned.label}</Badge>
