@@ -18,6 +18,7 @@ export function StoreMarquee() {
     <Marquee
       label="Where your next fit comes from"
       speed="normal"
+      controls={false}
       className="mx-auto w-full max-w-6xl px-s-6 pb-s-5"
     >
       {TILES.map((source, index) => (

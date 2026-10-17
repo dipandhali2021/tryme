@@ -25,6 +25,8 @@ export type MarqueeProps = React.ComponentProps<"section"> & {
   perspective?: number;
   depth?: number;
   label?: string;
+  /** Show the status + pause/resume controls beside the label. */
+  controls?: boolean;
   paused?: boolean;
   defaultPaused?: boolean;
   onPausedChange?: (paused: boolean) => void;
@@ -35,7 +37,7 @@ const bounded = (value: number, fallback: number, low: number, high: number) => 
 /** One semantic list. Decorative copies never mount React effects or duplicate IDs. */
 export function Marquee({ children, direction = "left", speed = "slow", pixelsPerSecond, respondToScroll = false, scrollTarget,
   presentation = "flat", tiltX = 4, tiltY = -18, perspective = 1000, depth = .65,
-  label = "Highlights", paused, defaultPaused = false, onPausedChange,
+  label = "Highlights", controls = true, paused, defaultPaused = false, onPausedChange,
   className, style, ref, onPointerEnter, onPointerLeave, onFocusCapture, onBlurCapture, ...props }: MarqueeProps) {
   const root = React.useRef<HTMLElement>(null), viewport = React.useRef<HTMLDivElement>(null), track = React.useRef<HTMLDivElement>(null);
   const source = React.useRef<HTMLUListElement>(null), copy = React.useRef<HTMLUListElement>(null), leadingCopy = React.useRef<HTMLUListElement>(null);
@@ -151,10 +153,10 @@ export function Marquee({ children, direction = "left", speed = "slow", pixelsPe
     onPointerLeave={event => { onPointerLeave?.(event); setHovered(false); }}
     onFocusCapture={event => { onFocusCapture?.(event); setFocused(true); setContentFocused(Boolean(source.current?.contains(event.target))); }}
     onBlurCapture={event => { onBlurCapture?.(event); const next = event.relatedTarget; setFocused(next instanceof Node && event.currentTarget.contains(next)); setContentFocused(next instanceof Node && Boolean(source.current?.contains(next))); }}>
-    <div data-slot="marquee-header"><Meta as="span" id={`${id}-label`}>{label}</Meta><div data-slot="marquee-controls">
+    <div data-slot="marquee-header"><Meta as="span" id={`${id}-label`}>{label}</Meta>{controls ? <div data-slot="marquee-controls">
       <Meta as="span" data-slot="marquee-status" role="status">{status}</Meta>
       <Button size="sm" variant="ghost" disabled={quiet || interactive} aria-controls={`${id}-viewport`} onClick={() => { if (paused === undefined) setLocalPaused(!manuallyPaused); onPausedChange?.(!manuallyPaused); }}>{quiet || interactive ? "Motion paused" : manuallyPaused ? "Resume motion" : "Pause motion"}</Button>
-    </div></div>
+    </div> : null}</div>
     <div ref={viewport} data-slot="marquee-viewport" id={`${id}-viewport`}><div data-slot="marquee-stage"><div ref={track} data-slot="marquee-track">
       <ul ref={outerLeadingCopy} data-slot="marquee-copy" data-copy-position="before-outer" aria-hidden="true" inert />
       <ul ref={leadingCopy} data-slot="marquee-copy" data-copy-position="before" aria-hidden="true" inert />
