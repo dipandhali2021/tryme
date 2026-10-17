@@ -1,12 +1,12 @@
 import Link from "next/link";
+import { ArrowDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { HeroButton } from "@/components/ui/hero-button";
 import { TextReveal } from "@/components/ui/text-reveal";
 
 export function Hero() {
   return (
-    <section className="mx-auto flex w-full max-w-5xl flex-col items-center gap-s-5 px-s-6 pb-s-10 pt-s-16 text-center">
+    <section className="flex flex-1 flex-col items-center justify-center gap-s-4 px-s-6 text-center">
       <Badge variant="pink-soft">Live virtual try-on</Badge>
       <TextReveal
         as="h1"
@@ -14,19 +14,19 @@ export function Hero() {
         variant="rise"
         split="word"
         stagger={45}
-        className="font-heading text-v-display font-weight-v-semibold tracking-tight text-balance md:text-v-hero"
+        className="font-heading text-v-display font-weight-v-semibold tracking-tight text-balance xl:text-6xl"
       />
-      <p className="max-w-2xl text-v-lead text-muted-foreground text-balance">
-        Turn on the camera. Pick a fit from Amazon, Flipkart or Myntra. See it
-        on you for 20 seconds.
-      </p>
-      <div className="flex flex-wrap items-center justify-center gap-s-3 pt-s-2">
+      <div className="flex flex-wrap items-center justify-center gap-s-5 pt-s-2">
         <HeroButton asChild size="lg">
-          <Link href="/studio">Open the fitting room</Link>
+          <Link href="/studio">Try it now</Link>
         </HeroButton>
-        <Button asChild variant="ghost" size="lg">
-          <Link href="#how">How it works</Link>
-        </Button>
+        <Link
+          href="#how"
+          className="inline-flex items-center gap-1.5 text-v-control text-muted-foreground transition-colors hover:text-foreground"
+        >
+          How it works
+          <ArrowDown className="size-4" aria-hidden />
+        </Link>
       </div>
     </section>
   );

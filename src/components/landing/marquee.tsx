@@ -14,7 +14,7 @@ export function StoreMarquee() {
     <Marquee
       label="Where your next fit comes from"
       speed="normal"
-      className="mx-auto w-full max-w-5xl px-s-6"
+      className="mx-auto w-full max-w-6xl px-s-6 pb-s-5"
     >
       {SOURCES.map((source) => (
         <span

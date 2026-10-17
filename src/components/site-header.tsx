@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
 import {
   ThemeToggle,
@@ -8,6 +10,7 @@ import {
   type ThemeChangeDetails,
   type ThemeMode,
 } from "@/components/ui/theme-toggle";
+import { cn } from "@/lib/utils";
 
 const STORAGE_KEY = "tryme-mode";
 
@@ -35,6 +38,10 @@ function emit(): void {
 }
 
 export function SiteHeader() {
+  // On the landing page the hills backdrop runs edge to edge, so the header
+  // floats over it with no surface of its own — anything else draws a strip.
+  const landing = usePathname() === "/";
+
   // Mirrors localStorage without a hydration mismatch: the server snapshot is
   // the dark default; the client re-reads right after hydration.
   const mode = useSyncExternalStore<ThemeMode>(
@@ -54,8 +61,23 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-40 flex items-center justify-between gap-s-4 border-b border-border/60 bg-background/80 px-s-6 py-s-3 backdrop-blur">
-      <Link href="/" className="flex items-baseline gap-s-2">
+    <header
+      className={cn(
+        "sticky top-0 z-40 flex items-center justify-between gap-s-4 border-b px-s-6 py-s-3",
+        landing
+          ? "border-transparent"
+          : "border-border/60 bg-background/80 backdrop-blur",
+      )}
+    >
+      <Link href="/" className="flex items-center gap-s-2">
+        <Image
+          src="/icon.svg"
+          alt=""
+          width={28}
+          height={28}
+          unoptimized
+          className="size-7"
+        />
         <span className="font-heading text-v-title font-weight-v-semibold tracking-tight">
           TryMe
         </span>

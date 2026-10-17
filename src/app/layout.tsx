@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "TryMe — live virtual try-on",
   description:
     "Turn on your camera, pick a garment from Amazon, Flipkart or Myntra, and see it on you in real time.",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 const themeScript = `(function(){try{var m=localStorage.getItem("tryme-mode");if(m==="light"||m==="dark"){document.documentElement.dataset.mode=m}}catch(e){}})();`;

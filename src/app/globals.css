@@ -428,3 +428,47 @@
     scrollbar-color: auto;
   }
 }
+
+/* Landing: the hills at golden hour live in page space. Light mode opens on
+   the sky dissolving into the canvas, with the valley carrying the details
+   below the fold. Dark mode dims the whole frame into dusk — the landscape
+   stays faintly visible up top and surfaces as you scroll. */
+.landing-backdrop {
+  background-color: var(--background);
+  background-image:
+    linear-gradient(
+      to bottom,
+      var(--background) 0%,
+      var(--background) 18%,
+      color-mix(in oklab, var(--background) 0%, transparent) 32%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--background) 0%, transparent) 86%,
+      color-mix(in oklab, var(--background) 60%, transparent) 100%
+    ),
+    url("/bg-hills.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, cover;
+  background-position: top, bottom, top;
+}
+
+:root[data-mode="dark"] .landing-backdrop {
+  background-image:
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--background) 74%, transparent) 0%,
+      color-mix(in oklab, var(--background) 58%, transparent) 30%,
+      color-mix(in oklab, var(--background) 42%, transparent) 54%,
+      color-mix(in oklab, var(--background) 26%, transparent) 74%
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--background) 0%, transparent) 88%,
+      color-mix(in oklab, var(--background) 55%, transparent) 100%
+    ),
+    url("/bg-hills.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, cover;
+  background-position: top, bottom, top;
+}
