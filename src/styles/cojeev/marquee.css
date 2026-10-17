@@ -65,23 +65,28 @@
   overflow-wrap: anywhere;
 }
 [data-slot="marquee-copy"] { pointer-events: none; }
-[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-track"] {
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"]) [data-slot="marquee-track"] {
   transform:none;
   inline-size: 100%;
 }
 [data-slot="marquee"][data-motion="static"] [data-slot="marquee-stage"] { transform:none; }
 [data-slot="marquee"][data-motion="static"] [data-slot="marquee-viewport"] { mask-image:none; }
 [data-slot="marquee"][data-motion="static"] [data-slot="marquee-content"] > li { filter:none; opacity:1; }
-[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-content"] {
+/* Before hydration the strip paints in its moving layout: one clipped row.
+   The wrapped stacked fallback is kept for the explicit static states
+   (reduced motion, focused content) but never for `:not([data-ready])`, or
+   every reload flashes a tall stack of pills before the script takes over. */
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"]) [data-slot="marquee-content"] {
   flex-wrap: wrap;
   min-inline-size: 0;
   inline-size: 100%;
   padding: 0;
 }
-[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-content"] > li { max-inline-size: 100%; }
-[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-content"] > li > * { max-inline-size: 100%; }
-[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-viewport"] { overflow: visible; }
-[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"], :not([data-ready="true"])) [data-slot="marquee-copy"] { display: none; }
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"]) [data-slot="marquee-content"] > li { max-inline-size: 100%; }
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"]) [data-slot="marquee-content"] > li > * { max-inline-size: 100%; }
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"]) [data-slot="marquee-viewport"] { overflow: visible; }
+[data-slot="marquee"]:is([data-motion="static"], [data-content-focused="true"]) [data-slot="marquee-copy"] { display: none; }
+[data-slot="marquee"]:not([data-ready="true"]) [data-slot="marquee-copy"] { display: none; }
 @media (prefers-reduced-motion: reduce) {
   [data-slot="marquee"] [data-slot="marquee-track"] { transform:none; inline-size: 100%; }
   [data-slot="marquee"][data-presentation] [data-slot="marquee-stage"] { transform:none; }
