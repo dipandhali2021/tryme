@@ -1,19 +1,19 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Hero } from "@/components/landing/hero";
+import { HowItWorks } from "@/components/landing/how-it-works";
+import { StoreMarquee } from "@/components/landing/marquee";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-s-6 p-s-10 text-center">
-      <h1 className="max-w-3xl font-heading text-v-hero font-weight-v-semibold tracking-tight">
-        See it on you. Live.
-      </h1>
-      <p className="max-w-prose text-v-lead text-muted-foreground">
-        Pick a garment from Amazon, Flipkart or Myntra, turn on your camera, and
-        watch it land on you in real time.
-      </p>
-      <Button asChild size="lg">
-        <Link href="/studio">Open the studio</Link>
-      </Button>
+    <main className="flex flex-1 flex-col">
+      <Hero />
+      <StoreMarquee />
+      <HowItWorks />
+      <footer className="mt-auto border-t border-border">
+        <p className="mx-auto max-w-5xl px-s-6 py-s-6 text-center text-v-meta text-muted-foreground">
+          Powered by Decart Lucy VTON · Works best on tops &amp; dresses · Store
+          names are trademarks of their respective owners.
+        </p>
+      </footer>
     </main>
   );
 }
