@@ -1,0 +1,6 @@
+# Never upload local secrets or work artifacts to the deployment.
+.env*
+!.env.local.example
+.superpowers/
+.cache/
+bg.jpeg
