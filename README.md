@@ -15,6 +15,10 @@ cp .env.local.example .env.local   # then paste your DECART_API_KEY
 npm run dev
 ```
 
+Running out of credits? Add `DECART_API_KEY_2`, `DECART_API_KEY_3`, … (or a
+comma/space separated list in `DECART_API_KEYS`) — when a key is exhausted or
+rejected, `/api/realtime-token` falls through to the next one automatically.
+
 Open http://localhost:3000. Camera access needs a secure context: `localhost`
 counts, other hosts need HTTPS.
 
