@@ -9,17 +9,28 @@ import {
 
 export type DropZoneProps = {
   onSource: (source: ExternalImageSource) => void;
+  /**
+   * Text paste/drop that carried no image file. Return true when the text was
+   * claimed (e.g. a product link that starts an import); the URL also wins
+   * over the image-source path when claimed.
+   */
+  onLink?: (text: string) => boolean;
   children: React.ReactNode;
 };
 
 /**
  * Window-wide drop & paste capture. Shows a full-screen hint while a drag is
- * in flight and forwards the first usable image to `onSource`.
+ * in flight and forwards the first usable image (or link text) to its handler.
  */
-export function DropZone({ onSource, children }: DropZoneProps) {
+export function DropZone({ onSource, onLink, children }: DropZoneProps) {
   const [dragging, setDragging] = useState(false);
   const onSourceRef = useRef(onSource);
-  onSourceRef.current = onSource;
+  const onLinkRef = useRef(onLink);
+
+  useEffect(() => {
+    onSourceRef.current = onSource;
+    onLinkRef.current = onLink;
+  }, [onSource, onLink]);
 
   useEffect(() => {
     let depth = 0;
@@ -62,14 +73,38 @@ export function DropZone({ onSource, children }: DropZoneProps) {
       const data = event.dataTransfer;
       if (!data) return;
       const source = extractImageSource(data);
-      if (source) onSourceRef.current(source);
+      if (source) {
+        // A product link the host claims beats the generic URL-as-image path.
+        if (source.kind === "url" && onLinkRef.current?.(source.url)) return;
+        onSourceRef.current(source);
+        return;
+      }
+      const text = (
+        data.getData("text/uri-list") || data.getData("text/plain")
+      ).trim();
+      if (text) onLinkRef.current?.(text);
     };
 
     const onPaste = (event: ClipboardEvent) => {
+      // An input may have already claimed this paste (e.g. the link box).
+      if (event.defaultPrevented) return;
       const data = event.clipboardData;
       if (!data) return;
       const source = extractImageSource(data);
-      if (source) onSourceRef.current(source);
+      if (source) {
+        if (source.kind === "url" && onLinkRef.current?.(source.url)) return;
+        onSourceRef.current(source);
+        return;
+      }
+      const target = event.target;
+      if (
+        target instanceof HTMLElement &&
+        target.closest("input, textarea, [contenteditable='true']")
+      ) {
+        return;
+      }
+      const text = data.getData("text/plain").trim();
+      if (text) onLinkRef.current?.(text);
     };
 
     window.addEventListener("dragenter", onDragEnter);
@@ -97,7 +132,7 @@ export function DropZone({ onSource, children }: DropZoneProps) {
               Drop it. It&apos;s yours in 20 seconds.
             </p>
             <p className="text-v-small opacity-80">
-              An image from any tab — or straight from your device.
+              An image or a product link from any tab — or from your device.
             </p>
           </div>
         </div>

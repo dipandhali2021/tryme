@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { HeroButton } from "@/components/ui/hero-button";
 import { Spinner } from "@/components/ui/spinner";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Countdown } from "@/components/studio/countdown";
 import { RecapCard } from "@/components/studio/recap-card";
 import type { SessionState } from "@/lib/session/machine";
@@ -232,28 +233,18 @@ export function CameraStage({
           </div>
 
           {videoVisible && (
-            <div
-              role="group"
+            <ToggleGroup
+              type="single"
+              value={fit}
+              onValueChange={(next) => {
+                if (next === "fill" || next === "fit") chooseFit(next);
+              }}
               aria-label="Camera framing"
-              className="pointer-events-auto flex shrink-0 items-center gap-1 rounded-full border border-white/20 bg-black/45 p-0.5 text-v-caps text-white backdrop-blur"
+              className="v-seg pointer-events-auto shrink-0"
             >
-              {(["fill", "fit"] as const).map((mode) => (
-                <button
-                  key={mode}
-                  type="button"
-                  aria-pressed={fit === mode}
-                  onClick={() => chooseFit(mode)}
-                  className={cn(
-                    "rounded-full px-s-3 py-1 font-weight-v-medium transition-colors",
-                    fit === mode
-                      ? "bg-white/90 text-black"
-                      : "text-white/75 hover:text-white",
-                  )}
-                >
-                  {mode === "fill" ? "Fill" : "Fit"}
-                </button>
-              ))}
-            </div>
+              <ToggleGroupItem value="fill">Fill</ToggleGroupItem>
+              <ToggleGroupItem value="fit">Fit</ToggleGroupItem>
+            </ToggleGroup>
           )}
         </div>
       )}

@@ -17,6 +17,7 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Spinner } from "@/components/ui/spinner";
 import {
   Toast,
   ToastDescription,
@@ -28,7 +29,8 @@ import { DropZone } from "@/components/studio/drop-zone";
 import { FilterBar } from "@/components/studio/filter-bar";
 import { ProductCard } from "@/components/studio/product-card";
 import { StoreTabs } from "@/components/studio/store-tabs";
-import { fetchSearch } from "@/lib/api";
+import { fetchSearch, importProductLink } from "@/lib/api";
+import { formatINR } from "@/lib/format";
 import {
   DEFAULT_FILTERS,
   applyFilters,
@@ -36,11 +38,21 @@ import {
   deriveColors,
   type Filters,
 } from "@/lib/stores/filter";
+import {
+  looksLikeStoreLink,
+  type ImportedGarment,
+} from "@/lib/stores/link-url";
 import type { SearchResponse } from "@/lib/stores/search";
 import type { Product, StoreId } from "@/lib/stores/types";
 import type { ExternalImageSource } from "@/lib/studio/external";
 
 const SUGGESTIONS = ["shirt", "jeans", "dress", "sneakers"];
+
+const STORE_LABEL: Record<StoreId, string> = {
+  amazon: "Amazon",
+  flipkart: "Flipkart",
+  myntra: "Myntra",
+};
 
 export type StorePanelProps = {
   onTryOn: (imageUrl: string) => void;
@@ -128,9 +140,15 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
   } | null>(null);
   const [errorKey, setErrorKey] = useState<string | null>(null);
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
-  const [toast, setToast] = useState<string | null>(null);
+  const [toast, setToast] = useState<{
+    title: string;
+    message: string;
+  } | null>(null);
   const [pinned, setPinned] = useState<PinnedGarment | null>(null);
+  const [importing, setImporting] = useState(false);
+  const [imported, setImported] = useState<ImportedGarment | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const importingRef = useRef(false);
 
   /** A dropped/pasted/uploaded garment becomes a pinned card + Try it on. */
   const pinSource = useCallback((source: ExternalImageSource) => {
@@ -148,6 +166,29 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
         previewUrl: `/api/proxy-image?url=${encodeURIComponent(source.url)}`,
       });
     }
+  }, []);
+
+  /** Turn a product link into a garment card. Importing itself is free. */
+  const runImport = useCallback((text: string) => {
+    if (importingRef.current) return;
+    importingRef.current = true;
+    setImporting(true);
+    importProductLink(text)
+      .then((garment) => {
+        setImported(garment);
+        setInput("");
+      })
+      .catch((err: unknown) => {
+        setToast({
+          title: "Link trouble",
+          message:
+            err instanceof Error ? err.message : "Couldn't read that link.",
+        });
+      })
+      .finally(() => {
+        importingRef.current = false;
+        setImporting(false);
+      });
   }, []);
 
   // The identity of the search currently being asked for.
@@ -171,12 +212,15 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
         setErrorKey(null);
         setResult({ key, response: res });
         setFilters((current) => ({ ...current, colors: [], brands: [] }));
-        if (res.error) setToast(res.error);
+        if (res.error) setToast({ title: "Search trouble", message: res.error });
       })
       .catch((err: unknown) => {
         if (cancelled) return;
         setErrorKey(key);
-        setToast(err instanceof Error ? err.message : "Search failed");
+        setToast({
+          title: "Search trouble",
+          message: err instanceof Error ? err.message : "Search failed",
+        });
       });
     return () => {
       cancelled = true;
@@ -186,6 +230,10 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
   const submit = (value?: string) => {
     const next = (value ?? input).trim();
     if (!next) return;
+    if (looksLikeStoreLink(next)) {
+      runImport(next);
+      return;
+    }
     setInput(next);
     setQuery(next);
     setNonce((n) => n + 1);
@@ -203,7 +251,14 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
   const hasSearched = query !== null;
 
   return (
-    <DropZone onSource={pinSource}>
+    <DropZone
+      onSource={pinSource}
+      onLink={(text) => {
+        if (!looksLikeStoreLink(text)) return false;
+        runImport(text);
+        return true;
+      }}
+    >
       <section className="flex min-h-0 flex-col bg-v-canvas">
         <div className="flex flex-col gap-s-3 border-b border-border p-s-4">
           <StoreTabs value={store} onValueChange={setStore} />
@@ -221,12 +276,31 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
               <InputGroupInput
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
-                placeholder="Search shirts, jeans, kurtas…"
-                aria-label="Search garments"
+                onPaste={(event) => {
+                  const text = event.clipboardData.getData("text/plain");
+                  if (looksLikeStoreLink(text)) {
+                    event.preventDefault();
+                    runImport(text);
+                  }
+                }}
+                placeholder="Search shirts, jeans… or paste a product link"
+                aria-label="Search garments or paste a product link"
               />
             </InputGroup>
-            <Button type="submit" variant="secondary">
-              Search
+            <Button
+              type="submit"
+              variant="secondary"
+              disabled={importing}
+              aria-busy={importing}
+            >
+              {importing ? (
+                <>
+                  <Spinner className="size-4" aria-hidden />
+                  Importing…
+                </>
+              ) : (
+                "Search"
+              )}
             </Button>
             <input
               ref={fileInputRef}
@@ -263,6 +337,36 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
             theme-aware, with no frame paint to glitch against the header. */}
         <div className="scroll-slim min-h-0 flex-1 overflow-y-auto">
           <div className="p-s-4">
+              {imported ? (
+                <div className="mb-s-3 flex items-center gap-s-3 rounded-2xl border border-border bg-v-paper p-s-2 pr-s-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`/api/proxy-image?url=${encodeURIComponent(imported.imageUrl)}`}
+                    alt="Imported garment"
+                    className="h-20 w-16 shrink-0 rounded-xl object-cover"
+                  />
+                  <div className="min-w-0 flex-1">
+                    <Badge variant="pink-soft">
+                      {STORE_LABEL[imported.store]} link
+                    </Badge>
+                    <p className="mt-s-1 truncate text-v-small text-muted-foreground">
+                      {imported.title}
+                      {imported.price ? ` · ${formatINR(imported.price)}` : ""}
+                    </p>
+                  </div>
+                  <Button size="sm" onClick={() => onTryOn(imported.imageUrl)}>
+                    Try on
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    aria-label="Remove imported garment"
+                    onClick={() => setImported(null)}
+                  >
+                    <X className="size-4" aria-hidden />
+                  </Button>
+                </div>
+              ) : null}
               {pinned ? (
                 <div className="mb-s-3 flex items-center gap-s-3 rounded-2xl border border-border bg-v-paper p-s-2 pr-s-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -325,8 +429,8 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
               if (!open) setToast(null);
             }}
           >
-            <ToastTitle>Search trouble</ToastTitle>
-            <ToastDescription>{toast ?? ""}</ToastDescription>
+            <ToastTitle>{toast?.title ?? ""}</ToastTitle>
+            <ToastDescription>{toast?.message ?? ""}</ToastDescription>
           </Toast>
           <ToastViewport />
         </ToastProvider>
