@@ -17,7 +17,8 @@ export async function createClientToken(
   const token = await client.tokens.create({
     expiresIn: 300,
     allowedModels: ["lucy-vton-3.6"],
-    allowedOrigins: origin ? [origin] : [],
+    // Decart rejects an empty allowedOrigins array — omit it when unknown.
+    ...(origin ? { allowedOrigins: [origin] } : {}),
   });
 
   return {

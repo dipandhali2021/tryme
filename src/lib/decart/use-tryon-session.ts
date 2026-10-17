@@ -18,11 +18,35 @@ export type UseTryOnSession = {
   remoteStream: MediaStream | null;
   enableCamera: () => Promise<void>;
   disableCamera: () => void;
-  tryGarment: (imageUrl: string) => void;
+  tryGarment: (source: GarmentSource) => void;
   tryAgain: () => void;
   dismissRecap: () => void;
   notifyRemoteFrame: () => void;
 };
+
+/** A garment to try on: a remote image URL, or a local file/URL from drag & drop. */
+export type GarmentSource = string | { file: File } | { url: string };
+
+/**
+ * Normalize any garment source to a string the session can hold on to and
+ * re-fetch later (Try again). Local files become object URLs — kept alive on
+ * purpose so retrying a device photo can reuse its bytes.
+ */
+function sourceToUrl(source: GarmentSource): string {
+  if (typeof source === "string") return source;
+  if ("file" in source) return URL.createObjectURL(source.file);
+  return source.url;
+}
+
+/** Fetch garment bytes: object URLs directly, remote URLs via our proxy. */
+async function fetchGarmentBlob(url: string): Promise<Blob> {
+  const target = url.startsWith("blob:")
+    ? url
+    : `/api/proxy-image?url=${encodeURIComponent(url)}`;
+  const res = await fetch(target);
+  if (!res.ok) throw new Error("Could not load that garment image.");
+  return await res.blob();
+}
 
 // Matches the lucy-vton-latest model definition (1280×720, 30fps ideal).
 const CAMERA_CONSTRAINTS: MediaStreamConstraints = {
@@ -87,17 +111,13 @@ export function useTryOnSession(): UseTryOnSession {
     return apiRef.current;
   }, []);
 
-  /** Fetch a garment image through our proxy and upload it to Decart once. */
+  /** Fetch a garment image (proxy for URLs, direct for object URLs) and upload it to Decart once. */
   const ensureFileId = useCallback(
     async (imageUrl: string): Promise<string> => {
       const cache = fileIdsRef.current;
       const hit = cache.get(imageUrl);
       if (hit) return hit;
-      const res = await fetch(
-        `/api/proxy-image?url=${encodeURIComponent(imageUrl)}`,
-      );
-      if (!res.ok) throw new Error("Could not load that garment image.");
-      const blob = await res.blob();
+      const blob = await fetchGarmentBlob(imageUrl);
       const { client } = await getApi();
       const ref = await client.files.upload(blob, { ttlSeconds: 3600 });
       cache.set(imageUrl, ref.id);
@@ -195,7 +215,9 @@ export function useTryOnSession(): UseTryOnSession {
   }, [clearSession]);
 
   const tryGarment = useCallback(
-    (imageUrl: string) => {
+    (source: GarmentSource) => {
+      // Normalize files/URLs to a stable string first (see sourceToUrl).
+      const imageUrl = sourceToUrl(source);
       const phase = stateRef.current.phase;
       pendingGarmentRef.current = imageUrl;
       dispatch({ type: "GARMENT_SELECTED", imageUrl });

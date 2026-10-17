@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { ExternalLink, Search } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ExternalLink, Search, Upload, X } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Empty, EmptyDescription, EmptyTitle } from "@/components/ui/empty";
 import {
@@ -18,6 +19,7 @@ import {
   ToastTitle,
   ToastViewport,
 } from "@/components/ui/toast";
+import { DropZone } from "@/components/studio/drop-zone";
 import { FilterBar } from "@/components/studio/filter-bar";
 import { ProductCard } from "@/components/studio/product-card";
 import { StoreTabs } from "@/components/studio/store-tabs";
@@ -31,11 +33,20 @@ import {
 } from "@/lib/stores/filter";
 import type { SearchResponse } from "@/lib/stores/search";
 import type { Product, StoreId } from "@/lib/stores/types";
+import type { ExternalImageSource } from "@/lib/studio/external";
 
 const SUGGESTIONS = ["shirt", "jeans", "dress", "sneakers"];
 
 export type StorePanelProps = {
   onTryOn: (imageUrl: string) => void;
+};
+
+type PinnedGarment = {
+  label: string;
+  /** What the try-on session receives (object URL or remote URL). */
+  imageUrl: string;
+  /** What the thumbnail renders. */
+  previewUrl: string;
 };
 
 function AmazonFallback({ url }: { url: string | undefined }) {
@@ -110,6 +121,26 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
   const [loading, setLoading] = useState(false);
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [toast, setToast] = useState<string | null>(null);
+  const [pinned, setPinned] = useState<PinnedGarment | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  /** A dropped/pasted/uploaded garment becomes a pinned card + Try it on. */
+  const pinSource = useCallback((source: ExternalImageSource) => {
+    if (source.kind === "file") {
+      const objectUrl = URL.createObjectURL(source.file);
+      setPinned({
+        label: "From your device",
+        imageUrl: objectUrl,
+        previewUrl: objectUrl,
+      });
+    } else {
+      setPinned({
+        label: "From the web",
+        imageUrl: source.url,
+        previewUrl: `/api/proxy-image?url=${encodeURIComponent(source.url)}`,
+      });
+    }
+  }, []);
 
   useEffect(() => {
     if (!query) return;
@@ -154,85 +185,134 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
   const hasSearched = query !== null;
 
   return (
-    <section className="flex min-h-0 flex-col bg-v-canvas">
-      <div className="flex flex-col gap-s-3 border-b border-border p-s-4">
-        <StoreTabs value={store} onValueChange={setStore} />
-        <form
-          className="flex gap-s-2"
-          onSubmit={(event) => {
-            event.preventDefault();
-            submit();
-          }}
-        >
-          <InputGroup className="flex-1">
-            <InputGroupAddon>
-              <Search className="size-4" aria-hidden />
-            </InputGroupAddon>
-            <InputGroupInput
-              value={input}
-              onChange={(event) => setInput(event.target.value)}
-              placeholder="Search shirts, jeans, kurtas…"
-              aria-label="Search garments"
+    <DropZone onSource={pinSource}>
+      <section className="flex min-h-0 flex-col bg-v-canvas">
+        <div className="flex flex-col gap-s-3 border-b border-border p-s-4">
+          <StoreTabs value={store} onValueChange={setStore} />
+          <form
+            className="flex gap-s-2"
+            onSubmit={(event) => {
+              event.preventDefault();
+              submit();
+            }}
+          >
+            <InputGroup className="flex-1">
+              <InputGroupAddon>
+                <Search className="size-4" aria-hidden />
+              </InputGroupAddon>
+              <InputGroupInput
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
+                placeholder="Search shirts, jeans, kurtas…"
+                aria-label="Search garments"
+              />
+            </InputGroup>
+            <Button type="submit" variant="secondary">
+              Search
+            </Button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                if (file) pinSource({ kind: "file", file });
+                event.target.value = "";
+              }}
             />
-          </InputGroup>
-          <Button type="submit" variant="secondary">
-            Search
-          </Button>
-        </form>
-        {hasSearched && !blocked ? (
-          <FilterBar
-            filters={filters}
-            onChange={setFilters}
-            brands={brands}
-            colors={colors}
-          />
-        ) : null}
-      </div>
-
-      <div className="min-h-0 flex-1">
-        <ScrollArea className="h-full">
-          <div className="p-s-4">
-            {loading ? (
-              <SkeletonGrid />
-            ) : blocked ? (
-              <AmazonFallback url={response?.fallbackSearchUrl} />
-            ) : !hasSearched ? (
-              <StartState onPick={submit} />
-            ) : visible.length === 0 ? (
-              <Empty>
-                <EmptyTitle>No matches</EmptyTitle>
-                <EmptyDescription>
-                  Try a different search, or loosen the filters up top.
-                </EmptyDescription>
-              </Empty>
-            ) : (
-              <div className="grid grid-cols-2 gap-s-3 xl:grid-cols-3">
-                {visible.map((product: Product) => (
-                  <ProductCard
-                    key={`${product.store}:${product.id}`}
-                    product={product}
-                    onTryOn={(picked) => onTryOn(picked.imageUrl)}
+            <Button
+              type="button"
+              variant="outline"
+              aria-label="Upload a garment photo"
+              onClick={() => fileInputRef.current?.click()}
+            >
+              <Upload className="size-4" aria-hidden />
+              Upload
+            </Button>
+          </form>
+          {hasSearched && !blocked ? (
+            <FilterBar
+              filters={filters}
+              onChange={setFilters}
+              brands={brands}
+              colors={colors}
+            />
+          ) : null}
+        </div>
+  
+        <div className="min-h-0 flex-1">
+          <ScrollArea className="h-full">
+            <div className="p-s-4">
+              {pinned ? (
+                <div className="mb-s-3 flex items-center gap-s-3 rounded-2xl border border-border bg-v-paper p-s-2 pr-s-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={pinned.previewUrl}
+                    alt="Pinned garment"
+                    className="h-20 w-16 rounded-xl object-cover"
                   />
-                ))}
-              </div>
-            )}
-          </div>
-        </ScrollArea>
-      </div>
-
-      <ToastProvider>
-        <Toast
-          variant="danger"
-          open={toast !== null}
-          onOpenChange={(open) => {
-            if (!open) setToast(null);
-          }}
-        >
-          <ToastTitle>Search trouble</ToastTitle>
-          <ToastDescription>{toast ?? ""}</ToastDescription>
-        </Toast>
-        <ToastViewport />
-      </ToastProvider>
-    </section>
+                  <div className="min-w-0 flex-1">
+                    <Badge variant="pink-soft">{pinned.label}</Badge>
+                    <p className="mt-s-1 truncate text-v-small text-muted-foreground">
+                      Yours whenever you are — it stays pinned for another round.
+                    </p>
+                  </div>
+                  <Button size="sm" onClick={() => onTryOn(pinned.imageUrl)}>
+                    Try it on
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    aria-label="Remove pinned garment"
+                    onClick={() => setPinned(null)}
+                  >
+                    <X className="size-4" aria-hidden />
+                  </Button>
+                </div>
+              ) : null}
+              {loading ? (
+                <SkeletonGrid />
+              ) : blocked ? (
+                <AmazonFallback url={response?.fallbackSearchUrl} />
+              ) : !hasSearched ? (
+                <StartState onPick={submit} />
+              ) : visible.length === 0 ? (
+                <Empty>
+                  <EmptyTitle>No matches</EmptyTitle>
+                  <EmptyDescription>
+                    Try a different search, or loosen the filters up top.
+                  </EmptyDescription>
+                </Empty>
+              ) : (
+                <div className="grid grid-cols-2 gap-s-3 xl:grid-cols-3">
+                  {visible.map((product: Product) => (
+                    <ProductCard
+                      key={`${product.store}:${product.id}`}
+                      product={product}
+                      onTryOn={(picked) => onTryOn(picked.imageUrl)}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </ScrollArea>
+        </div>
+  
+        <ToastProvider>
+          <Toast
+            variant="danger"
+            open={toast !== null}
+            onOpenChange={(open) => {
+              if (!open) setToast(null);
+            }}
+          >
+            <ToastTitle>Search trouble</ToastTitle>
+            <ToastDescription>{toast ?? ""}</ToastDescription>
+          </Toast>
+          <ToastViewport />
+        </ToastProvider>
+      </section>
+    </DropZone>
   );
 }

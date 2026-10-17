@@ -6,9 +6,13 @@ export async function POST(request: Request): Promise<Response> {
     const token = await createClientToken(origin);
     return Response.json(token);
   } catch (err) {
-    return Response.json(
-      { error: err instanceof Error ? err.message : "token mint failed" },
-      { status: 500 },
-    );
+    console.error("[realtime-token] failed:", err);
+    const message =
+      err instanceof Error
+        ? err.message
+        : typeof err === "string"
+          ? err
+          : "token mint failed";
+    return Response.json({ error: message }, { status: 500 });
   }
 }

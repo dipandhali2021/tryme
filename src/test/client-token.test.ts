@@ -31,7 +31,7 @@ describe("createClientToken", () => {
     expect(token.expiresAt).toBe(Date.parse("2026-10-16T12:00:00.000Z"));
   });
 
-  it("passes no origins when none is provided", async () => {
+  it("omits origins entirely when none is provided (API rejects empty arrays)", async () => {
     vi.stubEnv("DECART_API_KEY", "sk-test");
     tokensCreate.mockResolvedValue({
       apiKey: "ek_123",
@@ -39,9 +39,8 @@ describe("createClientToken", () => {
     });
 
     await createClientToken();
-    expect(tokensCreate).toHaveBeenCalledWith(
-      expect.objectContaining({ allowedOrigins: [] }),
-    );
+    const payload = tokensCreate.mock.calls[0][0] as Record<string, unknown>;
+    expect(payload).not.toHaveProperty("allowedOrigins");
   });
 
   it("rejects without the api key", async () => {
