@@ -9,7 +9,7 @@ export default function StudioPage() {
   const session = useTryOnSession();
 
   return (
-    <main className="grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-2">
+    <main className="studio-shell grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-2 lg:grid-rows-1 lg:overflow-hidden">
       <CameraStage
         state={session.state}
         localStream={session.localStream}

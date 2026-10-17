@@ -408,3 +408,23 @@
 }
 
   @custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+/* The studio is an app-shell: at lg the page pins to the viewport so both
+   halves fill it and the results feed scrolls internally. Below lg the panes
+   stack and the page keeps its natural scroll. */
+@media (min-width: 1024px) {
+  body:has(.studio-shell) {
+    height: 100dvh;
+    overflow: hidden;
+  }
+}
+
+/* Chrome 121+ lets the standardized scrollbar-* properties suppress the
+   ::-webkit-scrollbar paint (and adds platform arrow caps). Managed scrollers
+   opt back into the slim painted bar; Firefox keeps thin + themed. */
+@supports selector(::-webkit-scrollbar) {
+  .scroll-slim {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+}

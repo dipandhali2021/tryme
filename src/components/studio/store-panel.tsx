@@ -6,7 +6,6 @@ import {
   useMemo,
   useRef,
   useState,
-  type CSSProperties,
 } from "react";
 import { ExternalLink, Search, Upload, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -17,7 +16,6 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   Toast,
@@ -261,19 +259,10 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
           ) : null}
         </div>
   
-        <div className="min-h-0 flex-1">
-          <ScrollArea
-            className="h-full"
-            style={
-              {
-                // .v-scroll caps itself at var(--h) — give it a definite
-                // viewport-derived cap so the results box never blows up the
-                // layout (and shrinks when content is short).
-                "--h": "calc(100dvh - 360px)",
-              } as CSSProperties
-            }
-          >
-            <div className="p-s-4">
+        {/* Native scroll area: the cojeev scrollbar policy styles it slim and
+            theme-aware, with no frame paint to glitch against the header. */}
+        <div className="scroll-slim min-h-0 flex-1 overflow-y-auto">
+          <div className="p-s-4">
               {pinned ? (
                 <div className="mb-s-3 flex items-center gap-s-3 rounded-2xl border border-border bg-v-paper p-s-2 pr-s-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -326,7 +315,6 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
                 </div>
               )}
             </div>
-          </ScrollArea>
         </div>
   
         <ToastProvider>

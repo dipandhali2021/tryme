@@ -29,8 +29,8 @@ export function RecapCard({ url, onTryAgain, onAddAnother }: RecapCardProps) {
   }, [url]);
 
   return (
-    <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/55 p-s-5 backdrop-blur-sm">
-      <div className="flex w-full max-w-md flex-col gap-s-3 rounded-3xl bg-background/95 p-s-4 text-foreground shadow-2xl">
+    <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/55 p-s-5 backdrop-blur-sm">
+      <div className="flex w-full max-w-lg flex-col gap-s-3 rounded-3xl bg-background/95 p-s-4 text-foreground shadow-2xl">
         <video
           ref={videoRef}
           controls

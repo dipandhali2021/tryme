@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ScrollbarProvider } from "@/components/ui/scroll-area";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
@@ -22,8 +23,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="flex min-h-full flex-col">
-        <SiteHeader />
-        {children}
+        <ScrollbarProvider>
+          <SiteHeader />
+          {children}
+        </ScrollbarProvider>
       </body>
     </html>
   );

@@ -13,7 +13,11 @@ export type ProductCardProps = {
   onTryOn: (product: Product) => void;
 };
 
-/** Presentational product tile: image (proxied), price row, and a Try on CTA. */
+/**
+ * Presentational product tile: a fixed-ratio image (proxied), then a content
+ * column that stretches so price + Try on pin to the bottom — every card in a
+ * row shares the same image box and button line.
+ */
 export function ProductCard({ product, onTryOn }: ProductCardProps) {
   const [failed, setFailed] = useState(false);
   const src = `/api/proxy-image?url=${encodeURIComponent(product.imageUrl)}`;
@@ -21,11 +25,8 @@ export function ProductCard({ product, onTryOn }: ProductCardProps) {
     typeof product.mrp === "number" && product.mrp > product.price;
 
   return (
-    <Card
-      appearance="collection"
-      className="flex flex-col overflow-hidden"
-    >
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-v-beige">
+    <Card className="flex flex-col border border-border p-0">
+      <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden bg-v-beige">
         {failed ? (
           <div className="flex h-full items-center justify-center p-s-3 text-center text-v-small text-muted-foreground">
             Image unavailable
