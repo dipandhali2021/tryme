@@ -4,6 +4,8 @@ Live virtual try-on. Turn on your camera, pick a garment scraped from
 Amazon / Flipkart / Myntra, and see it on you in real time via
 [Decart Lucy VTON](https://decart.ai).
 
+**Live demo:** <https://tryme-rust.vercel.app>
+
 - **Landing** (`/`) — what it is, how it works.
 - **Studio** (`/studio`) — camera on the left, live garments on the right.
 
