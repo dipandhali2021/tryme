@@ -5,3 +5,8 @@ export function formatClock(seconds: number): string {
   const rest = total % 60;
   return `${minutes}:${String(rest).padStart(2, "0")}`;
 }
+
+/** Format whole rupees with Indian digit grouping: 119999 → "₹1,19,999". */
+export function formatINR(rupees: number): string {
+  return `₹${Math.round(rupees).toLocaleString("en-IN")}`;
+}

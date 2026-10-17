@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatClock } from "@/lib/format";
+import { formatINR, formatClock } from "@/lib/format";
 
 describe("formatClock", () => {
   it.each([
@@ -14,5 +14,13 @@ describe("formatClock", () => {
 
   it("clamps negatives to zero", () => {
     expect(formatClock(-3)).toBe("0:00");
+  });
+});
+
+describe("formatINR", () => {
+  it("formats with Indian digit grouping", () => {
+    expect(formatINR(1199)).toBe("₹1,199");
+    expect(formatINR(119999)).toBe("₹1,19,999");
+    expect(formatINR(0)).toBe("₹0");
   });
 });

@@ -1,0 +1,238 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { ExternalLink, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Empty, EmptyDescription, EmptyTitle } from "@/components/ui/empty";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Toast,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from "@/components/ui/toast";
+import { FilterBar } from "@/components/studio/filter-bar";
+import { ProductCard } from "@/components/studio/product-card";
+import { StoreTabs } from "@/components/studio/store-tabs";
+import { fetchSearch } from "@/lib/api";
+import {
+  DEFAULT_FILTERS,
+  applyFilters,
+  deriveBrands,
+  deriveColors,
+  type Filters,
+} from "@/lib/stores/filter";
+import type { SearchResponse } from "@/lib/stores/search";
+import type { Product, StoreId } from "@/lib/stores/types";
+
+const SUGGESTIONS = ["shirt", "jeans", "dress", "sneakers"];
+
+export type StorePanelProps = {
+  onTryOn: (imageUrl: string) => void;
+};
+
+function AmazonFallback({ url }: { url: string | undefined }) {
+  return (
+    <div className="mx-auto max-w-md rounded-2xl border border-border bg-v-paper p-s-5 text-center">
+      <p className="text-v-title font-weight-v-semibold">
+        Amazon blocks live search
+      </p>
+      <p className="mt-s-1 text-v-small text-muted-foreground">
+        Amazon does not allow server-side scraping, so TryMe opens it in a new
+        tab instead. Drag any product image from that tab onto this panel to
+        try it on.
+      </p>
+      {url ? (
+        <Button asChild className="mt-s-4">
+          <a href={url} target="_blank" rel="noreferrer">
+            Open Amazon search
+            <ExternalLink className="ml-s-1 size-4" aria-hidden />
+          </a>
+        </Button>
+      ) : null}
+    </div>
+  );
+}
+
+function StartState({ onPick }: { onPick: (query: string) => void }) {
+  return (
+    <div className="flex flex-col items-center gap-s-2 py-s-10 text-center">
+      <p className="text-v-title font-weight-v-semibold">
+        Find something to wear
+      </p>
+      <p className="max-w-sm text-v-small text-muted-foreground">
+        Search Flipkart or Myntra, hit Try on, and watch it land on you. 20
+        seconds per try.
+      </p>
+      <div className="flex flex-wrap justify-center gap-s-2 pt-s-3">
+        {SUGGESTIONS.map((suggestion) => (
+          <Button
+            key={suggestion}
+            variant="outline"
+            size="sm"
+            onClick={() => onPick(suggestion)}
+          >
+            {suggestion}
+          </Button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SkeletonGrid() {
+  return (
+    <div className="grid grid-cols-2 gap-s-3 xl:grid-cols-3">
+      {Array.from({ length: 6 }, (_, index) => (
+        <Skeleton key={index} className="aspect-[3/4] rounded-2xl" />
+      ))}
+    </div>
+  );
+}
+
+/**
+ * Right half of the studio: store tabs, search, filters, and the live
+ * product grid. Each Try on hands the garment image to the try-on session.
+ */
+export function StorePanel({ onTryOn }: StorePanelProps) {
+  const [store, setStore] = useState<StoreId>("flipkart");
+  const [input, setInput] = useState("");
+  const [query, setQuery] = useState<string | null>(null);
+  const [nonce, setNonce] = useState(0);
+  const [response, setResponse] = useState<SearchResponse | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
+  const [toast, setToast] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!query) return;
+    let cancelled = false;
+    setLoading(true);
+    fetchSearch(store, query)
+      .then((res) => {
+        if (cancelled) return;
+        setResponse(res);
+        setFilters((current) => ({ ...current, colors: [], brands: [] }));
+        if (res.error) setToast(res.error);
+      })
+      .catch((err: unknown) => {
+        if (cancelled) return;
+        setToast(err instanceof Error ? err.message : "Search failed");
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [store, query, nonce]);
+
+  const submit = (value?: string) => {
+    const next = (value ?? input).trim();
+    if (!next) return;
+    setInput(next);
+    setQuery(next);
+    setNonce((n) => n + 1);
+  };
+
+  const products = useMemo(() => response?.products ?? [], [response]);
+  const visible = useMemo(
+    () => applyFilters(products, filters),
+    [products, filters],
+  );
+  const brands = useMemo(() => deriveBrands(products), [products]);
+  const colors = useMemo(() => deriveColors(products), [products]);
+
+  const blocked = Boolean(response?.blocked);
+  const hasSearched = query !== null;
+
+  return (
+    <section className="flex min-h-0 flex-col bg-v-canvas">
+      <div className="flex flex-col gap-s-3 border-b border-border p-s-4">
+        <StoreTabs value={store} onValueChange={setStore} />
+        <form
+          className="flex gap-s-2"
+          onSubmit={(event) => {
+            event.preventDefault();
+            submit();
+          }}
+        >
+          <InputGroup className="flex-1">
+            <InputGroupAddon>
+              <Search className="size-4" aria-hidden />
+            </InputGroupAddon>
+            <InputGroupInput
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+              placeholder="Search shirts, jeans, kurtas…"
+              aria-label="Search garments"
+            />
+          </InputGroup>
+          <Button type="submit" variant="secondary">
+            Search
+          </Button>
+        </form>
+        {hasSearched && !blocked ? (
+          <FilterBar
+            filters={filters}
+            onChange={setFilters}
+            brands={brands}
+            colors={colors}
+          />
+        ) : null}
+      </div>
+
+      <div className="min-h-0 flex-1">
+        <ScrollArea className="h-full">
+          <div className="p-s-4">
+            {loading ? (
+              <SkeletonGrid />
+            ) : blocked ? (
+              <AmazonFallback url={response?.fallbackSearchUrl} />
+            ) : !hasSearched ? (
+              <StartState onPick={submit} />
+            ) : visible.length === 0 ? (
+              <Empty>
+                <EmptyTitle>No matches</EmptyTitle>
+                <EmptyDescription>
+                  Try a different search, or loosen the filters up top.
+                </EmptyDescription>
+              </Empty>
+            ) : (
+              <div className="grid grid-cols-2 gap-s-3 xl:grid-cols-3">
+                {visible.map((product: Product) => (
+                  <ProductCard
+                    key={`${product.store}:${product.id}`}
+                    product={product}
+                    onTryOn={(picked) => onTryOn(picked.imageUrl)}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </ScrollArea>
+      </div>
+
+      <ToastProvider>
+        <Toast
+          variant="danger"
+          open={toast !== null}
+          onOpenChange={(open) => {
+            if (!open) setToast(null);
+          }}
+        >
+          <ToastTitle>Search trouble</ToastTitle>
+          <ToastDescription>{toast ?? ""}</ToastDescription>
+        </Toast>
+        <ToastViewport />
+      </ToastProvider>
+    </section>
+  );
+}
