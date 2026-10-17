@@ -7,7 +7,15 @@ export default function Home() {
     <main className="relative flex flex-1 flex-col">
       <div
         aria-hidden
-        className="landing-backdrop absolute -top-[69px] bottom-0 left-0 right-0 z-0"
+        className="landing-canvas absolute -top-[69px] bottom-0 left-0 right-0 z-0"
+      />
+      <div
+        aria-hidden
+        className="landing-hills absolute -top-[69px] left-0 right-0 z-0"
+      />
+      <div
+        aria-hidden
+        className="landing-veils absolute -top-[69px] bottom-0 left-0 right-0 z-0"
       />
       <div className="relative z-10 flex flex-1 flex-col">
         <section className="flex min-h-[calc(100svh-69px)] flex-col">

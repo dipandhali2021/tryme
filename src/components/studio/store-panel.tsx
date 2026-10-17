@@ -263,13 +263,13 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
         <div className="flex flex-col gap-s-3 border-b border-border p-s-4">
           <StoreTabs value={store} onValueChange={setStore} />
           <form
-            className="flex gap-s-2"
+            className="flex flex-wrap gap-s-2 sm:flex-nowrap"
             onSubmit={(event) => {
               event.preventDefault();
               submit();
             }}
           >
-            <InputGroup className="flex-1">
+            <InputGroup className="w-full min-w-0 sm:w-auto sm:flex-1">
               <InputGroupAddon>
                 <Search className="size-4" aria-hidden />
               </InputGroupAddon>
@@ -292,6 +292,7 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
               variant="secondary"
               disabled={importing}
               aria-busy={importing}
+              className="flex-1 sm:flex-none"
             >
               {importing ? (
                 <>
@@ -318,6 +319,7 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
               variant="outline"
               aria-label="Upload a garment photo"
               onClick={() => fileInputRef.current?.click()}
+              className="flex-1 sm:flex-none"
             >
               <Upload className="size-4" aria-hidden />
               Upload

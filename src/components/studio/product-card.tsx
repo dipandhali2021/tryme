@@ -68,18 +68,22 @@ export function ProductCard({ product, onTryOn }: ProductCardProps) {
         <p className="line-clamp-2 text-v-small font-weight-v-medium">
           {product.title}
         </p>
-        <div className="mt-auto flex items-center justify-between gap-s-2 pt-s-2">
-          <span className="flex items-baseline gap-s-2">
-            <span className="text-v-control font-weight-v-semibold tabular-nums">
+        <div className="mt-auto flex flex-col gap-s-2 pt-s-2 sm:flex-row sm:items-center sm:justify-between">
+          <span className="flex min-w-0 items-baseline gap-s-2">
+            <span className="shrink-0 text-v-control font-weight-v-semibold tabular-nums">
               {formatINR(product.price)}
             </span>
             {showStrike ? (
-              <span className="text-v-meta text-muted-foreground line-through tabular-nums">
+              <span className="min-w-0 truncate text-v-meta text-muted-foreground line-through tabular-nums">
                 {formatINR(product.mrp as number)}
               </span>
             ) : null}
           </span>
-          <Button size="sm" onClick={() => onTryOn(product)}>
+          <Button
+            size="sm"
+            className="w-full shrink-0 sm:w-auto"
+            onClick={() => onTryOn(product)}
+          >
             Try on
           </Button>
         </div>

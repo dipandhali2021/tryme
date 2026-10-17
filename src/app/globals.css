@@ -411,9 +411,14 @@
 
 /* The studio is an app-shell: at lg the page pins to the viewport so both
    halves fill it and the results feed scrolls internally. Below lg the panes
-   stack and the page keeps its natural scroll. */
+   stack and the page keeps its natural scroll. Next keeps a visited route's
+   DOM around (inline display:none !important) for instant back/forward, so
+   the lock must ignore a hidden shell — otherwise it holds the page hostage
+   after navigating away. */
 @media (min-width: 1024px) {
-  body:has(.studio-shell) {
+  body:has(
+    .studio-shell:not([style*="display: none"]):not([style*="display:none"])
+  ) {
     height: 100dvh;
     overflow: hidden;
   }
@@ -433,44 +438,74 @@
    the sky dissolving into the canvas, with the valley carrying the details
    below the fold. Dark mode dims the whole frame into dusk — the landscape
    stays faintly visible up top and surfaces as you scroll. */
-.landing-backdrop {
+/* Landing backdrop, three page-space layers: the canvas carries the whole
+   page; the hills image fills a viewport-sized pocket at the top (sized from
+   svh, never the page height — a percentage of a phone-long page zooms the
+   cover crop straight into the blank sky); the veils dissolve the image into
+   the canvas up top and scrim the footer. */
+.landing-canvas {
   background-color: var(--background);
+}
+
+.landing-hills {
+  /* A viewport-scaled pocket, never a percentage of the page: on a phone a
+     page-long cover crop zooms straight into the blank sky. The tail melts
+     into the canvas so the cut never shows mid-content. */
+  height: 140svh;
+  background-image: url("/bg-hills.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - 18svh),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - 18svh),
+    transparent 100%
+  );
+}
+
+.landing-veils {
   background-image:
     linear-gradient(
       to bottom,
-      var(--background) 0%,
-      var(--background) 18%,
-      color-mix(in oklab, var(--background) 0%, transparent) 32%
+      var(--background) 0,
+      var(--background) calc(100svh * 0.22),
+      color-mix(in oklab, var(--background) 0%, transparent) calc(100svh * 0.42)
     ),
     linear-gradient(
       to bottom,
       color-mix(in oklab, var(--background) 0%, transparent) 86%,
       color-mix(in oklab, var(--background) 60%, transparent) 100%
-    ),
-    url("/bg-hills.jpg");
+    );
   background-repeat: no-repeat;
-  background-size: 100% 100%, 100% 100%, cover;
-  background-position: top, bottom, top;
+  background-size: 100% 100%, 100% 100%;
+  background-position: top, bottom;
 }
 
-:root[data-mode="dark"] .landing-backdrop {
+:root[data-mode="dark"] .landing-veils {
   background-image:
     linear-gradient(
       to bottom,
-      color-mix(in oklab, var(--background) 74%, transparent) 0%,
-      color-mix(in oklab, var(--background) 58%, transparent) 30%,
-      color-mix(in oklab, var(--background) 42%, transparent) 54%,
-      color-mix(in oklab, var(--background) 26%, transparent) 74%
+      color-mix(in oklab, var(--background) 74%, transparent) 0,
+      color-mix(in oklab, var(--background) 58%, transparent)
+        calc(100svh * 0.4),
+      color-mix(in oklab, var(--background) 42%, transparent)
+        calc(100svh * 0.72),
+      color-mix(in oklab, var(--background) 26%, transparent)
+        calc(100svh * 0.99)
     ),
     linear-gradient(
       to bottom,
       color-mix(in oklab, var(--background) 0%, transparent) 88%,
       color-mix(in oklab, var(--background) 55%, transparent) 100%
-    ),
-    url("/bg-hills.jpg");
+    );
   background-repeat: no-repeat;
-  background-size: 100% 100%, 100% 100%, cover;
-  background-position: top, bottom, top;
+  background-size: 100% 100%, 100% 100%;
+  background-position: top, bottom;
 }
 
 /* The root scroller keeps working (wheel, touch, keys) but paints no native
