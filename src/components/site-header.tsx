@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import {
   ThemeToggle,
   applyTheme,
@@ -11,25 +11,45 @@ import {
 
 const STORAGE_KEY = "tryme-mode";
 
-export function SiteHeader() {
-  const [mode, setMode] = useState<ThemeMode>("dark");
+const listeners = new Set<() => void>();
 
-  useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored === "light" || stored === "dark") setMode(stored);
-    } catch {
-      // storage unavailable — keep the dark default
-    }
-  }, []);
+function subscribe(listener: () => void): () => void {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function readStoredMode(): ThemeMode {
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (stored === "light" || stored === "dark") return stored;
+  } catch {
+    // storage unavailable — keep the dark default
+  }
+  return "dark";
+}
+
+function emit(): void {
+  for (const listener of listeners) listener();
+}
+
+export function SiteHeader() {
+  // Mirrors localStorage without a hydration mismatch: the server snapshot is
+  // the dark default; the client re-reads right after hydration.
+  const mode = useSyncExternalStore<ThemeMode>(
+    subscribe,
+    readStoredMode,
+    () => "dark",
+  );
 
   function handleModeChange(next: ThemeMode, details?: ThemeChangeDetails) {
-    setMode(next);
     try {
       window.localStorage.setItem(STORAGE_KEY, next);
     } catch {
       // storage unavailable — theme still applies for this session
     }
+    emit();
     applyTheme(next, false, undefined, details ? { origin: details.origin } : undefined);
   }
 

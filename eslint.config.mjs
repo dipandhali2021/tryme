@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored Cojeev motion layer, installed as-is. Its morph/flow internals
+    // trip the new React Compiler lint rules; we do not own that code.
+    "src/lib/cojeev-motion/**",
   ]),
 ]);
 
