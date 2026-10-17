@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import type { RealTimeClient, createDecartClient, models } from "@decartai/sdk";
+import { TryOnRecorder } from "@/lib/decart/recorder";
 import {
   initialSessionState,
   reduce,
@@ -16,6 +17,7 @@ export type UseTryOnSession = {
   state: SessionState;
   localStream: MediaStream | null;
   remoteStream: MediaStream | null;
+  recapUrl: string | null;
   enableCamera: () => Promise<void>;
   disableCamera: () => void;
   tryGarment: (source: GarmentSource) => void;
@@ -76,16 +78,23 @@ export function useTryOnSession(): UseTryOnSession {
   const [state, dispatch] = useReducer(reduce, undefined, initialSessionState);
   const [localStream, setLocalStream] = useState<MediaStream | null>(null);
   const [remoteStream, setRemoteStream] = useState<MediaStream | null>(null);
+  const [recapUrl, setRecapUrl] = useState<string | null>(null);
 
   const stateRef = useRef(state);
   stateRef.current = state;
 
   const localStreamRef = useRef<MediaStream | null>(null);
+  const remoteStreamRef = useRef<MediaStream | null>(null);
   const sessionRef = useRef<RealTimeClient | null>(null);
   const apiRef = useRef<Sdk | null>(null);
   const fileIdsRef = useRef(new Map<string, string>());
   const pendingGarmentRef = useRef<string | null>(null);
   const connectingRef = useRef(false);
+  const recorderRef = useRef<TryOnRecorder | null>(null);
+
+  useEffect(() => {
+    remoteStreamRef.current = remoteStream;
+  }, [remoteStream]);
 
   /** Lazily create the SDK client (browser-only; the key never reaches us). */
   const getApi = useCallback(async (): Promise<Sdk> => {
@@ -133,6 +142,21 @@ export function useTryOnSession(): UseTryOnSession {
     // Keep `remoteStream` so the stage can freeze on the last AI frame.
   }, []);
 
+  /** Stop any in-flight recording and hand back its blob (may be null). */
+  const stopRecorder = useCallback((): Promise<Blob | null> => {
+    const recorder = recorderRef.current;
+    recorderRef.current = null;
+    return recorder ? recorder.stop() : Promise.resolve(null);
+  }, []);
+
+  /** Drop the recap URL and release its blob. */
+  const clearRecap = useCallback(() => {
+    setRecapUrl((prev) => {
+      if (prev) URL.revokeObjectURL(prev);
+      return null;
+    });
+  }, []);
+
   const startSession = useCallback(
     async (garmentUrl: string) => {
       if (connectingRef.current || sessionRef.current) return;
@@ -142,6 +166,9 @@ export function useTryOnSession(): UseTryOnSession {
         return;
       }
       connectingRef.current = true;
+      // A new try invalidates the previous recording and recap.
+      void stopRecorder();
+      clearRecap();
       try {
         const { client, model } = await getApi();
         const fileId = await ensureFileId(garmentUrl);
@@ -161,9 +188,11 @@ export function useTryOnSession(): UseTryOnSession {
         sessionRef.current = session;
         connectingRef.current = false;
         session.on("error", (err) => {
+          void stopRecorder();
           dispatch({ type: "ERROR", message: describeError(err) });
         });
         session.on("sessionEnded", (ended) => {
+          void stopRecorder();
           const reason =
             ended && typeof ended === "object" && "reason" in ended
               ? String((ended as { reason?: unknown }).reason ?? "")
@@ -188,7 +217,7 @@ export function useTryOnSession(): UseTryOnSession {
         dispatch({ type: "ERROR", message: describeError(err) });
       }
     },
-    [ensureFileId, getApi],
+    [clearRecap, ensureFileId, getApi, stopRecorder],
   );
 
   const enableCamera = useCallback(async () => {
@@ -205,6 +234,8 @@ export function useTryOnSession(): UseTryOnSession {
   }, []);
 
   const disableCamera = useCallback(() => {
+    void stopRecorder();
+    clearRecap();
     clearSession();
     localStreamRef.current?.getTracks().forEach((track) => track.stop());
     localStreamRef.current = null;
@@ -212,7 +243,7 @@ export function useTryOnSession(): UseTryOnSession {
     setLocalStream(null);
     setRemoteStream(null);
     dispatch({ type: "CAMERA_OFF" });
-  }, [clearSession]);
+  }, [clearRecap, clearSession, stopRecorder]);
 
   const tryGarment = useCallback(
     (source: GarmentSource) => {
@@ -261,10 +292,20 @@ export function useTryOnSession(): UseTryOnSession {
   }, [startSession]);
 
   const dismissRecap = useCallback(() => {
+    clearRecap();
     dispatch({ type: "RECAP_DISMISSED" });
-  }, []);
+  }, [clearRecap]);
 
   const notifyRemoteFrame = useCallback(() => {
+    const phase = stateRef.current.phase;
+    // The first AI frame is both the clock start and the recording start.
+    if (
+      (phase === "connecting" || phase === "warming") &&
+      remoteStreamRef.current
+    ) {
+      if (!recorderRef.current) recorderRef.current = new TryOnRecorder();
+      recorderRef.current.start(remoteStreamRef.current);
+    }
     dispatch({ type: "FIRST_FRAME" });
   }, []);
 
@@ -275,16 +316,37 @@ export function useTryOnSession(): UseTryOnSession {
     return () => window.clearInterval(id);
   }, [state.phase]);
 
-  // At 0s the reducer moves to `ending`: close the session, then recap.
+  // At 0s the reducer moves to `ending`: stop the recording, close the
+  // session, then land on the recap (or skip it when nothing was recorded).
   useEffect(() => {
     if (state.phase !== "ending") return;
-    clearSession();
-    dispatch({ type: "DISCONNECTED" });
-  }, [state.phase, clearSession]);
+    let cancelled = false;
+    void (async () => {
+      const blob = await stopRecorder();
+      if (cancelled) return;
+      clearSession();
+      if (blob && blob.size > 0) {
+        const url = URL.createObjectURL(blob);
+        setRecapUrl((prev) => {
+          if (prev) URL.revokeObjectURL(prev);
+          return url;
+        });
+        dispatch({ type: "DISCONNECTED" });
+      } else {
+        // Short session, nothing usable recorded — straight back to camera.
+        dispatch({ type: "DISCONNECTED" });
+        dispatch({ type: "RECAP_DISMISSED" });
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [state.phase, clearSession, stopRecorder]);
 
   // Tear everything down on unmount.
   useEffect(() => {
     return () => {
+      void recorderRef.current?.stop();
       sessionRef.current?.disconnect();
       localStreamRef.current?.getTracks().forEach((track) => track.stop());
     };
@@ -294,6 +356,7 @@ export function useTryOnSession(): UseTryOnSession {
     state,
     localStream,
     remoteStream,
+    recapUrl,
     enableCamera,
     disableCamera,
     tryGarment,

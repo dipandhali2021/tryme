@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { HeroButton } from "@/components/ui/hero-button";
 import { Spinner } from "@/components/ui/spinner";
 import { Countdown } from "@/components/studio/countdown";
+import { RecapCard } from "@/components/studio/recap-card";
 import type { SessionState } from "@/lib/session/machine";
 import { cn } from "@/lib/utils";
 
@@ -14,6 +15,7 @@ export type CameraStageProps = {
   state: SessionState;
   localStream: MediaStream | null;
   remoteStream: MediaStream | null;
+  recapUrl: string | null;
   onEnableCamera: () => void;
   onDisableCamera: () => void;
   onTryExample: () => void;
@@ -41,6 +43,7 @@ export function CameraStage({
   state,
   localStream,
   remoteStream,
+  recapUrl,
   onEnableCamera,
   onDisableCamera,
   onTryExample,
@@ -151,25 +154,12 @@ export function CameraStage({
             </div>
           )}
 
-          {state.phase === "recap" && state.recapReady && (
-            <div className="absolute inset-x-0 bottom-s-5 flex justify-center p-s-4">
-              <div className="flex items-center gap-s-3 rounded-2xl bg-background/92 p-s-4 text-foreground shadow-xl backdrop-blur">
-                <div className="mr-s-2">
-                  <p className="text-v-control font-weight-v-semibold">
-                    Nice try!
-                  </p>
-                  <p className="text-v-small text-muted-foreground">
-                    Clip replay lands here in the next step.
-                  </p>
-                </div>
-                <HeroButton size="sm" showArrow={false} onClick={onTryAgain}>
-                  Try again
-                </HeroButton>
-                <Button variant="ghost" size="sm" onClick={onDismissRecap}>
-                  Pick another
-                </Button>
-              </div>
-            </div>
+          {state.phase === "recap" && state.recapReady && recapUrl && (
+            <RecapCard
+              url={recapUrl}
+              onTryAgain={onTryAgain}
+              onAddAnother={onDismissRecap}
+            />
           )}
 
           {state.phase === "error" && (

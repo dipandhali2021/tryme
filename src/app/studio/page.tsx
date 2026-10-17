@@ -14,6 +14,7 @@ export default function StudioPage() {
         state={session.state}
         localStream={session.localStream}
         remoteStream={session.remoteStream}
+        recapUrl={session.recapUrl}
         onEnableCamera={() => void session.enableCamera()}
         onDisableCamera={session.disableCamera}
         onTryExample={() => session.tryGarment(SAMPLE_GARMENT_URL)}
