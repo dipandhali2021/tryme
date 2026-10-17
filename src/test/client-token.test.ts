@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { createDecartClient } from "@decartai/sdk";
 
 const tokensCreate = vi.fn();
 vi.mock("@decartai/sdk", () => ({
@@ -6,7 +7,7 @@ vi.mock("@decartai/sdk", () => ({
 }));
 
 import { POST } from "@/app/api/realtime-token/route";
-import { createClientToken } from "@/lib/decart/client-token";
+import { createClientToken, decartApiKeys } from "@/lib/decart/client-token";
 
 beforeEach(() => {
   vi.clearAllMocks();
@@ -46,6 +47,72 @@ describe("createClientToken", () => {
   it("rejects without the api key", async () => {
     await expect(createClientToken()).rejects.toThrow(/DECART_API_KEY/);
     expect(tokensCreate).not.toHaveBeenCalled();
+  });
+});
+
+describe("createClientToken key fallback", () => {
+  const clientKeys = () =>
+    vi
+      .mocked(createDecartClient)
+      .mock.calls.map(([options]) => options?.apiKey);
+
+  beforeEach(() => {
+    tokensCreate.mockReset();
+  });
+
+  it("moves to the next key when one is exhausted", async () => {
+    vi.stubEnv("DECART_API_KEY", "sk-fallback-primary");
+    vi.stubEnv("DECART_API_KEY_2", "sk-fallback-backup");
+    tokensCreate
+      .mockRejectedValueOnce(new Error("402: insufficient credits"))
+      .mockResolvedValueOnce({
+        apiKey: "ek_next",
+        expiresAt: "2026-10-16T12:00:00.000Z",
+      });
+
+    const token = await createClientToken();
+    expect(token.apiKey).toBe("ek_next");
+    expect(clientKeys()).toEqual(["sk-fallback-primary", "sk-fallback-backup"]);
+  });
+
+  it("tries a key that just failed last until its cooldown expires", async () => {
+    vi.stubEnv("DECART_API_KEY", "sk-cooldown-primary");
+    vi.stubEnv("DECART_API_KEY_2", "sk-cooldown-backup");
+    tokensCreate
+      .mockRejectedValueOnce(new Error("401 unauthorized"))
+      .mockResolvedValueOnce({
+        apiKey: "ek_first",
+        expiresAt: "2026-10-16T12:00:00.000Z",
+      });
+    await createClientToken();
+    vi.mocked(createDecartClient).mockClear();
+
+    tokensCreate.mockResolvedValue({
+      apiKey: "ek_second",
+      expiresAt: "2026-10-16T12:00:00.000Z",
+    });
+    const token = await createClientToken();
+    expect(token.apiKey).toBe("ek_second");
+    expect(clientKeys()).toEqual(["sk-cooldown-backup"]);
+  });
+
+  it("throws the last error when every key fails", async () => {
+    vi.stubEnv("DECART_API_KEY", "sk-allfail-primary");
+    vi.stubEnv("DECART_API_KEY_2", "sk-allfail-backup");
+    tokensCreate
+      .mockRejectedValueOnce(new Error("primary exploded"))
+      .mockRejectedValueOnce(new Error("backup exploded"));
+
+    await expect(createClientToken()).rejects.toThrow("backup exploded");
+    expect(tokensCreate).toHaveBeenCalledTimes(2);
+  });
+
+  it("collects numbered and list keys in order, deduplicated", () => {
+    vi.stubEnv("DECART_API_KEY", "one");
+    vi.stubEnv("DECART_API_KEY_10", "ten");
+    vi.stubEnv("DECART_API_KEY_2", "two");
+    vi.stubEnv("DECART_API_KEYS", "three, one");
+    expect(decartApiKeys()).toEqual(["one", "two", "ten", "three"]);
   });
 });
 
