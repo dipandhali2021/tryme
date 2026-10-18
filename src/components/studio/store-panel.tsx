@@ -34,6 +34,7 @@ import { formatINR } from "@/lib/format";
 import {
   DEFAULT_FILTERS,
   applyFilters,
+  composeGenderQuery,
   deriveBrands,
   deriveColors,
   type Filters,
@@ -137,9 +138,12 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
   const [result, setResult] = useState<{
     key: string;
     response: SearchResponse;
+    page: number;
+    exhausted: boolean;
   } | null>(null);
   const [errorKey, setErrorKey] = useState<string | null>(null);
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [toast, setToast] = useState<{
     title: string;
     message: string;
@@ -191,10 +195,17 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
       });
   }, []);
 
+  // The gender chip refines the search itself ("shirt" + Women → "women
+  // shirt") so the facet can bring in new results instead of only sifting
+  // whatever the store already returned.
+  const searchQuery = useMemo(
+    () => (query ? composeGenderQuery(query, filters.gender) : null),
+    [query, filters.gender],
+  );
   // The identity of the search currently being asked for.
   const searchKey = useMemo(
-    () => (query ? `${store}\u0000${query}\u0000${nonce}` : null),
-    [store, query, nonce],
+    () => (searchQuery ? `${store}\u0000${searchQuery}\u0000${nonce}` : null),
+    [store, searchQuery, nonce],
   );
   // Loading is derived (not set in an effect): we are waiting whenever the
   // latest request's key does not match the latest result or error.
@@ -203,14 +214,14 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
   const response = result?.response ?? null;
 
   useEffect(() => {
-    if (!searchKey || !query) return;
+    if (!searchKey || !searchQuery) return;
     let cancelled = false;
     const key = searchKey;
-    fetchSearch(store, query)
+    fetchSearch(store, searchQuery)
       .then((res) => {
         if (cancelled) return;
         setErrorKey(null);
-        setResult({ key, response: res });
+        setResult({ key, response: res, page: 1, exhausted: false });
         setFilters((current) => ({ ...current, colors: [], brands: [] }));
         if (res.error) setToast({ title: "Search trouble", message: res.error });
       })
@@ -225,7 +236,7 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
     return () => {
       cancelled = true;
     };
-  }, [searchKey, store, query]);
+  }, [searchKey, store, searchQuery]);
 
   const submit = (value?: string) => {
     const next = (value ?? input).trim();
@@ -238,6 +249,49 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
     setQuery(next);
     setNonce((n) => n + 1);
   };
+
+  /** Append the next store page to the current results (free — no AI). */
+  const loadMore = useCallback(() => {
+    if (!searchKey || !searchQuery || loadingMore) return;
+    if (!result || result.key !== searchKey || result.exhausted) return;
+    const key = searchKey;
+    const nextPage = result.page + 1;
+    setLoadingMore(true);
+    fetchSearch(store, searchQuery, nextPage)
+      .then((res) => {
+        if (res.error) {
+          setToast({ title: "Search trouble", message: res.error });
+          return;
+        }
+        setResult((prev) => {
+          if (!prev || prev.key !== key) return prev;
+          if (res.products.length === 0) {
+            return { ...prev, exhausted: true };
+          }
+          const have = new Set(
+            prev.response.products.map((p) => `${p.store}:${p.id}`),
+          );
+          const fresh = res.products.filter(
+            (p) => !have.has(`${p.store}:${p.id}`),
+          );
+          return {
+            ...prev,
+            page: nextPage,
+            response: {
+              ...prev.response,
+              products: [...prev.response.products, ...fresh],
+            },
+          };
+        });
+      })
+      .catch((err: unknown) => {
+        setToast({
+          title: "Search trouble",
+          message: err instanceof Error ? err.message : "Couldn't load more.",
+        });
+      })
+      .finally(() => setLoadingMore(false));
+  }, [searchKey, searchQuery, store, result, loadingMore]);
 
   const products = useMemo(() => response?.products ?? [], [response]);
   const visible = useMemo(
@@ -410,15 +464,41 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
                   </EmptyDescription>
                 </Empty>
               ) : (
-                <div className="grid grid-cols-2 gap-s-3 xl:grid-cols-3">
-                  {visible.map((product: Product) => (
-                    <ProductCard
-                      key={`${product.store}:${product.id}`}
-                      product={product}
-                      onTryOn={(picked) => onTryOn(picked.imageUrl)}
-                    />
-                  ))}
-                </div>
+                <>
+                  <div className="grid grid-cols-2 gap-s-3 xl:grid-cols-3">
+                    {visible.map((product: Product) => (
+                      <ProductCard
+                        key={`${product.store}:${product.id}`}
+                        product={product}
+                        onTryOn={(picked) => onTryOn(picked.imageUrl)}
+                      />
+                    ))}
+                  </div>
+                  {result?.exhausted ? (
+                    <p className="mt-s-4 text-center text-v-small text-muted-foreground">
+                      That&apos;s everything for this search.
+                    </p>
+                  ) : (
+                    <div className="mt-s-4 flex justify-center">
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        onClick={loadMore}
+                        disabled={loadingMore}
+                        aria-busy={loadingMore}
+                      >
+                        {loadingMore ? (
+                          <>
+                            <Spinner className="size-4" aria-hidden />
+                            Loading…
+                          </>
+                        ) : (
+                          "Load more"
+                        )}
+                      </Button>
+                    </div>
+                  )}
+                </>
               )}
             </div>
         </div>

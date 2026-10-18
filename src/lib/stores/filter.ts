@@ -20,6 +20,23 @@ export const DEFAULT_FILTERS: Filters = {
   sort: "relevance",
 };
 
+/**
+ * Fold the gender facet into the store query ("shirt" + women → "women
+ * shirt") so the chip brings in new results instead of only sifting the
+ * page the store already returned. "all" and "unisex" are pure filters.
+ */
+export function composeGenderQuery(
+  q: string,
+  gender: Filters["gender"],
+): string {
+  if (gender !== "men" && gender !== "women") return q;
+  const hasFacet = q
+    .toLowerCase()
+    .split(/\s+/)
+    .some((word) => word.replace(/[^a-z]/g, "").startsWith(gender));
+  return hasFacet ? q : `${gender} ${q}`;
+}
+
 /** Apply the filter bar to a product list. Price bounds are inclusive. */
 export function applyFilters(products: Product[], f: Filters): Product[] {
   const filtered = products.filter((p) => {

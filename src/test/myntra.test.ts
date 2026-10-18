@@ -1,7 +1,13 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { myntraSearchUrl, parseMyntraState } from "@/lib/stores/myntra";
+import {
+  cookieHeader,
+  myntraGatewayUrl,
+  myntraSearchUrl,
+  parseMyntraGateway,
+  parseMyntraState,
+} from "@/lib/stores/myntra";
 
 const fixture = JSON.parse(
   readFileSync(join(process.cwd(), "src/test/fixtures/myntra-state.json"), "utf8"),
@@ -64,5 +70,75 @@ describe("myntraSearchUrl", () => {
     expect(myntraSearchUrl("men's t-shirts!")).toBe(
       "https://www.myntra.com/mens-t-shirts",
     );
+  });
+});
+
+describe("parseMyntraGateway", () => {
+  const products = parseMyntraGateway({
+    responseType: "LIST",
+    hasNextPage: true,
+    totalCount: 361843,
+    products: [
+      {
+        productId: 36597142,
+        productName:
+          "max Girls Striped Spread Collar Regular Fit Pure Cotton Casual Shirt",
+        brand: "max",
+        price: 499,
+        mrp: 599,
+        searchImage: "http://assets.myntassets.com/assets/images/a.jpg",
+        landingPageUrl: "Shirts/max/max-Girls-Shirt/36597142/buy",
+        gender: "Girls",
+        primaryColour: "Blue",
+        rating: 4.4,
+      },
+      { productId: 1, product: "broken — no image" },
+    ],
+  });
+
+  it("maps gateway products onto the shared shape", () => {
+    expect(products).toHaveLength(1);
+    const p = products[0];
+    expect(p.store).toBe("myntra");
+    expect(p.id).toBe("36597142");
+    expect(p.brand).toBe("max");
+    expect(p.price).toBe(499);
+    expect(p.mrp).toBe(599);
+    expect(p.discountPct).toBe(17);
+    expect(p.gender).toBe("kids");
+    expect(p.color).toBe("Blue");
+    expect(p.imageUrl).toMatch(/^https:\/\//);
+    expect(p.productUrl).toBe(
+      "https://www.myntra.com/Shirts/max/max-Girls-Shirt/36597142/buy",
+    );
+  });
+
+  it("is empty for missing or malformed bodies", () => {
+    expect(parseMyntraGateway(null)).toEqual([]);
+    expect(parseMyntraGateway({})).toEqual([]);
+    expect(parseMyntraGateway({ products: "nope" })).toEqual([]);
+  });
+});
+
+describe("myntraGatewayUrl", () => {
+  it("paginates with rows and offset", () => {
+    expect(myntraGatewayUrl("men shirt", 1)).toBe(
+      "https://www.myntra.com/gateway/v2/search/men-shirt?p=1&rows=40&o=0&plaEnabled=false",
+    );
+    expect(myntraGatewayUrl("men shirt", 3)).toBe(
+      "https://www.myntra.com/gateway/v2/search/men-shirt?p=3&rows=40&o=80&plaEnabled=false",
+    );
+  });
+});
+
+describe("cookieHeader", () => {
+  it("keeps only the name=value pairs", () => {
+    expect(
+      cookieHeader(["a=1; Path=/; Secure", " b=2 ; HttpOnly", ""]),
+    ).toBe("a=1; b=2");
+  });
+
+  it("is empty for no cookies", () => {
+    expect(cookieHeader([])).toBe("");
   });
 });

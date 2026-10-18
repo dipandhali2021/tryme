@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   DEFAULT_FILTERS,
   applyFilters,
+  composeGenderQuery,
   deriveBrands,
   deriveColors,
   type Filters,
@@ -153,5 +154,24 @@ describe("deriveBrands", () => {
 describe("deriveColors", () => {
   it("dedupes, drops empty, and sorts alphabetically", () => {
     expect(deriveColors(catalog)).toEqual(["Black", "Blue", "White"]);
+  });
+});
+
+describe("composeGenderQuery", () => {
+  it("prepends the facet so the store searches it", () => {
+    expect(composeGenderQuery("shirt", "women")).toBe("women shirt");
+    expect(composeGenderQuery("jeans", "men")).toBe("men jeans");
+  });
+
+  it("leaves the query alone for all and unisex", () => {
+    expect(composeGenderQuery("shirt", "all")).toBe("shirt");
+    expect(composeGenderQuery("shirt", "unisex")).toBe("shirt");
+  });
+
+  it("doesn't double up when the query already carries the facet", () => {
+    expect(composeGenderQuery("women shirt", "women")).toBe("women shirt");
+    expect(composeGenderQuery("mens tshirt", "men")).toBe("mens tshirt");
+    expect(composeGenderQuery("Womens kurta", "women")).toBe("Womens kurta");
+    expect(composeGenderQuery("men's shoes", "men")).toBe("men's shoes");
   });
 });

@@ -2,14 +2,34 @@ import { extractJsonAfterMarker } from "@/lib/stores/extract";
 import { inferCategory, inferGender } from "@/lib/stores/normalize";
 import type { Gender, Product } from "@/lib/stores/types";
 
-export function myntraSearchUrl(q: string, page = 1): string {
-  const slug = q
+/** Slug Myntra uses for search URLs: "Men's T-Shirts!" → "mens-t-shirts". */
+export function myntraSlug(q: string): string {
+  return q
     .toLowerCase()
     .replace(/['’]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
-  const url = `https://www.myntra.com/${slug}`;
+}
+
+export function myntraSearchUrl(q: string, page = 1): string {
+  const url = `https://www.myntra.com/${myntraSlug(q)}`;
   return page > 1 ? `${url}?p=${page}` : url;
+}
+
+const GATEWAY_ROWS = 40;
+
+/** The JSON gateway the Myntra web app itself calls for result pages. */
+export function myntraGatewayUrl(q: string, page = 1): string {
+  const offset = (page - 1) * GATEWAY_ROWS;
+  return `https://www.myntra.com/gateway/v2/search/${myntraSlug(q)}?p=${page}&rows=${GATEWAY_ROWS}&o=${offset}&plaEnabled=false`;
+}
+
+/** Join a `Set-Cookie` list into a single Cookie request header. */
+export function cookieHeader(setCookies: string[]): string {
+  return setCookies
+    .map((row) => row.split(";")[0]?.trim() ?? "")
+    .filter(Boolean)
+    .join("; ");
 }
 
 const CHROME_UA =
@@ -85,16 +105,10 @@ function toProduct(value: MyntraValue): Product | null {
   };
 }
 
-/** Parse the `window.__myx` search payload into normalized products. */
-export function parseMyntraState(state: unknown): Product[] {
-  const record = state as {
-    searchData?: { results?: { products?: unknown } };
-  } | null;
-  const raw = record?.searchData?.results?.products;
-  if (!Array.isArray(raw)) return [];
+function productsFrom(entries: unknown[]): Product[] {
   const seen = new Set<string>();
   const products: Product[] = [];
-  for (const item of raw) {
+  for (const item of entries) {
     const product = toProduct(item as MyntraValue);
     if (product && !seen.has(product.id)) {
       seen.add(product.id);
@@ -104,18 +118,81 @@ export function parseMyntraState(state: unknown): Product[] {
   return products;
 }
 
-/** Fetch a Myntra search page and parse its product list. */
+/** Parse the `window.__myx` search payload into normalized products. */
+export function parseMyntraState(state: unknown): Product[] {
+  const record = state as {
+    searchData?: { results?: { products?: unknown } };
+  } | null;
+  const raw = record?.searchData?.results?.products;
+  return Array.isArray(raw) ? productsFrom(raw) : [];
+}
+
+/** Parse a `/gateway/v2/search` response body into normalized products. */
+export function parseMyntraGateway(body: unknown): Product[] {
+  const raw = (body as { products?: unknown } | null)?.products;
+  return Array.isArray(raw) ? productsFrom(raw) : [];
+}
+
+/**
+ * Fetch a Myntra search page. A normal browser session gets HTML with the
+ * `window.__myx` payload; datacenter IPs (our Vercel functions) get a
+ * stripped page instead — so we also keep the Akamai cookies that came with
+ * it and ask the JSON gateway, which only answers once they are sent along.
+ */
 export async function searchMyntra(q: string, page = 1): Promise<Product[]> {
-  const res = await fetch(myntraSearchUrl(q, page), {
+  const pageUrl = myntraSearchUrl(q, page);
+
+  let cookies: string[] = [];
+  let pageStatus: number | string = "n/a";
+  let htmlLength = 0;
+  try {
+    const res = await fetch(pageUrl, {
+      headers: {
+        "user-agent": CHROME_UA,
+        accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "accept-language": "en-IN,en;q=0.9",
+      },
+      cache: "no-store",
+      signal: AbortSignal.timeout(15_000),
+    });
+    pageStatus = res.status;
+    if (res.ok) {
+      cookies =
+        typeof res.headers.getSetCookie === "function"
+          ? res.headers.getSetCookie()
+          : [];
+      const html = await res.text();
+      htmlLength = html.length;
+      const products = parseMyntraState(
+        extractJsonAfterMarker(html, "window.__myx ="),
+      );
+      if (products.length > 0) return products;
+    }
+  } catch {
+    pageStatus = "unreachable";
+  }
+
+  const gatewayRes = await fetch(myntraGatewayUrl(q, page), {
     headers: {
       "user-agent": CHROME_UA,
-      accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      accept: "application/json, text/plain, */*",
       "accept-language": "en-IN,en;q=0.9",
+      referer: pageUrl,
+      ...(cookies.length > 0 ? { cookie: cookieHeader(cookies) } : {}),
     },
     cache: "no-store",
     signal: AbortSignal.timeout(15_000),
   });
-  if (!res.ok) throw new Error(`myntra search failed: ${res.status}`);
-  const html = await res.text();
-  return parseMyntraState(extractJsonAfterMarker(html, "window.__myx ="));
+  if (!gatewayRes.ok) {
+    throw new Error(
+      `myntra gateway failed: ${gatewayRes.status} (page ${pageStatus}, html ${htmlLength}b, cookies ${cookies.length})`,
+    );
+  }
+  const body = (await gatewayRes.json().catch(() => null)) as unknown;
+  if (body === null) {
+    throw new Error(
+      `myntra gateway sent non-JSON (page ${pageStatus}, html ${htmlLength}b, cookies ${cookies.length})`,
+    );
+  }
+  return parseMyntraGateway(body);
 }
