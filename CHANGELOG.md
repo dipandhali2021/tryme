@@ -2,6 +2,24 @@
 
 Release notes for TryMe, mirrored from the [GitHub Releases](https://github.com/dipandhali2021/tryme/releases) page.
 
+## v0.1.1 — 2026-10-18
+
+Search fixes — the gender chips refine the search, results paginate, and Myntra gets an honest fallback on the cloud.
+
+### Fixed
+
+- **Gender chips refine the search itself.** Picking Women (or Men) folds the facet into the store query — "shirt" + Women searches "women shirt" — instead of only filtering the loaded page. "shirt" alone is an all-men page from Flipkart, which is why Women used to show an empty grid.
+- **Myntra on the hosted demo.** Myntra answers datacenter networks with a ~500-byte "Site Maintenance" decoy (verified from Vercel `bom1` and third-party fetchers), so its search can't run from the cloud. The studio now spots the refusal and shows an "Open Myntra search" panel with the drag-onto-studio flow — same pattern as Amazon — instead of a dead-end error. The crawler pass and `/gateway/v2/search` JSON fallback stay in place for networks where they answer; local sessions keep live Myntra search.
+
+### Added
+
+- **Load more** — paginates the current search, appends deduped products, and notes when the store runs out.
+
+### Verified
+
+- 172 unit tests, ESLint clean, `tsc --noEmit` clean.
+- Prod pass on <https://tryme-rust.vercel.app>: "shirt" + Women chip shows women's shirts (was empty); Load more took 40 → 68 products; Myntra tab shows the fallback panel.
+
 ## v0.1.0 — 2026-10-18
 
 Live virtual try-on. Turn on your camera, pick a garment from Amazon / Flipkart / Myntra (or drag in any image), and see it on you in real time with [Decart Lucy VTON](https://decart.ai) — every try capped at 20 seconds.
