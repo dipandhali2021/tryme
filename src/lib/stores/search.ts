@@ -1,7 +1,11 @@
 import { amazonFallback } from "@/lib/stores/amazon";
 import { cacheGet, cacheSet } from "@/lib/stores/cache";
 import { searchFlipkart } from "@/lib/stores/flipkart";
-import { searchMyntra } from "@/lib/stores/myntra";
+import {
+  MyntraBlockedError,
+  myntraSearchUrl,
+  searchMyntra,
+} from "@/lib/stores/myntra";
 import type { Product, StoreId } from "@/lib/stores/types";
 
 export type SearchResponse = {
@@ -77,6 +81,25 @@ export async function searchStore(
     cacheSet(key, response);
     return response;
   } catch (err) {
+    // Myntra serves a maintenance decoy to cloud networks, so its search
+    // can't run on the hosted demo. Mirror the Amazon pattern: hand the
+    // browser a Myntra search link + the drag-onto-studio flow instead.
+    if (store === "myntra" && err instanceof MyntraBlockedError) {
+      const response: SearchResponse = {
+        store,
+        q,
+        page,
+        products: [],
+        cached: false,
+        fetchedAt: Date.now(),
+        blocked: true,
+        fallbackSearchUrl: myntraSearchUrl(q),
+        error: err.message,
+      };
+      cacheSet(`neg:${key}`, response);
+      return response;
+    }
+
     // Serve the last good page for this query if one exists, even expired.
     const stale = cacheGet<SearchResponse>(key, Number.POSITIVE_INFINITY);
     if (stale) return { ...stale, cached: true };

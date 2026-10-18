@@ -67,21 +67,28 @@ type PinnedGarment = {
   previewUrl: string;
 };
 
-function AmazonFallback({ url }: { url: string | undefined }) {
+function BlockedFallback({
+  store,
+  url,
+}: {
+  store: StoreId;
+  url: string | undefined;
+}) {
+  const isAmazon = store === "amazon";
   return (
     <div className="mx-auto max-w-md rounded-2xl border border-border bg-v-paper p-s-5 text-center">
       <p className="text-v-title font-weight-v-semibold">
-        Amazon blocks live search
+        {isAmazon ? "Amazon blocks live search" : "Myntra blocks cloud search"}
       </p>
       <p className="mt-s-1 text-v-small text-muted-foreground">
-        Amazon does not allow server-side scraping, so TryMe opens it in a new
-        tab instead. Drag any product image from that tab onto this panel to
-        try it on.
+        {isAmazon
+          ? "Amazon does not allow server-side scraping, so TryMe opens it in a new tab instead. Drag any product image from that tab onto this panel to try it on."
+          : "Myntra does not serve search pages to cloud servers, so TryMe opens it in a new tab instead. Drag any product image from there onto this panel to try it on — same 20-second try-on."}
       </p>
       {url ? (
         <Button asChild className="mt-s-4">
           <a href={url} target="_blank" rel="noreferrer">
-            Open Amazon search
+            Open {isAmazon ? "Amazon" : "Myntra"} search
             <ExternalLink className="ml-s-1 size-4" aria-hidden />
           </a>
         </Button>
@@ -223,7 +230,9 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
         setErrorKey(null);
         setResult({ key, response: res, page: 1, exhausted: false });
         setFilters((current) => ({ ...current, colors: [], brands: [] }));
-        if (res.error) setToast({ title: "Search trouble", message: res.error });
+        if (res.error && !res.blocked) {
+          setToast({ title: "Search trouble", message: res.error });
+        }
       })
       .catch((err: unknown) => {
         if (cancelled) return;
@@ -453,7 +462,7 @@ export function StorePanel({ onTryOn }: StorePanelProps) {
               {loading ? (
                 <SkeletonGrid />
               ) : blocked ? (
-                <AmazonFallback url={response?.fallbackSearchUrl} />
+                <BlockedFallback store={store} url={response?.fallbackSearchUrl} />
               ) : !hasSearched ? (
                 <StartState onPick={submit} />
               ) : visible.length === 0 ? (

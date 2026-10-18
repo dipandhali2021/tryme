@@ -2,14 +2,23 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("@/lib/stores/flipkart", () => ({ searchFlipkart: vi.fn() }));
-vi.mock("@/lib/stores/myntra", () => ({ searchMyntra: vi.fn() }));
+vi.mock("@/lib/stores/myntra", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/lib/stores/myntra")>();
+  return { ...actual, searchMyntra: vi.fn() };
+});
 
 import { cacheFile } from "@/lib/stores/cache";
 import { searchFlipkart } from "@/lib/stores/flipkart";
+import {
+  MyntraBlockedError,
+  myntraSlug,
+  searchMyntra,
+} from "@/lib/stores/myntra";
 import { searchStore } from "@/lib/stores/search";
 import type { Product } from "@/lib/stores/types";
 
 const mockedFlipkart = vi.mocked(searchFlipkart);
+const mockedMyntra = vi.mocked(searchMyntra);
 
 const product: Product = {
   id: "p1",
@@ -81,5 +90,19 @@ describe("searchStore", () => {
     expect(res.fallbackSearchUrl).toBe("https://www.amazon.in/s?k=blue%20shoes");
     expect(res.products).toHaveLength(0);
     expect(mockedFlipkart).not.toHaveBeenCalled();
+  });
+
+  it("routes a cloud-blocked Myntra search to its fallback panel", async () => {
+    const q = unique();
+    mockedMyntra.mockRejectedValue(
+      new MyntraBlockedError("gateway 403, page 200/483b"),
+    );
+
+    const res = await searchStore("myntra", q);
+    expect(res.blocked).toBe(true);
+    expect(res.fallbackSearchUrl).toBe(`https://www.myntra.com/${myntraSlug(q)}`);
+    expect(res.products).toHaveLength(0);
+    expect(res.error).toContain("myntra blocked");
+    expect(mockedMyntra).toHaveBeenCalledTimes(1);
   });
 });

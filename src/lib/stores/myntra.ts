@@ -35,6 +35,17 @@ export function cookieHeader(setCookies: string[]): string {
 const CHROME_UA =
   "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 
+const GOOGLEBOT_UA =
+  "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
+
+/** Myntra refuses search pages to cloud networks (Akamai maintenance decoy). */
+export class MyntraBlockedError extends Error {
+  constructor(detail: string) {
+    super(`myntra blocked: ${detail}`);
+    this.name = "MyntraBlockedError";
+  }
+}
+
 type MyntraValue = {
   productId?: number | string;
   product?: string;
@@ -136,42 +147,22 @@ export function parseMyntraGateway(body: unknown): Product[] {
 /**
  * Fetch a Myntra search page. A normal browser session gets HTML with the
  * `window.__myx` payload; datacenter IPs (our Vercel functions) get a
- * stripped page instead — so we also keep the Akamai cookies that came with
- * it and ask the JSON gateway, which only answers once they are sent along.
+ * stripped maintenance page instead — so we keep the Akamai cookies that
+ * came with it, try once more as a crawler, then ask the JSON gateway that
+ * the Myntra web app itself uses (it only answers with those cookies).
+ * If even the gateway refuses, the IP itself is blocked: throw
+ * `MyntraBlockedError` so the UI can offer the drag-in fallback.
  */
 export async function searchMyntra(q: string, page = 1): Promise<Product[]> {
   const pageUrl = myntraSearchUrl(q, page);
 
-  let cookies: string[] = [];
-  let pageStatus: number | string = "n/a";
-  let htmlLength = 0;
-  try {
-    const res = await fetch(pageUrl, {
-      headers: {
-        "user-agent": CHROME_UA,
-        accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "accept-language": "en-IN,en;q=0.9",
-      },
-      cache: "no-store",
-      signal: AbortSignal.timeout(15_000),
-    });
-    pageStatus = res.status;
-    if (res.ok) {
-      cookies =
-        typeof res.headers.getSetCookie === "function"
-          ? res.headers.getSetCookie()
-          : [];
-      const html = await res.text();
-      htmlLength = html.length;
-      const products = parseMyntraState(
-        extractJsonAfterMarker(html, "window.__myx ="),
-      );
-      if (products.length > 0) return products;
-    }
-  } catch {
-    pageStatus = "unreachable";
-  }
+  const first = await fetchSearchPage(pageUrl, CHROME_UA);
+  if (first.products.length > 0) return first.products;
 
+  const crawler = await fetchSearchPage(pageUrl, GOOGLEBOT_UA);
+  if (crawler.products.length > 0) return crawler.products;
+
+  const cookies = [...first.cookies, ...crawler.cookies];
   const gatewayRes = await fetch(myntraGatewayUrl(q, page), {
     headers: {
       "user-agent": CHROME_UA,
@@ -183,16 +174,52 @@ export async function searchMyntra(q: string, page = 1): Promise<Product[]> {
     cache: "no-store",
     signal: AbortSignal.timeout(15_000),
   });
-  if (!gatewayRes.ok) {
-    throw new Error(
-      `myntra gateway failed: ${gatewayRes.status} (page ${pageStatus}, html ${htmlLength}b, cookies ${cookies.length})`,
-    );
+  const body = gatewayRes.ok
+    ? ((await gatewayRes.json().catch(() => null)) as unknown)
+    : null;
+  if (body !== null) return parseMyntraGateway(body);
+
+  throw new MyntraBlockedError(
+    `gateway ${gatewayRes.status}, page ${first.status}/${first.length}b`,
+  );
+}
+
+/** One page visit: its status, cookies, size and any `__myx` products. */
+async function fetchSearchPage(
+  pageUrl: string,
+  userAgent: string,
+): Promise<{
+  status: number | string;
+  cookies: string[];
+  length: number;
+  products: Product[];
+}> {
+  try {
+    const res = await fetch(pageUrl, {
+      headers: {
+        "user-agent": userAgent,
+        accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "accept-language": "en-IN,en;q=0.9",
+      },
+      cache: "no-store",
+      signal: AbortSignal.timeout(15_000),
+    });
+    const cookies =
+      typeof res.headers.getSetCookie === "function"
+        ? res.headers.getSetCookie()
+        : [];
+    if (!res.ok) return { status: res.status, cookies, length: 0, products: [] };
+    const html = await res.text();
+    let products: Product[] = [];
+    try {
+      products = parseMyntraState(
+        extractJsonAfterMarker(html, "window.__myx ="),
+      );
+    } catch {
+      products = [];
+    }
+    return { status: res.status, cookies, length: html.length, products };
+  } catch {
+    return { status: "unreachable", cookies: [], length: 0, products: [] };
   }
-  const body = (await gatewayRes.json().catch(() => null)) as unknown;
-  if (body === null) {
-    throw new Error(
-      `myntra gateway sent non-JSON (page ${pageStatus}, html ${htmlLength}b, cookies ${cookies.length})`,
-    );
-  }
-  return parseMyntraGateway(body);
 }
